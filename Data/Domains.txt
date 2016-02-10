@@ -1,0 +1,247 @@
+#	This file contains the data for the Domains.
+#	
+#	First line format is [Domain type:Entrance char:Wall char:color]
+#
+#	These must occur in the same order as in Misc.h
+
+DOMAINS 14 {
+
+Overworld:0:0:Black
+
+#		s			c				d				h
+1		Goblin			Bomb			Eagle			Wolf
+2		Doll			Leafer			Sahagin			Creep
+3		Grenade			Odd.Eye			Shadow			Ogre
+4		Chimera			Coeurl			Slam.Dancer		Black.Chocobo
+5		Bat				Cream			Wyvern			Pisco.Demon
+6		Image			Blood.Slime		Troll			Cure.Beast
+7		Aqua.Worm		Ricard.Mage		Sentry			Zuu
+8		Spirit			Water.Elemental	Rock.Wasp		Chimera.Brain
+9		Mummy			Zombie.Dragon	Ankylosaurus	Air.Elemental
+10		Cockatrice		Vampire			Morbol			Reflect.Knight
+11		Dust.Mousse		Enchanted.Fan	Clockwrk.Dragon	Gloom.Widow
+12		Flaremancer		Dark.Sage		Behemoth		Rukh
+13		Green.Dragon	Magic.Dragon	Crystal.Dragon	Tyrannosaurus
+
+an.underwater.ruin:247:247:Lightblue
+
+#	s				c				d				h
+1	Pirate			Eagle			Skeleton		Yellow.Chocobo
+2	Scum			Rock.Moth		Sahagin			Zombie
+3	Odd.Eye			Cursed.Copper	Shadow			Ice.Beast
+4	Archeotoad		Shark			Black.Chocobo	Soul
+5	Sea.Snake		Cream			Pisco.Demon		Bloodbones
+6	Piranha			Ice.Elemental	Image			Blood.Slime
+7	Adamantoise		Aqua.Worm		Ghoul			Tofu
+8	Alligator		Water.Elemental	Spirit			Night.Stalker
+9	Hermit.Crab		Hydra			Water.Dragon	Air.Elemental
+10	Moogle.Eater	Morbol			Ooze			Cockatrice
+11	Storm.Dragon	Mindflayer		Skuldier		Silver.Dragon
+12	Gold.Dragon		Ahriman			White.Dragon	Blue.Dragon
+13	Ghost			Shadow.Dragon	Magic.Dragon	Green.Dragon
+
+a.mountain.path:126:94:Red
+
+#	s				c			d				h
+1	Eagle			Bomb		Crazy.Horse		Skeleton
+2	Iguana			Stray.Cat	Zombie			Rock.Moth
+3	Grenade			Ogre		Hornet			Skull.Eater
+4	Iron.Fist		Soul		Black.Chocobo	Earth.Elemental
+5	Gigas			Wyvern		Bloodbones		Werewolf
+6	Minotaurus		Cure.Beast	Clapper			Stone.Golem
+7	Red.Chocobo		Hades.Gigas	Zuu				Yellow.Dragon
+8	Earth.Dragon	Rock.Wasp	Spirit			Iron.Golem
+9	Air.Elemental	Lamia		Zombie.Dragon	Purobolos
+10	Red.Dragon		Cockatrice	Dinozombie		Aspis
+11	Storm.Dragon	Skuldier	Silver.Dragon	Enchanted.Fan
+12	Rukh			Behemoth	Sacred			Revenant
+13	Green.Dragon	Retainer	Tyrannosaurus	Magic.Dragon
+
+a.cavern:239:177:Lightgray
+
+#	s				c			d				h
+1	Goblin 			Jelly		Asp				Spider
+2	Larva			Rock.Moth	Scum			Creep
+3	Skull.Eater		Shadow		Cursed.Copper	Cobra
+4	Clay.Golem		Crawl		Earth.Elemental	Archeotoad
+5	Basilisk		Bat			Pisco.Demon		Cream
+6	Clapper			Blood.Slime	Tiny.Mage		Image
+7	Adamantoise		Ghoul		Yellow.Dragon	Tofu
+8	Earth.Dragon	Muck		Undergrounder	Medusa
+9	Arachne			Lamia		Hermit.Crab		Mummy
+10	Dark.Elemental	Ooze		Moogle.Eater	Dinozombie
+11	Dust.Mousse		Gloom.Widow	Black.Dragon	Skuldier
+12	Revenant		Gold.Dragon	Dark.Sage		Behemoth
+13	Golden.Flan		Hades		Shadow.Dragon	Ghost
+
+an.abandoned.factory:254:219:Darkgray
+
+#	s				c				d				h
+1	Bomb			Pirate			Jelly			Spider
+2	Ice.Soldier		Doll			Scum			Flame.Dog
+3	Proto.Armor		Cursed.Copper	Grenade			Ice.Beast
+4	Clay.Golem		Chimera			Earth.Elemental	Iron.Fist
+5	Guard			Cream			Fire.Elemental	Ra.Mage
+6	Stone.Golem		Clapper			Bio.Soldier		Blood.Slime
+7	Bolt.Elemental	Marionette		Sentry			Tofu
+8	Iron.Golem		Chimera.Brain	Night.Stalker	Muck
+9	Magitek.Armor	Purobolos		Hermit.Crab		Nightshade
+10	Ooze			Rock.Statue		Reflect.Knight	Agama
+11	Clockwrk.Dragon	Enchanted.Fan	Dust.Mousse		Reflect.Mage
+12	Mech.Giant		Time.Elemental	Flaremancer		Dark.Sage
+13	Golden.Flan		Bad.Man			Retainer		Ghost
+
+a.ghost.town:254:178:Yellow
+
+#	s				c				d			h
+1	Jelly			Skeleton		Spider		Pirate
+2	Stray.Cat		Doll			Zombie		Scum
+3	Cursed.Copper	Shadow			Arachnid	Hornet
+4	Slam.Dancer		Trap.Rose		Soul		Coeurl
+5	Sword.Dancer	Bloodbones		Bat			Ra.Mage
+6	Tiny.Mage		Evoker			Image		Blood.Slime
+7	Ricard.Mage		Marionette		Porky		Tofu
+8	Night.Stalker	Rock.Wasp		Muck		Spirit
+9	Nightshade		Shadow.Dancer	Hermit.Crab	Mummy
+10	Vampire			Aspis			Ooze		Rock.Statue
+11	Skuldier		Enchanted.Fan	Dust.Mousse	Gloom.Widow
+12	Dark.Sage		Flaremancer		Revenant	Time.Elemental
+13	Retainer		Ultima.Demon	Golden.Flan	Ghost
+
+a.temple:241:178:Magenta
+
+#	s				c				d				h
+1	Spider			Skeleton		Wolf			Goblin
+2	Creep			Zombie			Larva			Iguana
+3	Arachnid		Shadow			Cobra			Ogre
+4	Soul			Slam.Dancer		Crawl			Coeurl
+5	Bloodbones		Pisco.Demon		Werewolf		Bat
+6	Image			Minotaurus		Blood.Slime		Evoker
+7	Ghoul			Ricard.Mage		Hades.Gigas		Tofu
+8	Spirit			Night.Stalker	Mini.Satana		Medusa
+9	Zombie.Dragon	Mummy			Nightshade		Shadow.Dancer
+10	Rock.Statue		Vampire			Dark.Elemental	Aspis
+11	Black.Dragon	Skuldier		Holy.Elemental	Black.Warlock
+12	Ahriman			Nitemare		Sacred			White.Dragon
+13	Bad.Man			Crystal.Dragon	Ultima.Demon	Hades
+
+a.swamp:247:247:Green
+
+#	s				c				d				h
+1	Jelly			Asp				Skeleton		Spider
+2	Scum			Rock.Moth		Larva			Creep
+3	Shadow			Cobra			Arachnid		Hornet
+4	Crawl			Scorpion		Trap.Rose		Archeotoad
+5	Werewolf		Sea.Snake		Pisco.Demon		Bat
+6	Piranha			Image			Troll			Blood.Slime
+7	Adamantoise		Tofu			Ghoul			Red.Chocobo
+8	Alligator		Water.Elemental	Muck			Rock.Wasp
+9	Zombie.Dragon	Water.Dragon	Hydra			Hermit.Crab
+10	Morbol			Ooze			Moogle.Eater	Dinozombie
+11	Gloom.Widow		Black.Dragon	Mindflayer		Silver.Dragon
+12	Revenant		Ahriman			Gold.Dragon		Nitemare
+13	Tyrannosaurus	Ghost			Purple.Worm		Green.Dragon
+
+an.ice.castle:247:247:White
+
+#	s				c				d			h
+1	Eagle			Wolf			Jelly		Crazy.Horse
+2	Ice.Soldier		Stray.Cat		Leafer		Needler
+3	Shadow			Ice.Beast		Rhobite		Skull.Eater
+4	Black.Chocobo	Coeurl			Soul		Chimera
+5	Werewolf		Wyvern			Gigas		Ra.Mage
+6	Ice.Elemental	Treant			Evoker		Cure.Beast
+7	Zuu				Ghoul			Ricard.Mage	Tofu
+8	Ice.Lizard		Night.Stalker	Medusa		Mini.Satana
+9	Air.Elemental	Zombie.Dragon	Hydra		Magitek.Armor
+10	Frost.Dragon	Rock.Statue		Cockatrice	Dark.Elemental
+11	Black.Warlock	Storm.Dragon	Mindflayer	Reflect.Mage
+12	Nitemare		Blue.Dragon		Ahriman		Dark.Sage
+13	Shadow.Dragon	Ultima.Demon	Ghost		Crystal.Dragon
+	
+a.volcano:94:94:Lightred
+
+#	s				c				d				h
+1	Bomb			Goblin			Eagle			Peeper
+2	Flame.Dog		Scum			Rock.Moth		Iguana
+3	Grenade			Shadow			Ogre			Sand.Worm
+4	Scorpion		Soul			Clay.Golem		Black.Chocobo
+5	Fire.Elemental	Gigas			Basilisk		Ra.Mage
+6	Evoker			Stone.Golem		Minotaurus		Bio.Soldier
+7	Red.Chocobo		Ricard.Mage		Sentry			Hades.Gigas
+8	Mini.Satana		Undergrounder	Earth.Dragon	Chimera.Brain
+9	Ankylosaurus	Purobolos		Hydra			Arachne
+10	Agama			Red.Dragon		Cockatrice		Ooze
+11	Black.Dragon	Black.Warlock	Sandcrawler		Silver.Dragon
+12	Flaremancer		Ahriman			Behemoth		Sacred
+13	Tyrannosaurus	Magic.Dragon	Green.Dragon	Purple.Worm
+
+a.forest:237:237:Lightgreen
+
+#	s			c				d				h
+1	Wolf		Creep			Crazy.Horse		Asp
+2	Needler		Leafer			Stray.Cat		Creep
+3	Rhobite		Skull.Eater		Hornet			Ogre
+4	Trap.Rose	Black.Chocobo	Iron.Fist		Coeurl
+5	Werewolf	Wyvern			Gigas			Basilisk
+6	Treant		Cure.Beast		Troll			Tiny.Mage
+7	Porky		Red.Chocobo		Zuu				Yellow.Dragon
+8	Rock.Wasp	Medusa			Night.Stalker	Spirit
+9	Purobolos	Nightshade		Ankylosaurus	Hermit.Crab
+10	Cockatrice	Aspis			Frost.Dragon	Ooze
+11	Gloom.Widow	Storm.Dragon	Enchanted.Fan	Silver.Dragon
+12	Rukh		Nitemare		Ahriman			Behemoth
+13	Purple.Worm	Retainer		Tyrannosaurus	Magic.Dragon
+
+a.pyramid:94:176:Lightyellow
+
+#	s			c				d				h
+1	Peeper		Eagle			Crazy.Horse		Asp
+2	Iguana		Larva			Rock.Moth		Flame.Dog
+3	Cobra		Arachnid		Sand.Worm		Proto.Armor
+4	Scorpion	Chimera			Black.Chocobo	Earth.Elemental
+5	Basilisk	Guard			Wyvern			Fire.Elemental
+6	Minotaurus	Bio.Soldier		Cure.Beast		Stone.Golem
+7	Sentry		Red.Chocobo		Yellow.Dragon	Adamantoise
+8	Rock.Wasp	Chimera.Brain	Earth.Dragon	Undergrounder
+9	Mummy		Ankylosaurus	Magitek.Armor	Arachne	
+10	Aspis		Dinozombie		Agama			Cockatrice
+11	Dust.Mousse	Sandcrawler		Gloom.Widow		Black.Dragon
+12	Ahriman		White.Dragon	Time.Elemental	Sacred
+13	Hoover		Purple.Worm		Tyrannosaurus	Retainer
+
+a.tower:186:178:Lightgray
+
+#	s				c				d			h
+1	Bomb			Goblin			Jelly		Wolf
+2	Flame.Dog		Ice.Soldier		Doll		Scum
+3	Proto.Armor		Ice.Beast		Grenade		Ogre
+4	Slam.Dancer		Chimera			Clay.Golem	Coeurl
+5	Guard			Basilisk		Wyvern		Cream
+6	Bio.Soldier		Stone.Golem		Minotaurus	Clapper
+7	Marionette		Tofu			Sentry		Yellow.Dragon
+8	Medusa			Chimera.Brain	Ice.Lizard	Iron.Golem
+9	Magitek.Armor	Hydra			Lamia		Purobolos
+10	Reflect.Knight	Agama			Vampire		Red.Dragon
+11	Enchanted.Fan	Clockwrk.Dragon	Dust.Mousse	Reflect.Mage
+12	Flaremancer		Time.Elemental	Sacred		Mech.Giant
+13	Purple.Worm		Green.Dragon	Retainer	Shadow.Dragon
+
+a.crystal.palace:35:35:Blue
+
+#	s				c				d				h
+1	Eagle			Bomb			Goblin			Jelly
+2	Ice.Soldier		Doll			Scum			Iguana
+3	Grenade			Shadow			Ice.Beast		Proto.Armor
+4	Scorpion		Chimera			Soul			Earth.Elemental
+5	Ra.Mage			Guard			Wyvern			Fire.Elemental
+6	Tiny.Mage		Clapper			Evoker			Ice.Elemental
+7	Yellow.Dragon	Ricard.Mage		Tofu			Bolt.Elemental
+8	Mini.Satana		Chimera.Brain	Iron.Golem		Water.Elemental
+9	Zombie.Dragon	Water.Dragon	Magitek.Armor	Air.Elemental
+10	Dinozombie		Red.Dragon		Frost.Dragon	Dark.Elemental
+11	Silver.Dragon	Clockwrk.Dragon	Black.Dragon	Holy.Elemental
+12	Gold.Dragon		Behemoth		Blue.Dragon		Dark.Sage
+13	Crystal.Dragon	Magic.Dragon	Shadow.Dragon	Ultima.Demon
+
+}

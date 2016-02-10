@@ -1,0 +1,72 @@
+
+<spell> 	::= <cost> <effect-list> {'&' <effect-list>}*
+
+<cost>		::= 'consume' <item-name>
+		(* item-name comes from Items.txt, Weapons.txt, or Armor.txt *)
+	
+<effect-list>	::=
+		| 'chance' <degree> <effect>+
+		| 'if' <condition> <effect-list>
+		| 'party' <effect-list>
+		| <effect>+ [<effect-list>]
+
+<effect>	::=	'add' ['random_of'] <status-list>
+		::= 'attack' [<element>] ['hurts' <race>+] [<sp_attack>+]
+		::= 'cancel' <status-list>
+		::= 'caster'							// remaining effects apply to caster.
+		::= 'damage' <degree> <element>
+		::= 'escape'
+		::= 'heal' <degree> | <amount>
+		::= 'remove' <status-list>
+		::= 'give_resist' <element>+
+		::= 'give_weak' <element>+
+		::= 'toggle' <status-list>
+		::= 'stat' <stat> <integer>				// stat-buff
+		::= 'drain' <degree>
+		::= 'loseHP' <amount> ['both']
+		::= 'special' <special>
+
+		
+<condition>	::= <status> | 'monster'
+
+<degree>	::= 'min' | 'low' | 'med' | 'high' | 'max'
+
+<amount>	::= 'caster_HP'		// caster HP
+		| 'all'					// all HP
+		| 'lost'				// caster MaxHP - HP
+		| 'half_lost'			// caster (MaxHP - HP) / 2
+
+<element>	::= <FFCG.txt::ELEMENT>
+		| 'neutral'
+		
+<stat>		::= 'Str' | 'Int' | 'Vit' | 'Agi' | 'Eva' | 'Hit' | 'Atk'
+
+<race>		::= <FFCG.txt::RACE>+
+
+<status-list>	::= <FFCG.txt::STATUS>+
+
+<special>	::= 'attack_caster_choice'
+		::= 'change_row'
+		::= 'charge' <integer>
+		::= 'dark_magic' <status>
+		::= 'draw' <integer>
+		::= 'escape'
+		::= 'exchange_weapon'
+		::= 'junction'
+		::= 'pep_up'
+		::= 'skip_next_turn'
+		::= 'steal' ('gil' | 'item')
+		::= 'weapon_gains' <effect>
+
+<sp_attack>	::= 'add' <status>
+		::= 'drainHP'
+		::= 'drainMP'
+		::= <element>
+		::= 'exchange_weapon'
+		::= 'ignore_evasion'
+		::= 'ignore_row'
+		::= 'may_change_row'
+		::= 'meatbone_slash'
+		::= 'modifier_minus_one'
+		::= 'twice'
+		::= 'd4_times'

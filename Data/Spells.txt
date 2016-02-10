@@ -1,0 +1,1127 @@
+# If a spell has a "chance" of doing something, followed by other effects not
+# dependent on that chance, end the list of dependent effects with an
+# ampersand (&).  e.g. "Big Guard", below.
+# Similarly, an "attack" or "if" clause must be terminated by an ampersand if
+# followed by other effects.
+#
+# Note: "chance" excludes KO party members for ANY spells (so, e.g., creating an
+# ANY spell with a chance to revive someone wouldn't work).
+#
+#	"atk" indicates whether the enemy should cast the spell on the players (Y),
+#	another enemy (N), or a KO'd enemy (K).
+
+
+SPELLS {
+
+$ Black.Low
+#Lv	name	Map	target	AI		effect
+
+2	Fire	N	ANY		ENEMY	damage low fire ~
+"Low fire damage."
+2	Ice		N	ANY		ENEMY	damage low ice ~
+"Low ice damage."
+2	Bolt	N	ANY		ENEMY	damage low bolt ~
+"Low bolt damage."
+
+3	Poison	N	ANY		ENEMY	damage low dark
+								chance high add Poison ~
+"Low dark damage, and high chance of adding Poison."
+
+3	Tornado	N	SINGLE	ENEMY	chance min add Critical ~
+"Minimum chance of reducing target's HP to one-fourth of its starting amount."
+
+3	Count	N	SINGLE	ENEMY	chance high add Count ~
+"High chance of adding Count."
+
+5	Fire.2	N	ANY		ENEMY	damage med fire ~
+"Medium fire damage."
+
+5	Ice.2	N	ANY		ENEMY	damage med ice ~
+"Medium ice damage."
+
+5	Bolt.2	N	ANY		ENEMY	damage med bolt ~
+"Medium bolt damage."
+
+
+$ Black.High
+#Lv	name			Map	target	AI		effect
+
+6	Bio				N	ANY		ENEMY	damage med dark
+										chance high add Poison ~
+"Medium dark damage, and high chance of adding Poison."
+
+6	Death			N	SINGLE	ENEMY	chance min add KO ~
+"Minimum chance of adding KO."
+
+6	Quake			N	GROUP	ENEMY	damage med earth ~
+"Medium earth damage."
+
+8	Fire.3			N	ANY		ENEMY	damage high fire ~
+"High fire damage."
+
+8	Ice.3			N	ANY		ENEMY	damage high ice ~
+"High ice damage."
+
+8	Bolt.3			N	ANY		ENEMY	damage high bolt ~
+"High bolt damage."
+
+10	Maelstrom		N	GROUP	ENEMY	chance max add Critical ~
+"Maximum chance of reducing group's HP to one-fourth of starting amount."
+
+10	Flare			N	SINGLE	ENEMY	damage max neutral ~
+"Maximum damage."
+
+10	Ultima			N	GROUP	ENEMY	damage high neutral ~
+"High damage."
+
+
+$ Blue.Low
+#Lv	name			Map	target	AI		effect
+
+1	Exploder		N	SINGLE	ENEMY	loseHP caster_HP caster loseHP all ~
+"You explode, doing damage equal to your HP."
+
+1	Aero			N	ANY		ENEMY	damage low air ~
+"Low air damage."
+
+1	Goblin.Punch	N	SINGLE	ENEMY	damage low neutral
+										chance high add Confuse ~
+"Low damage, with high chance of adding Confuse."
+
+2	Flash			N	GROUP	ENEMY	chance max add Blind ~
+"Maximum chance of adding Blind."
+
+2	Aqua.Rake		N	GROUP	ENEMY	damage low water ~
+"Low water damage."
+
+2	Condemn			N	SINGLE	ENEMY	chance max add Count ~
+"Maximum chance of adding Count."
+
+4	Aero.2			N	ANY		ENEMY	damage med air ~
+"Medium air damage."
+
+4	Red.Feast		N	SINGLE	ENEMY	special red_feast ~
+"Medium HP drain."
+
+4	Pep.Up			N	OTHER	ALLY	special pep_up heal max caster loseHP all ~
+"Add caster's vitality to target's, then maximum HP recovery, but caster dies."
+
+
+$ Blue.High
+#Lv	name			Map	target	AI		effect
+
+5	Flamethrower	N	SINGLE	ENEMY	damage high fire ~
+"High fire damage."
+
+5	Dischord		N	SINGLE	ENEMY	chance low stat Agi -4 stat Hit -2
+										stat Eva -2 stat Atk -4 ~
+"Low chance of reducing Attack and Agility by 4, and reducing Hit and Evade by 2."
+
+5	Tsunami			N	GROUP	ENEMY	damage med water ~
+"Medium water damage."
+
+7	Aero.3			N	ANY		ENEMY	damage high air ~
+"High air damage."
+
+7	Mind.Blast		N	GROUP	ENEMY	chance high add Stun & 
+										chance max add Poison ~
+"High chance of adding Stun, followed by maximum chance of adding Poison."
+
+7	Bad.Breath		N	SINGLE	ENEMY	chance low add Frog Sleep Confuse
+										Slow Poison ~
+"Low chance of adding Frog, Sleep, Confuse, Slow, and Poison."
+
+11	Megaflare		N	GROUP	ENEMY	damage max neutral ~
+"Maximum damage."
+
+11	White.Wind		N	GROUP	ALLY	heal caster_HP ~
+"HP recovery equal to caster's HP."
+
+11	Big.Guard		N	GROUP	ALLY	chance max add Protect Shell Regen ~
+"Maximum chance of adding Protect, Shell, and Regen."
+
+
+$ Break
+#Lv	name			Map	target	AI		effect
+
+4	Speed.Break		N	SINGLE	ENEMY	chance max stat Agi -4 ~
+"Maximum chance of reducing target's Agility by 4."
+
+4	Arm.Break		N	SINGLE	ENEMY	chance max stat Hit -2 ~
+"Maximum chance of reducing target's Hit by 2."
+
+4	Leg.Break		N	SINGLE	ENEMY	chance max stat Eva -2 ~
+"Maximum chance of reducing target's Evade by 2."
+
+4	Armor.Break		N	SINGLE	ENEMY	chance max stat Vit -4 ~
+"Maximum chance of reducing target's Vitality by 4."
+
+4	Weapon.Break	N	SINGLE	ENEMY	chance max stat Atk -4 ~
+"Maximum chance of reducing target's Attack by 4."
+
+4	Mind.Break		N	SINGLE	ENEMY	chance max stat Int -6 ~
+"Maximum chance of reducing target's Intelligence by 6."
+
+7	Armor.Crush		N	SINGLE	ENEMY	chance max stat Vit -4 & attack ~
+"Maximum chance of reducing target's Vitality by 4, followed by a physical attack."
+
+7	Weapon.Crush	N	SINGLE	ENEMY	chance max stat Atk -4 & attack ~
+"Maximum chance of reducing target's Attack by 4, followed by a physical attack."
+
+7	Mind.Crush		N	SINGLE	ENEMY	chance max stat Int -6 & attack ~
+"Maximum chance of reducing target's Intelligence by 6, followed by a physical attack."
+
+
+$ Clockwork
+#Lv	name			Map	target			AI		effect
+3	Black.Ingot		N	RANDOM_GROUP	ENEMY	chance max add Count ~
+"Maximum chance of adding Count."
+
+3	Silver.Disc		N	RANDOM_GROUP	ENEMY	chance max add Blind Slow ~
+"Maximum chance of adding Blind and Slow."
+
+3	Chroma.Gem		N	RANDOM_GROUP	ENEMY	chance max add Sleep ~
+"Maximum chance of adding Sleep."
+
+3	Green.Gear		N	RANDOM_GROUP	ENEMY	chance max add Poison Lock ~
+"Maximum chance of adding Poison and Lock."
+
+3	Red.Spring		N	RANDOM_GROUP	ALLY	chance max add Haste ~
+"Maximum chance of adding Haste."
+
+3	Gold.Battery	N	RANDOM_GROUP	ALLY	heal med ~
+"Medium HP recovery."
+
+6	Bronze.Plating	N	RANDOM_GROUP	ALLY	chance max add Reflect ~
+"Maximum chance of adding Reflect."
+
+7	Yellow.Spring	N	RANDOM_GROUP	ALLY	chance max add Protect Shell ~
+"Maximum chance of adding Protect and Shell."
+
+7	Blue.Screw		N	RANDOM_GROUP	ALLY	remove Reflect Blink Protect
+												Shell Haste Regen Reraise ~
+"Removes Reflect, Blink, Protect, Shell, Haste, Regen, and Reraise."
+												
+
+$ Combine
+#Lv	name			Map	target	AI		effect
+3	Water.Cannon	N	SINGLE	ENEMY	consume Water.Ball damage med water & chance high add Slow ~
+"Consume Water Ball for medium water damage, with high chance of adding Slow."
+
+3	Fire.Cannon		N	SINGLE	ENEMY	consume Fire.Ball damage med fire & chance high add Poison ~
+"Consume Fire Ball for medium fire damage, with high chance of adding Poison."
+
+3	Frost.Cannon	N	SINGLE	ENEMY	consume Ice.Ball damage med ice & chance high add Lock ~
+"Consume Ice Ball for medium ice damage, with high chance of adding Lock."
+
+3	Spark.Cannon	N	SINGLE	ENEMY	consume Thunder.Ball damage med bolt & chance high add Blind ~
+"Consume Thunder Ball for medium bolt damage, with high chance of adding Blind."
+
+5	Killer.Cannon	N	SINGLE	ENEMY	consume Coeurl.Whisker chance med add KO ~
+"Consume Coeurl's Whisker for medium chance of adding KO."
+
+5	Power.Cannon	N	SINGLE	ALLY	consume Baccus'.Wine chance max stat Atk 4 add Berserk ~
+"Consume Baccus' Wine for maximum chance of increasing Attack by 4 and adding Berserk."
+
+7	Mini.Cannon		N	GROUP	ENEMY	consume Scape.Doll chance max stat Vit -8 ~
+"Consume Scape Doll for maximum chance of reducing Vitality by 8."
+
+8	Time.Cannon		N	GROUP	ALLY	consume Hourglass chance max add Quick Haste ~
+"Consume Hourglass for maximum chance of adding Quick and Haste."
+
+8	Divine.Cannon	N	SINGLE	ENEMY	consume Light.Curtain damage max holy ~
+"Consume Light Curtain for maximum holy damage."
+
+
+$ Dance
+#Lv	name			Map	target	AI		effect
+
+1	Sword.Dance		N	GROUP	ENEMY	damage min neutral ~
+"Minimum damage."
+
+2	Disillusion		N	GROUP	ENEMY	chance med stat Eva -1 ~
+"Medium chance of reducing Evade by 1."
+
+2	Witch.Hunt		N	GROUP	ENEMY	chance med stat Int -3 ~
+"Medium chance of reducing Intellience by 3."
+
+2	Slow.Dance		N	GROUP	ENEMY	chance med stat Agi -2 ~
+"Medium chance of reducing Agility by 2."
+
+2	Polka			N	GROUP	ENEMY	chance med stat Atk -2 ~
+"Medium chance of reducing Attack by 2."
+
+3	Sleepy.Shuffle	N	GROUP	ENEMY	chance min add Sleep ~
+"Minimum chance of adding Sleep."
+
+6	Jitterbug		N	SINGLE	ENEMY	drain med  ~
+"Medium HP drain."
+
+7	Last.Dance		N	GROUP	ENEMY	chance max add Halt ~
+"Maximum chance of adding Halt."
+
+7 Nameless.Dance	N	GROUP	ENEMY	chance max add random_of Blind
+										Mute Slow Poison Lock Confuse Sleep
+										Stun Undead Stop Charm Frog Petrify ~
+"Maximum chance of adding a random negative status."
+
+									
+$ Dark.Arts
+#Lv	name			Map	target	AI		effect
+
+1	Drain.Touch		N	ANY		ENEMY	drain min ~
+"Minimum HP drain."
+
+2	Dark.Haze		N	GROUP	ENEMY	chance low add Blind Confuse ~
+"Low chance of adding Blind and Confuse."
+
+5	Curse			N	ANY		ENEMY	chance max add Undead ~
+"Maxium chance of adding Undead."
+
+6	Evil.Mist		N	GROUP	ENEMY	damage med dark ~
+"Medium dark damage."
+
+7	Chaos.Drive		N	ANY		ENEMY	damage med bolt & chance high add Confuse ~
+"Medium bolt damage, and high chance of adding Confuse."
+
+7	Deep.Freeze		N	ANY		ENEMY	damage med ice & chance high add Slow ~
+"Medium ice damage, and high chance of adding Slow."
+
+12	Doomsday		N	ALL		ENEMY	damage max dark & chance max add Undead ~
+"Maximum dark damage, and maximum chance of adding Undead."
+
+12	Hellwind		N	ALL		ENEMY	damage max air & chance min add Calcify ~
+"Maximum air damage, and minimum chance of adding Calcify."
+
+12	Meltdown		N	ALL		ENEMY	damage max fire & chance max add Poison ~
+"Maximum air damage, and maximum chance of adding Poison."
+
+
+$ Dark.Magic
+#Lv	name			Map	target	AI		effect
+
+1	Death.Cold		N	SINGLE	ENEMY	special dark_magic Slow ~
+"Caster and target both gain Slow, unless either cancels it."
+
+1	Darkness		N	SINGLE	ENEMY	special dark_magic Blind ~
+"Caster and target both gain Blind, unless either cancels it."
+
+1	Lose.Voice		N	SINGLE	ENEMY	special dark_magic Mute ~
+"Caster and target both gain Mute, unless either cancels it."
+
+1	Hold.Tight		N	SINGLE	ENEMY	special dark_magic Lock ~
+"Caster and target both gain Lock, unless either cancels it."
+
+4	Nightmare		N	SINGLE	ENEMY	special dark_magic Sleep ~
+"Caster and target both gain Sleep, unless either cancels it."
+
+4	Chicken.Race	N	SINGLE	ENEMY	special dark_magic Stun ~
+"Caster and target both gain Stun, unless either cancels it."
+
+7	Shock			N	SINGLE	ENEMY	loseHP lost both ~
+"Caster and target both take damage equal to caster's maximum HP minus
+his current HP."
+
+9	Dark.Holy		N	SINGLE	ENEMY	damage max dark ~
+"Maximum dark damage."
+
+11	Seal			N	SINGLE	ENEMY	special dark_magic Petrify ~
+"Caster and target both gain Petrify, unless either cancels it."
+
+
+$ Dragon.Skill					
+#Lv	name			Map	target	AI		effect
+
+2	Dragon's.Crest	N	SINGLE	ENEMY	attack hurts Dragons ~
+"Attack target doing extra damage to Dragons."
+
+4	Reis'.Wind		N	GROUP	ALLY	chance max add Regen ~
+"Maximum chance of adding Regen."
+
+5	Luna			N	ALL		ENEMY	add Berserk ~
+"Add Berserk to all combatants."
+
+6	White.Draw		N	GROUP	ALLY	gainMP med ~
+"Medium temporary MP gain."
+
+7	Lancet			N	SINGLE	ENEMY	attack modifier_minus_one drainHP drainMP ~
+"Weak physical attack draining HP and MP."
+
+7	Fire.Breath		N	GROUP	ENEMY	damage med fire ~
+"Medium fire damage."
+
+7	Ice.Breath		N	GROUP	ENEMY	damage med ice ~
+"Medium ice damage."
+
+7	Bolt.Breath		N	GROUP	ENEMY	damage med bolt ~
+"Medium bolt damage."
+
+8	Holy.Breath		N	GROUP	ENEMY	damage high holy ~
+"High holy damage."
+
+
+$ Draw
+#Lv	name			Map	target	AI		effect
+
+2	Draw.Strength	N	SINGLE	ENEMY	chance med stat Atk -2
+										caster stat Atk 2 ~
+"Medium chance of drawing 2 Attack from target."
+
+2	Draw.Reflexes	N	SINGLE	ENEMY	chance med stat Eva -1
+										caster stat Eva 1 ~
+"Medium chance of drawing 1 Evade from target."
+
+2	Draw.Mind		N	SINGLE	ENEMY	chance med stat Int -3
+										caster stat Int 3 ~
+"Medium chance of drawing 3 Intelligence from target."
+
+2	Draw.Speed		N	SINGLE	ENEMY	chance med stat Agi -2
+										caster stat Agi 2 ~
+"Medium chance of drawing 2 Agility from target."
+
+2	Draw.Dexterity	N	SINGLE	ENEMY	chance med stat Hit -1
+										caster stat Hit 1 ~
+"Medium chance of drawing 2 Hit from target."
+
+3	Junction.Xchnge	N	SINGLE	ENEMY	special junction ~
+"Swap all temporary stat bonuses and penalities with target."
+
+5	Aura			N	SELF	ALLY	stat Vit 4 ~
+"Increase vitality by 4."
+	
+5	Draw.Treasure	N	SINGLE	ENEMY	chance max special steal item ~
+"Maximum chance of stealing an item from the enemy."
+
+9	Draw.Life		N	SINGLE	ENEMY	drain high ~
+"High HP drain."
+
+
+$ Draw.Out
+#Lv	name			Map	target	AI		effect
+
+1	Ashura			N	GROUP	ENEMY	damage min holy ~
+"Minimum holy damage."
+
+2	Kotetsu			N	GROUP	ENEMY	damage low dark ~
+"Low dark damage."
+
+3	Murasame		Y	GROUP	ALLY	heal low ~
+"Low HP recovery."
+
+4	Heaven's.Cloud	N	GROUP	ENEMY	damage low air
+									chance max add Slow ~
+"Low air damage, with maximum chance of adding Slow."
+
+5	Kiyomori		N	GROUP	ALLY	chance min add Protect Shell ~
+"Minimum chance of adding Protect and Shell."
+
+6	Muramasa		N	GROUP	ENEMY	damage med dark
+									chance low add Poison ~
+"Medium dark damage, with low chance of adding Poison."
+
+7	Kikuichimoji	N	GROUP	ENEMY	damage med holy ~
+"Medium holy damage."
+
+8	Masamune		N	GROUP	ALLY	chance high add Regen Haste ~
+"High chance of adding Regen and Haste."
+
+11	Chirijiraden	N	GROUP	ENEMY	damage max dark ~
+"Maximum dark damage."
+
+	
+$ Elemental
+#Lv	name			Map	target	AI		effect
+
+1	Local.Quake		N	SINGLE	ENEMY	damage low earth
+										chance low add Confuse ~
+"Low earth damage, with low chance of adding Confuse."
+
+2	Blizzard		N	SINGLE	ENEMY	damage low ice
+										chance low add Mute ~
+"Low ice damage, with low chance of adding Mute."
+
+3	Sand.Storm		N	SINGLE	ENEMY	damage low air
+										chance low add Blind ~
+"Low air damage, with low chance of adding Mute."
+
+5	Quicksand		N	SINGLE	ENEMY	damage low neutral
+										chance low add Count ~
+"Low damage, with low chance of adding Mute."
+
+5	Kamaitachi		N	SINGLE	ENEMY	damage low bolt
+										chance low add Stun ~
+"Low bolt damage, with low chance of adding Mute."
+
+5	Demon.Fire		N	SINGLE	ENEMY	damage low fire
+										chance low add Sleep ~
+"Low fire damage, with low chance of adding Mute."
+
+7	Hell.Ivy		N	SINGLE	ENEMY	damage low dark
+										chance low add Stop ~
+"Low dark damage, with low chance of adding Mute."
+
+11	Water.Ball		N	SINGLE	ENEMY	damage low water
+										chance low add Frog ~
+"Low water damage, with low chance of adding Mute."
+
+12	Carve.Model		N	SINGLE	ENEMY	damage low holy
+										chance low add Petrify ~
+"Low holy damage, with low chance of adding Mute."
+
+
+$ Finisher
+#Lv	name			Map	target	AI		effect
+
+2	Swap.Strike		N	SINGLE	ENEMY	special exchange_weapon attack ~
+"Exchange your weapon with one in your inventory, then attack."
+
+2	Lunge			N	SINGLE	ENEMY	special change_row attack ~
+"Change rows and attack."
+
+3	True.Strike		N	SINGLE	ENEMY	attack ignore_evasion ~
+"Physical attack ignoring evasion."
+
+3	Critical.Strike	N	SINGLE	ENEMY	attack meatbone_slash ~
+"Strong physical attack; very likely to hit."
+
+4	Curse.Blade		N	SINGLE	ENEMY	attack dark & attack earth ~
+"Attack imbued with the element dark, then attack imbued with element earth."
+
+4	Bladeblitz		N	GROUP	ENEMY	attack ~
+"Physical attack against all enemies."
+
+5	Chill.Blade		N	SINGLE	ENEMY	attack ice & attack water ~
+"Attack imbued with the element ice, then attack imbued with element water."
+
+6	Sky.Blade		N	SINGLE	ENEMY	attack air & attack bolt ~
+"Attack imbued with the element air, then attack imbued with element bolt."
+
+6	Radiant.Blade	N	SINGLE	ENEMY	attack holy & attack fire ~
+"Attack imbued with the element holy, then attack imbued with element fire."
+	
+
+$ Guts
+#Lv	name			Map	target	AI		effect
+
+1	Throw.Stone		N	SINGLE	ENEMY	damage low neutral ~
+"Low damage."
+
+1	Dash			N	SINGLE	ENEMY	attack modifier_minus_one ignore_evasion ~
+"Weak physical attack ignoring evasion."
+
+1	First.Aid		N	GROUP	ALLY	remove Blind Mute Poison ~
+"Removes Blind, Mute, Poison, and Lock."
+
+2	Provoke			N	SINGLE	ENEMY	chance med add Berserk ~
+"Medium chance of adding Berserk."
+
+3	Accumulate		N	SELF	ALLY	chance max stat Atk 4 ~
+"Maximum chance of gaining 4 Attack."
+
+3	Yell			N	SELF	ALLY	chance max stat Hit 4 ~
+"Maximum chance of gaining 4 Hit."
+
+3	Cheer.Up		N	SELF	ALLY	chance max stat Eva 2 ~
+"Maximum chance of gaining 2 Evade."
+
+3	Roar			N	SELF	ALLY	chance max stat Agi 2 ~
+"Maximum chance of gaining 2 Agility."
+
+4	Scream			N	SELF	ALLY	chance high stat Atk 2 stat Hit 1
+										stat Eva 1 stat Agi 2 ~
+"Maximum chance of increasing Attack and Agility by 2, and increasing Hit and Evade by 1."
+
+
+$	Holy.Magic
+#Lv	name			Map	target	AI		effect
+
+#Wish
+
+4	Heal			Y	GROUP	ALLY	heal low ~
+"Low HP recovery."
+
+4	Harm			N	GROUP	ENEMY	if Undead damage med holy ~
+"Medium holy damage to Undead."
+
+7	M-Barrier		N	SINGLE	ALLY	chance low add Protect Shell
+										Haste Regen Reraise ~
+"Low chance of adding Protect, Shell, Haste, Regen, and Reraise."
+
+7	Heal.2			Y	GROUP	ALLY	heal med ~
+"Medium HP recovery."
+
+7	Harm.2			N	GROUP	ENEMY	if Undead damage high holy ~
+"High holy damage to Undead."
+
+10	Heal.3			Y	GROUP	ALLY	heal high ~
+"High HP recovery."
+
+10	Harm.3			N	GROUP	ENEMY	if Undead damage max holy ~
+"Maximum holy damage to Undead."
+
+12	Ulmagust		N	ANY		ENEMY	damage max holy ~
+"Maximum holy damage."
+			
+
+$ L1.Magic
+#Lv	name			Map	target	AI		effect
+
+#0	Dispel.L1		N	SINGLE	ENEMY
+0	Rasp.L1			N	SINGLE	ENEMY	chance high stat Int -3 ~
+"High chance of reducing Intelligence by 3."
+
+
+$ Magitek
+#Lv	name			Map	target	AI		effect
+
+1	Bolt.Beam		N	SINGLE	ENEMY	damage low bolt ~
+"Low bolt damage."
+
+1	Ice.Beam		N	SINGLE	ENEMY	damage low ice ~
+"Low ice damage."
+
+1	Fire.Beam		N	SINGLE	ENEMY	damage low fire ~
+"Low fire damage."
+
+4	Confuser		N	GROUP	ENEMY	chance max add Confuse ~
+"Maximum chance of adding Confuse."
+
+4	Heal.Force		Y	SINGLE	ALLY	heal med ~
+"Medium HP recovery."
+
+6	Bio.Beast		N	GROUP	ENEMY	damage low dark chance max add Poison ~
+"Low dark damage, and high chance of adding Poison."
+
+7	Tek.Barrier		N	SELF	ALLY	chance max add Protect Shell ~
+"Maximum chance of adding Protect and Shell."
+
+7	Tek.Missile		N	SINGLE	ENEMY	damage high neutral ~
+"High damage"
+
+10	X-Fer			N	SINGLE	ENEMY	chance max add KO ~
+"Maximum chance of adding KO."
+
+
+$ Mix
+#Lv	name			Map	target	AI		effect
+
+11	Dragon.Breath	N	GROUP	ENEMY	damage med fire damage med ice damage med bolt ~
+"Medium fire damage, medium ice damage, and medium bolt damage."
+
+
+$ Ninjutsu
+#Lv	name			Map	target	AI		effect
+
+1	Smoke			N	GROUP	ALLY	escape ~
+"Escape from battle."
+
+1	Heal.Pill		N	SINGLE	ALLY	heal low ~
+"Low HP recovery."
+
+2	Pin				N	SINGLE	ENEMY	chance med add Stun ~
+"Medium chance of adding Stun."
+
+6	Image			N	SELF	ALLY	chance max add Blinkx2 ~
+"Maximum chance of adding Blink."
+
+9	Tremor			N	GROUP	ENEMY	damage high earth ~
+"High earth damage."
+
+10	Blitz			N	GROUP	ENEMY	damage high bolt ~
+"High bolt damage."
+
+10	Flood			N	GROUP	ENEMY	damage high water ~
+"High water damage."
+
+10	Flame			N	GROUP	ENEMY	damage high fire ~
+"High fire damage."
+
+11	Gale			N	GROUP	ENEMY	damage high air ~
+"High air damage."
+
+
+$ Poker
+#Lv	name			Map	target	AI		effect
+
+0	Prismatic.Flash	N	GROUP	ENEMY	damage min holy ~
+"Minimum holy damage."
+
+$ Punch.Art
+#Lv	name			Map	target	AI		effect
+
+3	Stigma.Magic	N	GROUP	ALLY	remove Blind Slow Poison
+										Lock Count Undead ~
+"Removes Blind, Slow, Poison, Lock, Count, and Undead."
+	
+3	Chakra			M	SELF	ALLY	heal med ~
+"Medium HP recovery."
+
+4	Secret.Fist		N	SINGLE	ENEMY	chance max add Count ~
+"Maximum chance of adding Count."
+
+4	Kick			N	GROUP	ENEMY	attack modifier_minus_one ignore_evasion ignore_row ~
+"Weak physical attack against all enemies, ignoring row and evasion."
+
+4	Earth.Slash		N	ANY		ENEMY	damage med earth ~
+"Medium earth damage."
+
+5	Revive			N	SINGLE	KOALLY	if KO remove KO heal med ~
+"Restores a defeated player, with medium HP recovery."
+
+5	Aura.Bolt		N	SINGLE	ENEMY	damage med holy ~
+"Medium holy damage."
+
+5	Wave.Fist		N	SINGLE	ENEMY	damage med air ~
+"Medium air damage."
+
+9	Repeating.Fist	N	SINGLE	ENEMY	attack d4_times modifier_minus_one ignore_evasion ~
+"One to four weak physical attacks against target, ignoring evasion."
+
+
+$ Slot
+#Lv	name			Map	target	AI		effect
+
+2	Slot.5			N	NONE	ENEMY	special draw 5 ~
+"Draw five cards; effect is based on best poker hand made."
+3	Slot.6			N	NONE	ENEMY	special draw 6 ~
+"Draw six cards; effect is based on best poker hand made."
+4	Slot.7			N	NONE	ENEMY	special draw 7 ~
+"Draw seven cards; effect is based on best poker hand made."
+5	Slot.8			N	NONE	ENEMY	special draw 8 ~
+"Draw eight cards; effect is based on best poker hand made."
+6	Slot.9			N	NONE	ENEMY	special draw 9 ~
+"Draw nine cards; effect is based on best poker hand made."
+7	Slot.10			N	NONE	ENEMY	special draw 10 ~
+"Draw ten cards; effect is based on best poker hand made."
+8	Slot.11			N	NONE	ENEMY	special draw 11 ~
+"Draw eleven cards; effect is based on best poker hand made."
+9	Slot.12			N	NONE	ENEMY	special draw 12 ~
+"Draw twelve cards; effect is based on best poker hand made."
+10	Slot.13			N	NONE	ENEMY	special draw 13 ~
+"Draw thirteen cards; effect is based on best poker hand made."
+
+
+$ Snipe
+#Lv	name			Map	target	AI		effect
+
+1	Charge			N	NONE	ENEMY	special charge ~
+"Your next attack is stronger and more likely to hit."
+
+1	Leg.Aim			N	SINGLE	ENEMY	chance max add Lock ~
+"Maximum chance of adding Lock."
+
+3	Tapir			N	GROUP	ALLY	remove Stun Sleep Confuse Blind Mute Poison ~
+"Removes Stun, Sleep, Confuse, Blind, Mute, and Poison."
+
+4	Medusa's.Arrow	N	SINGLE	ENEMY	chance max add Calcify ~
+"Maximum chance of adding Calcify."
+
+4	Arm.Aim			N	SINGLE	ENEMY	chance max add Stun ~
+"Maximum chance of adding Stun."
+
+4	Nightengale		N	GROUP	ALLY	heal low ~
+"Low HP recovery."
+
+6	Seal.Evil		N	SINGLE	ENEMY	if Undead chance high add Petrify ~
+"High chance of adding Petrify to Undead."
+
+6	Cupid's.Arrow	N	SINGLE	ENEMY	chance high add Charm ~
+"High chance of adding Charm."
+
+9	Head.Aim		N	SINGLE	ENEMY	chance high add KO ~
+"High chance of adding KO."
+
+
+$ Steal
+#Lv	name			Map	target	AI		effect
+
+4	Steal.Heart		N	SINGLE	ENEMY	chance low add Charm ~
+"Low chance of adding Charm."
+
+8	Capture.Heart	N	SINGLE	ENEMY	attack & chance low add Charm ~
+"Physical attack, followed by low chance of adding Charm."
+
+
+$ Subdual.Arts
+#Lv	name			Map	target	AI		effect
+
+3	Ague			N	SINGLE	ENEMY	add Slow ~
+"Add the status Slow."
+
+3	Aphonia			N	SINGLE	ENEMY	add Mute ~
+"Add the status Mute."
+
+6	Dark.Nightmare	N	SINGLE	ENEMY	add Sleep ~
+"Add the status Sleep."
+
+6	Oblivion		N	SINGLE	ENEMY	add Count ~
+"Add the status Count."
+
+8	Ultima.Masher	N	ANY		ENEMY	damage high neutral ~
+"High damage."
+
+9	Allure			N	SINGLE	ENEMY	add Charm ~
+"Add the status Charm."
+
+9	Shadowbind		N	SINGLE	ENEMY	add Stop ~
+"Add the status Stop."
+
+12	Last.Breath		N	SINGLE	ENEMY	add KO ~
+"Add the status KO."
+
+13	Rockseal		N	SINGLE	ENEMY	add Petrify ~
+"Add the status Petrify."
+
+
+$ Summon.Low
+#Lv	name			Map	target	AI		effect
+
+1	Chocobo			N	SINGLE	ENEMY	damage low neutral ~
+"Low damage."
+
+1	Moogle			N	GROUP	ALLY	heal min ~
+"Minimum HP recovery."
+
+1	Remora			N	SINGLE	ENEMY	chance min add Stun Poison ~
+"Minimum chance of adding Stun and Poison."
+
+4	Ifrit			N	GROUP	ENEMY	damage low fire ~
+"Low fire damage."
+
+4	Shiva			N	GROUP	ENEMY	damage low ice ~
+"Low ice damage."
+
+4	Ramuh			N	GROUP	ENEMY	damage low bolt ~
+"Low bolt damage."
+
+6	Titan			N	GROUP	ENEMY	damage med earth ~
+"Medium earth damage."
+
+6	Golem			N	GROUP	ALLY	chance high add Protect ~
+"High chance of adding Protect."
+
+6	Fairy			N	GROUP	ALLY	heal low chance high add Regen ~
+"Low HP recovery, with medium chance of adding Regen."
+
+
+$ Summon.High
+#Lv	name			Map	target	AI		effect
+
+10	Odin			N	GROUP	ENEMY	chance low add KO ~
+"Low chance of adding KO."
+
+10	Fenrir			N	GROUP	ALLY	chance max add Blinkx2 ~
+"Maximum chance of adding Blink."
+
+10	Carbunkle		N	GROUP	ALLY	chance max add Reflect ~
+"Maximum chance of adding Reflect."
+
+13	Lich			N	GROUP	ENEMY	chance high stat Vit -4 &
+										damage high dark ~
+"High chance of reducing Vitality by 4, and high dark damage."
+
+13	Leviathan		N	GROUP	ENEMY	damage max water ~
+"Maximum water damage."
+
+13	Bahamut			N	GROUP	ENEMY	damage max neutral ~
+"Maximum damage."
+
+14	Cyclops			N	GROUP	ENEMY	damage max air ~
+"Maximum air damage."
+
+14	Alexander		N	GROUP	ENEMY	damage max holy ~
+"Maximum holy damage."
+
+14	Zodiac			N	GROUP	ENEMY	damage med neutral chance max add random_of
+										Poison Charm Sleep Undead Stun Halt Fatal
+										Critical Stop Frog KO Petrify Invite ~
+"Medium neutral damage, with a maximum chance of adding a negative status."
+
+
+$ Swordplay
+#Lv	name			Map	target	AI		effect
+
+3	Cleansing		N	SINGLE	ENEMY	attack add Count ~
+"Physical attack adding Count."
+
+4	Hallowed.Bolt	N	ANY		ENEMY	attack bolt add Mute ~
+"Physical attack imbued with the element bolt adding Mute."
+
+5	Duskblade		N	SINGLE	ENEMY	attack drainMP ~
+"Physical attack draining MP."
+
+5	Shadowblade		N	SINGLE	ENEMY	attack drainHP ~
+"Physical attack draining HP."
+
+6	Northswain's	N	SINGLE	ENEMY	attack add KO ~
+"Physical attack adding KO."
+
+6	Shield.Crush	N	SINGLE	ENEMY	chance max stat Eva -2 & attack ~
+"Maximum chance of reducing Evade by 2, followed by a physical attack."
+
+6	Speed.Crush		N	SINGLE	ENEMY	chance max stat Agi -4 & attack ~
+"Maximum chance of reducing Agility by 4, followed by a physical attack."
+
+6	Judgment.Blade	N	ANY		ENEMY	attack add Stop ~
+"Physical attack adding Stop."
+
+7	Divine.Ruin		N	GROUP	ENEMY	attack holy add Confuse ~
+"Physical attack imbued with the element holy adding Confuse."
+
+
+$ Talk.Skill
+#Lv	name			Map	target	AI		effect
+
+1	Negotiate		N	SINGLE	ENEMY	chance high special steal gil ~
+"High chance of gaining Gil from the enemy."
+
+2	Solution		N	SINGLE	ALLY	chance max stat Int 6 stat Agi -2 ~
+"Maximum chance of gaining 6 Intelligence, but losing 2 Agility."
+
+2	Persuade		N	SINGLE	ENEMY	chance med add Halt ~
+"Medium chance of adding Halt."
+
+2	Threaten		N	SINGLE	ALLY	chance max stat Agi 4 stat Atk -2 ~
+"Maximum chance of gaining 4 Agility, but losing 2 Attack."
+
+2	Praise			N	SINGLE	ALLY	chance max stat Atk 4 stat Int -3 ~
+"Maximum chance of gaining 4 Attack, but losing 3 Intelligence."
+
+3	Death.Sentence	N	SINGLE	ENEMY	chance high add Count ~
+"High chance of adding Count."
+
+3	Insult			N	SINGLE	ENEMY	chance high add Berserk ~
+"High chance of adding Berserk."
+
+5	Mimic.Daravon	N	ANY		ENEMY	chance max add Sleep ~
+"Maximum chance of adding Sleep."
+
+10	Invite			N	SINGLE	ENEMY	chance max add Invite ~
+"Maximum chance of adding Invite."
+
+
+$ Time.Low
+#Lv	name			Map	target	AI		effect
+
+1	Slow			N	SINGLE	ENEMY	chance max add Slow ~
+"Maximum chance of adding Slow."
+
+1	Scan			N	GROUP	ENEMY	special scan ~
+"Reveals the monsters' HP cards."
+
+1	Float			Y	GROUP	ALLY	add Float ~
+"Adds Float."
+
+2	Blink			N	SINGLE	ALLY	chance med add Blink ~
+"Medium chance of adding Blink."
+
+2	Haste			N	SINGLE	ALLY	chance med add Haste ~
+"Medium chance of adding Haste."
+
+2	Demi			N	SINGLE	ENEMY	chance med stat Vit -4 ~
+"Medium chance of reducing Vitality by 4."
+
+3	Warp			Y	NONE	ALLY	special warp ~
+"Allows you to escape from battle, or return to the previous floor of a dungeon."
+
+3	Stop			N	SINGLE	ENEMY	chance min add Stop ~
+"Minimum chance of adding Stop."
+
+3	Comet			N	SINGLE	ENEMY	damage med dark ~
+"Medium dark damage."
+
+
+$ Time.High
+#Lv	name			Map	target	AI		effect
+
+4	Exit			Y	NONE	ALLY	special exit ~
+"Escape from a battle, then return party to town."
+
+4	Quick			N	SINGLE	ALLY	chance max add Quick ~
+"Maximum chance of adding Quick."
+
+4	Slow.2			N	GROUP	ENEMY	chance max add Slow ~
+"Maximum chance of adding Slow."
+
+7	Haste.2			N	GROUP	ALLY	chance max add Haste ~
+"Maximum chance of adding Haste."
+
+7	Demi.2			N	GROUP	ENEMY	chance med stat Vit -6 ~
+"Medium chance of reducing Vitality by 6."
+
+7	Reflect			N	SINGLE	ALLY	chance max add Reflect ~
+"Maximum chance of adding Reflect."
+
+12	Galaxy.Stop		N	GROUP	ENEMY	chance med add Stop Stun Lock ~
+"Medium chance of adding Stop, Stun, and Lock."
+
+12	Meteor			N	GROUP	ENEMY	damage max dark ~
+"Maximum dark damage."
+
+12	X-Zone			N	GROUP	ENEMY	chance high add KO ~
+"High chance of adding KO."
+
+
+$ Truth
+#Lv	name			Map	target	AI		effect
+
+1	Asura			N	RANDOM	ALLY	heal min ~
+"Minimum HP recovery."
+
+3	Dragon.Pit		N	RANDOM	ALLY	chance high stat Hit 1 ~
+"High chance of gaining 1 Hit."
+
+3	Heaven.Thunder	N	RANDOM	ALLY	chance high stat Agi 2 ~
+"High chance of gaining 2 Agility."
+
+4	Diamond.Sword	N	RANDOM	ALLY	heal low ~
+"Low HP recovery."
+
+5	Space.Storage	N	RANDOM	ALLY	chance med add random_of Regen Regen
+										Reraise Reraise Haste Haste Protect Protect
+										Shell Shell Blink Blink Reflect ~
+"Adds a random good status."
+
+6	Sky.Demon		N	RANDOM	ALLY	chance high stat Eva 2 ~
+"High chance of gaining 2 Evade."
+
+6	Icewolf.Bite	N	RANDOM	ALLY	chance high stat Atk 4 ~
+"High chance of gaining 4 Attack."
+
+7	Hellcry.Punch	N	RANDOM	ALLY	heal med ~
+"Medium HP recovery."
+
+10	Holy.Explosion	N	RANDOM	ALLY	heal high ~
+"High HP recovery."
+
+
+$ White.Low
+#Lv	name			Map	target	AI		effect
+
+1	Lamp			N	GROUP	ALLY	remove Blind Confuse Lock ~
+"Removes Blind, Confuse, and Sleep."
+
+1	Antidote		N	GROUP	ALLY	remove Poison Mute Slow ~
+"Removes Poison, Mute, and Stun."
+
+1	Reraise			N	SINGLE	ALLY	chance max add Reraise ~
+"Maximum chance of adding Reraise."
+
+2	Regen			N	ANY		ALLY	chance max add Regen ~
+"Maximum chance of adding Regen."
+
+2	Life			Y	SINGLE	KOALLY	if KO remove KO heal low ~
+"Restores a defeated player, with low HP recovery."
+
+2	Cure			Y	ANY		ALLY	heal low ~
+"Low HP recovery."
+
+5	Shell			N	ANY		ALLY	chance max add Shell ~
+"Maximum chance of adding Shell."
+
+5	Cure.2			Y	ANY		ALLY	heal med ~
+"Medium HP recovery."
+
+5	Protect			N	ANY		ALLY	chance max add Protect ~
+"Maximum chance of adding Protect."
+
+
+$ White.High
+#Lv	name			Map	target	AI		effect
+
+6	NulAll			N	GROUP	ALLY	chance max give_resist earth fire
+										air water ice bolt dark holy ~
+"Grants resistance to all elements."
+
+6	Esuna			N	SINGLE	ALLY	remove Petrify Frog Charm Stop
+										Calcify Count Sleep Stun Berserk
+										Undead Slow Confuse Lock Mute
+										Blind Poison ~
+"Removes negative status."
+
+6	Invis			N	GROUP	ALLY	chance high add Blink ~
+"High chance of adding Blink."
+
+8	NulDeath		N	GROUP	ALLY	cancel KO Petrify Invite Fatal ~
+"Protects targets from instant death effects, until end of battle."
+
+8	Wall			N	SINGLE	ALLY	chance max add Protect Shell ~
+"Maximum chance of adding Protect and Shell."
+
+8	Cure.3			Y	ANY		ALLY	heal high ~
+"High HP recovery."
+
+11	Holy			N	SINGLE	ENEMY	damage max holy ~
+"Maximum holy damage."
+
+11	Cure.4			Y	ANY		ALLY	heal max ~
+"Maximum HP recovery."
+
+11	Life.2			Y	SINGLE	ALLY	if KO remove KO heal max ~
+"Restores a defeated player, with low HP recovery."
+
+
+$ Yinyang.Low
+#Lv	name			Map	target	AI		effect
+
+1	Blind			N	ANY		ENEMY	chance high add Blind ~
+"High chance of adding Blind."
+
+1	Mute			N	ANY		ENEMY	chance high add Mute ~
+"High chance of adding Mute."
+
+1	Confuse			N	ANY		ENEMY	chance high add Confuse ~
+"High chance of adding Confuse."
+
+2	Lock			N	GROUP	ENEMY	chance med add Lock ~
+"Medium chance of adding Lock."
+
+2	Sleep			N	ANY		ENEMY	chance low add Sleep ~
+"Low chance of adding Sleep."
+
+2	Temper			N	SINGLE	ALLY	chance med stat Atk 4 ~
+"Medium chance of increasing Attack by 4."
+
+3	Berserk			N	ANY		ALLY	chance med add Berserk ~
+"Medium chance of adding Berserk."
+
+3	Drain			N	SINGLE	ENEMY	drain low ~
+"Low HP drain."
+
+3	Fear			N	GROUP	ENEMY	if monster chance low special steal gil
+										& if monster escape ~
+"Target escapes battle, with low chance of stealing Gil."
+
+
+$ Yinyang.High
+#Lv	name			Map	target	AI		effect
+
+5	Stun			N	GROUP	ENEMY	chance med add Stun ~
+"Medium chance of adding Stun."
+
+5	Pray.Faith		N	SINGLE	ALLY	chance high stat Int 9 ~
+"High chance of increasing Intelligence by 9."
+
+5	Stone.Gaze		N	ANY		ENEMY	chance max add Calcify ~
+"Maximum chance of adding Calcify."
+
+7	Zombie			N	GROUP	ENEMY	chance max add Undead ~
+"Maximum chance of adding Undead."
+
+7	Charm			N	ANY		ENEMY	chance high add Charm ~
+"High chance of adding Charm."
+
+7	Frog			N	SINGLE	ENEMY	chance max toggle Frog ~
+"Maximum chance of toggling Frog."
+
+11	Dispel			N	GROUP	ENEMY	remove Reflect Blink Protect
+										Shell Haste Regen Reraise ~
+"Removes Reflect, Blink, Protect, Shell, Haste, Regen, and Reraise."
+
+11	Petrify			N	ANY		ENEMY	chance high add Petrify ~
+"High chance of adding Petrify."
+
+11	Grand.Cross		N	GROUP	ENEMY	chance low add Sleep Frog Poison ~
+"Low chance of adding Sleep, Frog, and Poison."
+
+}

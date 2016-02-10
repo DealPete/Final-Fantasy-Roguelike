@@ -1,0 +1,86 @@
+#	This file is parsed first at startup.  Include other files with
+#	INCLUDE { Filename }
+#	Included files must have extension ".txt".
+
+
+#These must be in the same order as listed in Misc.h
+TARGET_TYPE {
+NONE	ANY	SINGLE	GROUP	SELF	OTHER	RANDOM	RANDOM_GROUP	ALL
+}
+
+# These must bin the same order as listed in Misc.h
+ELEMENT {
+water	ice		holy	earth	dark	bolt	air		fire
+}
+
+# These must be in the same order as listed in Misc.h
+STATUS {
+Sleep	Stop	Stun	Berserk	Blind	Blink	Calcify	Charm
+Confuse	Count	Critical		Fatal	Float	Frog	Halt
+Haste	Invite	KO		Lock	Mute	Petrify	Poison	Protect
+Quick	Reflect Regen	Reraise	Shell	Slow	Undead	Blinkx2
+}
+
+# Longest ability name is 14 chars (Meatbone.Slash).
+# The abilities are hard-coded into the game and thus these names
+# shouldn't be altered.
+
+ABILITY {
+Command:	Aim NONE		Charm SINGLE		Control	SINGLE
+			Dark.Wave NONE	Double.Cast	NONE	Focus NONE
+			Jump NONE		Pray NONE			Rage SINGLE
+			Rapid.Fire NONE	Throw SINGLE ~
+			
+Support:	Ambush	Mix	Double.Grip	Ambidexterity	Boost	Gained.JP.Up
+			Long.Range	Martial.Arts ~
+			
+Reaction:	Hide	Absorb.MP	Barrier	Counter	Cover	Critical.Quick
+			Dragon.Spirit		Gil.Save	Int.Save	Meatbone.Slash
+			MP.Restore			MP.Switch	Sunken.State	Train
+			Blade.Grasp ~
+			
+Set:		Black.Low	Black.High	Blue.Low	Blue.High		Break
+			Clockwork	Dance		Dark.Magic	Dragon.Skill	Elemental
+			Enchant.Low	Enchant.High	Guts	Holy.Magic		Ninjutsu
+			Punch.Art	Sing	Snipe	Split	Steal			Summon.Low
+			Summon.High	Talk.Skill	Time.Low	Time.High		White.Low
+			White.High  Yinyang.Low Yinyang.High ~
+}
+
+# These must be in the same order as listed in Monsters.h
+RACE {
+Constructs	Mages	Giants	Dragons
+}
+
+# Spells must be loaded before weapons, because weapons can cast spells.
+# Items, Weapons, and Armour must be loaded before Monsters.
+# (Because Monsters have item drops).
+INCLUDE {
+Spells Items Armor Weapons Monsters Domains Jobs Quests
+}
+
+BUFFER HELP {
+Help
+}
+
+TOWN {
+#FF1
+Coneria	Pravoka	Melmond	Onrac	Gaia	Lefein
+
+#FF2
+Altea	Gatea	Phin	Palm	Poft	Salamando	Bofsk
+
+#FF3
+Ur		Kazus	Canaan	Tozus	Tokkul	Gysahl		Amur	Duster	
+
+#FF4
+Baron	Kaipo	Mysidia Mist	Mithril Troia		Agalt	Tomera
+
+#FF5
+Tule	Kerwin	Walz	Karnak	Crescent	Jachol	Gorn	Rikks
+Lugor	Kelb	Moore	Mirage	
+
+#FF6
+South.Figaro	Mobliz	Nikea	Narshe  Kohlingen	Jidoor	Albrook
+Tzen	Maranda	Thamasa
+}

@@ -1,0 +1,143 @@
+
+#Lv	Name			Vit	Agi	Eva	Hit	Atk	Int	Sex	Spade	Club	Diamond	Heart	Races	Weak	Resist	Immune	Adds	Always	Start
+
+1	Cave.Bat		2	2	1	0	2	0	N	S:Red.Feast								W:FA			I:BDE ~
+1	Float.Eye		1	2	0	1	2	2	N	S:Condemn						r:M		W:AH			I:ED ~
+1	Pike			1	1	0	1	2	0	N											W:B				I:FEW ~
+1	Weeper			1	1	0	1	2	1	N	S:Lose.Voice							W:H		R:DB	I:E ~
+1	Toad			1	1	1	1	1	1	N	S:Frog									W:IB	R:FW ~
+
+2	Blade.Man		2	1	1	2	3	2	M	S:Flash													I:D								P:Blade.Men ~
+2	Caribe			1	2	2	2	3	1	N											W:B				I:FEW ~	
+2	Cave.Toad		2	3	2	2	3	2	N	S:Frog									W:IB	R:FW ~
+2	Centaur			3	2	1	2	3	1	M	~
+2	Flan			2	1	0	2	2	1	N	S:Pep.Up								W:W		R:EFAIDH	I:B			a:Protect ~
+2	Giant.Bat		2	3	2	2	3	1	N	S:Red.Feast						r:G		W:FA			I:BDE ~
+2	Imp.Captain		2	3	2	3	3	1	M	S:Goblin.Punch							W:I ~
+2	Kyzoku			2	2	2	2	3	1	M																						P:Kyzoku ~
+2	Puppet			2	3	2	3	5	1	N	S:Slow.Dance					r:C		W:FW			I:B ~
+
+3	Alert			2	4	2	4	5	3	N	S:Chocobo	C:Moogle D:Sylph	r:CM	W:BW	R:DH	I:E	~
+3	Mad.Toad		3	4	3	3	3	1	N											W:IB	R:FW			+:Frog ~
+3	Warg.Wolf		3	3	2	4	6	1	N																							P:Warg.Wolves ~
+3	Rogue			3	4	2	3	5	1	M	~
+3	Screamer		3	3	2	1	8	3	N	S:Yell									W:H		R:DB	I:E ~	
+3	Were.Bat		3	4	3	2	3	1	N	S:Red.Feast								W:FA			I:BDE ~	
+
+4	Dark.Imp		4	6	3	5	8	2	M	S:Goblin.Punch							W:IH			I:D ~
+4	Horseman		5	4	2	4	8	2 	M																							P:Horsemen ~
+4	Juravis			3	5	4	5	6	2	N	S:Aero.2								W:A				I:E 							P:Juraves ~	
+4	Raider			4	5	3	4	6	2	M	~
+4	Red.Bone		4	4	3	6	9	2	N											W:FH	R:IW	I:D				a:Undead ~
+4	Red.Panther		3	4	2	5	8	2	N	S:Condemn										R:DB ~
+4	River.Gator		5	6	2	4	9	2	N											W:IB	R:FW ~
+4	Warrior			5	4	2	4	6	2	M	S:Flash													I:D ~
+4	Widow			3	5	3	6	6	2	N											W:W						+:Count ~
+
+5	Cannibal		5	7	3	7	11	2	M											W:FE	R:HW ~
+5	Crocodile		6	7	3	5	12	2	N											W:IB	R:FW ~
+5	Dark.Bat		5	7	4	5	8	4	N	S:Red.Feast								W:FAH			I:BDE ~
+5	Earth			5	5	3	5	8	6	N	S:Quake									W:A				I:E ~
+5	Naga			5	4	4	4	5	8	F	S:Aero.2 C:Aqua.Rake D:Condemn  r:M		W:B				I:FEW ~
+5	Queen.Lamia		5	5	3	5	8	6	F	S:Mute	C:Steal.Heart					W:H		R:DB ~
+5	Red.Caribe		4	6	4	5	9	2	N											W:B				I:FEW ~
+5	Red.Eye			5	6	3	5	8	6	N	S:Death							r:M		W:AH			I:ED ~
+5	Red.Sahag		5	5	4	5	8	2	N											W:B				I:FEW ~
+5	Sand.Pede		6	5	4	7	11	2	N											W:WE	R:FA ~
+5	Searcher		3	8	5	3	3	8	N	S:Ifrit	C:Ramuh D:Shiva			r:CM	W:BW	R:DH	I:E ~
+
+6	Balloon			6	8	4	6	9	3	N	S:Exploder						r:C		W:W				I:IEF ~
+6	Bull			8	6	4	6	11	3	N									r:G ~
+6	Cave.Naga		6	5	4	5	8	9	F	S:Aero.3 C:Aqua.Rake			r:M		W:B		R:FW ~
+6	Fire			6	7	4	6	11	5	N	S:Flamethrower							W:I				I:F ~
+6	Grudger			6	7	4	7	9	3	N	S:Provoke*								W:H		R:DB	I:E ~
+6	Mad.Ogre		9	3	3	7	14	3	M	S:Flash							r:G ~
+6	Mud.Golem		8	4	4	6	12	3	N									r:C				R:DH ~
+6	Ochu			7	6	4	7	9	7	N	S:Bad.Breath							W:IB	R:FW ~
+6	Python			6	7	4	7	11	3	N											W:IW	R:FA 			+:Poison ~
+6	Squidlarkin		6	5	2	5	8	9	N	S:Roulette C:Aero.2				r:M		W:B		R:EFAIDH I:W ~
+6	Treant			5	3	2	3	6	3	N	S:Berserk								W:FE	R:HW ~
+6	Wyrm			6	7	4	7	11	3	N											W:A				I:E ~
+
+7	Dragon.Bone		7	9	4	9	14	4	N									r:D		W:FH	R:IW	I:D				a:Undead ~
+7	Elec.Fish		6	7	5	7	12	5	N	S:Kamaitachi							W:B				I:FEW							P:Elec.Fishes ~
+7	Frost.Wolf		6	7	4	8	12	7	N	S:Ice.Breath							W:F				I:I 							P:Frost.Wolves ~
+7	Gremlin			7	8	5	8	12	4	N	S:Nightmare								W:H				I:D ~
+7	Huge.Naga		7	7	4	4	9	10	F	S:Tsunami	C:Roulette			r:M		W:B				I:FEW ~
+7	Pudding			7	7	4	7	9	4	N	S:Pep.Up								W:I		R:EAWBDH I:F			a:Protect ~
+7	Red.Giant		8	7	4	7	11	7	M	S:Flamethrower					r:GC	W:I				I:F ~
+7	Vampire.Cat		6	8	5	8	11	7	N	S:Mind.Blast							W:H				I:D				a:Undead ~
+7	Water			8	7	4	8	12	5	N	S:Tsunami								W:B				I:W ~
+
+8	Air				8	8	6	9	12	7	N	S:Aero.3								W:E				I:A ~
+8	Dark.Tree		8	8	5	10	18	7	N	S:Hell.Ivy								W:FEH			I:DW ~
+8	Geist			8	9	4	11	18	4	N	S:Red.Feast								W:FH	R:IW	I:D				a:Undead ~
+8	Jimera			8	8	5	6	11	7	N	S:Ice.Breath							W:D				I:EFAWIB ~
+8	Lilith			8	8	5	8	11	10	F	S:Mute		C:Capture.Heart				W:H		R:DB ~
+8	Ogre.Chief		12	4	4	10	18	4	M	S:Flash							r:G ~
+8	Rock.Golem		11	8	5	8	12	4	N									r:C				R:HD ~
+8	Sandhag			8	9	8	8	12	4	F											W:W				I:F ~
+8	Siren			8	8	5	8	12	8	F	S:Charm									W:H		R:DB	I:E ~
+8	Tiny.Toad		8	9	5	8	12	8	N	S:Frog		C:Frog						W:IB	R:FW ~
+8	Vamp.Girl		8	10	6	10	14	4	F	S:Red.Feast								W:FH	R:IW	I:D				a:Undead ~
+
+9	Dark.Grenade	9	12	6	9	14	5	N	S:Exploder						r:C		W:W				I:IEF ~
+9	Black.Cat		8	9	6	9	14	9	N	S:Mind.Blast	C:Condemn						R:DB ~
+9	Evil.Man		12	9	6	9	14	5	M	S:Flash													I:D ~
+9	Frost.Gator		8	7	6	9	20	7	N	S:Ice.Breath							W:FB	R:WA	I:I ~
+9	Frost.Giant		13	6	5	10	20	5	M									r:G		W:F				I:I ~
+9	Ice				11	9	6	9	14	8	N	S:Ice.3									W:F				I:I ~
+9	King.Naga		9	10	6	7	12	12	M	S:Aero.3	C:Tsunami			r:M		W:IB			I:FEW ~
+9	Red.Hydra		9	8	6	9	14	10	N	S:Demon.Fire	C:Demon.Fire	r:D		W:IB	R:WH	I:F						B:Haste	P:Red.Hydrae ~
+9	Tricker			8	12	6	5	8	12	N	S:Ramuh	C:Ramuh	D:Ramuh			r:M		W:B				I:EFAWIDH				B:Halt ~
+9	Tyro			13	5	5	11	20	5	N	S:Roar							r:G		W:I		R:FA ~
+9	White.Shark		10	8	6	7	20	5	N	S:Tsunami								W:B				I:FEW ~
+9	Wraith			9	9	6	11	19	5	N											W:FH	R:IW	I:D		+:Stun	a:Undead ~
+
+10	Apanda			11	11	7	11	18	5	N	S:Chicken.Race							W:H				I:D ~
+10	Bolt			10	11	7	11	15	8	N	S:Bolt.3								W:W				I:B ~
+10	Vamp.Lady		10	10	7	10	17	11	F	S:Red.Feast		C:Mind.Blast			W:FH	R:IW	I:D				a:Undead		P:Vamp.Ladies ~
+10	Manticore		10	9	6	10	15	7	N	S:Bolt.Breath							W:D				I:EFAWIB ~
+10	Mech.Dragon		14	10	6	10	18	8	N	S:Megaflare	C:Exploder			r:CD	W:ABW	R:DH	I:E ~
+10	Naochu			12	10	8	12	15	7	N	S:Bad.Breath							W:IB	R:FW ~
+10	Perilisk		5	13	8	8	12	7	N	S:Aero.3								W:A				I:E		+:KO ~
+10	Red.Worm		14	14	6	10	15	5	N	S:Red.Feast								W:FE			I:I ~
+10	Slime			10	10	6	11	15	5	N	S:Pep.Up								W:A		R:FWIBDH I:E			a:Protect ~
+10	Specter			10	10	6	13	23	5	N	S:Red.Feast								W:FH	R:IW	I:D				a:Undead ~
+10	Wizard.Ogre		15	5	5	10	18	10	M	S:Flamethrower	C:Tsunami		r:GM ~
+
+11	Blue.Hydra		15	15	6	10	15	6	N	S:Blizzard C:Blizzard D:Blizzard r:D	W:FB	R:W		I:I						B:Haste P:Blue.Hydrae ~
+11	Breath			12	12	8	12	18	6 	N	~
+11	Dark			11	12	8	11	18	9	N	S:Dark.Holy								W:H				I:D ~
+11	Dark.Behemoth	16	6	6	12	24	6	N											W:H				I:D				a:Shell ~
+11	Great.Pede		15	11	7	11	23	6	N											W:IE	R:BA ~
+11	Red.Ankylo		16	9	6	9	20	11	N	S:Big.Guard						r:G		W:I		R:FA ~
+11	Sahag.Prince	11	13	10	9	17	6	M											W:B				I:FEW ~
+11	Veteran			11	15	8	8	12	13	M	S:Condemn	C:Roulette	D:Death	r:M		W:AH			I:ED ~
+11	Wizard.Giant	16	6	4	13	21	11	M	S:White.Wind					r:G ~
+
+12	Attacker		18	18	5	6	9	18	N	S:With.Knives C:With.Knives D:With.Knives H:With.Knives r:C W:BW R:DH I:E ~
+12	Byblos			13	13	8	13	21	7	N	S:Seal									W:H				I:D 							P:Bybloi ~
+12	Defender		18	18	4	8	12	15	N	S:White.Wind	C:Red.Feast		r:C		W:BW	R:DH	I:E ~
+12	Evil.Mask		14	16	6	6	9	18	N	S:Flare* C:Holy* D:Bio* H:Moogle r:CM	W:BW	R:DH							B:Reflect ~
+12	Great.Morbol	14	13	9	14	20	7	N	S:Bad.Breath							W:IB	R:FW ~
+12	Holy			14	12	8	12	18	11	N	S:Holy									W:D				I:H								P:Holies ~
+12	King.Behemoth	18	6	6	13	27	6	N																			a:Shell ~
+12	Last.Arm		10	18	10	6	9	16	N	S:Cyclops C:Exploder D:Exploder H:Exploder r:C W:BW R:DH I:E ~
+12	Mind			13	10	9	13	17	11	N	S:Big.Guard ~
+12	Mythril.Golem	18	10	6	12	23	6	N									r:C				R:DH ~
+12	Wizard.Vampire	11	12	8	11	17	18	M	S:Red.Feast	C:Mind.Blast D:A-Fire		W:FH	R:IW	I:D				a:Undead ~
+12	Zombull			18	10	8	14	23	6	N	S:Red.Feast						r:G		W:FH	R:IW	I:D				a:Undead ~
+
+13	Brachioraidos	10	19	6	7	11	19	N	S:Flare	C:Dark.Holy				r:DM							B:Haste B:Reflect P:Brachioraidoi ~
+13	Dark.Bahamut	13	13	8	12	18	11	N	S:Megaflare C:Flare				r:D						I:D						B:Quick ~
+13	Intangir		13	7	9	13	23	12	N	S:Meteor																		B:Blink ~
+13	Kraken			14	7	4	19	27	11	N	S:Grand.Cross					r:G		W:B				I:W						B:Haste ~
+13	Lich			10	10	8	16	24	17	M	S:Megaflare	C:Death				r:M		W:FH	R:IW	I:D				a:Undead		P:Liches ~
+13	Lunasaur		14	12	6	13	24	12	N	S:Meteor						r:G		W:FH	R:IW	I:D				a:Undead B:Reflect ~
+13	Marilith		13	16	8	13	20	12	F	S:Flamethrower C:Fire.Breath			W:IH			I:FD ~
+13	Ogopogo			13	12	8	13	20	13	N	S:Leviathan								W:B				I:FEW ~
+13	Pink.Puff		14	14	5	14	21	12	N	S:Luna C:Luna D:Luna H:Luna				W:E		R:FWIBDH I:A ~
+13	Plague			13	19	10	7	11	19	N	S:Roulette C:Odin D:Condemn		r:M		W:A				I:E ~
+13	Tiamat			13	13	8	13	20	12	F	S:Demon.Fire C:Kamaitachi D:Blizzard r:D W:A			I:E						B:Haste ~
+13	Warmech			17	13	8	12	21	11	N	S:Megaflare						r:C		W:BW	R:DH					a:Regen ~

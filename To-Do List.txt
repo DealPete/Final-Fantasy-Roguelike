@@ -1,0 +1,24 @@
+
+toggle no longer exists
+enchant + throw?  (i.e. throwing complex items)
+slab
+
+when buying stuff in town, showing boni as if first player.
+when choosing throw weapon, it doesn't report the stat
+	improvements correctly
+weight doesn't reduce agi if item comes out of inventory.
+
+bug: Balloon used Exploder and crashed game.
+Might have been because Pete had "Reflect"
+bug: restrored game, Rahul at 0 HP but not dead.
+
+interface improvements:
+mEv description
+Way to determine from the map what quest level a dungeon is.
+write procedure to handle message box overflow
+make scrolling more sensible for enemy pad
+when throwing, some indication of which is the equipped weapon would be nice. 
+delete saves (other then poweroff without RESET)
+
+ask Ron:
+monster casts Red.Feast, player resists, what happens? (Ron is unsure)

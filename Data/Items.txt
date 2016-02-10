@@ -1,0 +1,29 @@
+
+ITEMS {
+
+# Level	Name			Price	Effect
+	1	Potion			30		"Restores 30 HP."
+	2	Sleeping.Bag	30
+"Restores 150 HP and MP to one hero. 
+Usable only on the overworld and save spots."
+	3	Remedy			100		"Removes all negative status."
+	4	Tent			100
+"Restores 150 HP and MP to each hero. 
+Usable only on the overworld and save spots."
+	5	Phoenix.Down	100
+"Revives target, and restores HP equal to vitality."
+	6	Hi.Potion		300		"Restores 70 HP."
+	7	Ether			300		"Restores 30 MP."
+	8	Cabin			500
+"Restores all HP and MP to each hero. 
+Usable only on the overworld and save spots."
+	9	Unicorn.Horn	1000
+"Removes all negative status from all party members."
+	10	X.Potion		3000	"Restores 150 HP."
+	11	Dry.Ether		3000	"Restores 70 MP."
+	12	Elixir			30000	"Restores all HP and MP."
+	13	Megalixir		0		"Restores all HP and MP to entire party."
+#	12	Golden.Apple	0		"Increases maximum HP by 50."
+#	13	Soma.Drop		0		"Increases maximum MP by 50."
+	
+}

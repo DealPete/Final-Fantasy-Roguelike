@@ -1,0 +1,15 @@
+@Use the arrow keys to move about the map.
+
+>   Go down stairs, enter a town, or explore an area.
+<   Go up stairs.
+
+c   Cast a spell.                    e   Equip item.
+j   Allocate job points.             i   Use item.
+m   Browse the map.                  I   Use key item.
+s   View the status screen.          r   Switch rows.
+
+P   Browse the message buffer.       S   Save and quit.
+Q   Turn off power without holding reset.
+
+SPACE, z, Z, ENTER    Select/Continue.
+ESC, x, X             Cancel/Close window.

@@ -1,0 +1,173 @@
+
+JOBS {
+
+#			Str	Agi	Vit	Int	Luc
+Archer		4	4	2	2	3
+"Archers are ranged attackers. They are snipers who can afford to take
+their time and carefully fire at enemies from a safe distance."
+
+a:Snipe		a:Aim			a:Rapid.Fire
+W:Bow		W:Gun
+A:Clothes	A:Hat			A:Boots
+A:Armlet	A:Shield		A:Ornament
+~
+
+#			Str	Agi	Vit	Int	Luc
+Berserker	5	1	5	1	3
+"Berserkers are wild warriors. They can use their battle cries to psych
+themselves up for ferocious combat before going berserk and swinging
+wildly in the enemy group. They are not as concerned with accuracy as
+they are with raw damage."
+
+a:Guts		a:Rage			a:Meatbone.Slash
+W:Axe		W:Greatsword	W:Hammer
+A:Plate		A:Helm			A:Shield
+A:Gauntlet	A:Boots
+~
+
+#			Str	Agi	Vit	Int	Luc
+Black.Mage	2	3	2	5	3
+"Black Mages use their spells to call on elemental forces to cause
+destruction and death in the enemy ranks. They have the ability to focus
+their inner magical energies to cause their magical attacks to be even
+more destructive."
+
+a:Black.Low	a:Black.High	a:Focus
+W:Knife		W:Rod
+A:Clothes	A:Robe			A:Hat
+A:Ring		A:Mantle		A:Ornament
+~
+
+#			Str	Agi	Vit	Int	Luc
+Blue.Mage	3	2	4	3	3
+"Blue Mages are adepts who can learn how to cast monster spells by
+observing the monsters that cast them. They are also able to manipulate a
+monster, forcing it to do their bidding."
+
+a:Blue.Low	a:Blue.High		a:Control
+W:Rapier	W:Rod
+A:Clothes	A:Hat	A:Shield	A:Boots	A:Mantle	A:Armlet
+~
+
+#			Str	Agi	Vit	Int	Luc
+Dark.Knight	4	3	2	3	3
+"Dark Knights are able to call upon demonic magic to bring curses on
+enemies, in exchange for being likewise cursed themselves. They can even
+attack all the enemies with dark energy at the cost of injuring themselves."
+
+a:Dark.Magic	a:Yinyang.Low	a:Dark.Wave
+W:Sword		W:Fellsword 	W:Blade
+A:Mail		A:Robe			A:Helm	A:Shield	A:Gauntlet
+~
+
+#			Str	Agi	Vit	Int	Luc
+Dragoon		3	4	3	2	3
+"Dragoons are aerial warriors, trained specifically to slay dragons. They
+can do a flying jump attack that uses their lance to cause extra damage,
+particularly to flying foes. They can also call upon the spirits of dragons
+for certain magical effects."
+
+a:Dragon.Skill	a:Jump		a:Dragon.Spirit
+W:Sword		W:Spear
+A:Plate		A:Mail			A:Helm
+A:Shield	A:Gauntlet		A:Boots
+~
+
+#			Str	Agi	Vit	Int	Luc
+Gadgeteer	3	4	2	2	4
+"Gadgeteers are eccentric inventors whose magical clockwork machines do
+not always do what they are intended to. The effects are always
+significant, but the Gadgeteer must always be prepared for the worst.
+Not completely reliant on their machines, Gadgeteers are also skilled
+in hand-to-hand combat."
+
+a:Clockwork	a:MP.Switch		a:Martial.Arts
+W:Claw		W:Gun
+A:Hat		A:Mail			A:Gauntlet
+A:Clothes	A:Boots			A:Armlet
+~
+
+#			Str	Agi	Vit	Int	Luc
+Knight		4	3	5	2	1
+"Knights are heavily armored guards. They often serve as human shields
+in combat, protecting their less resilient allies. They also have an
+array of combat techniques they can use to disarm and otherwise weaken
+their opponents' ability to fight."
+
+a:Break		a:Cover			a:Double.Grip
+W:Sword 	W:Knightsword 	W:Greatsword
+A:Plate 	A:Mail 			A:Helm
+A:Shield	A:Gauntlet
+~
+
+Mediator	1	4	3	5	2
+"Mediators are expert orators. They can inspire allies with their
+magical speeches, and since they know how to communicate with monsters,
+they can even manipulate the enemies, or even get them to completely
+turn around and join the Mediator's side."
+
+a:Talk.Skill	a:Control	a:Train
+W:Knife 	W:Gun
+A:Hat		A:Ornament	A:Clothes	A:Robe	A:Mantle	A:Ring
+~
+
+#			Str	Agi	Vit	Int	Luc
+Monk		5	2	3	1	4
+"Monks are expert martial artists. They do not need weapons or armor to
+be able to fight effectively. They can even sense and immediately respond
+to incoming attacks. Monks are in tune with their body's spiritual energy
+and can use it to attack or to heal."
+
+a:Punch.Art	a:Counter 		a:Martial.Arts
+W:Flail	 	W:Claw
+A:Clothes 	A:Hat 			A:Robe
+A:Boots		A:Ornament		A:Armlet
+~
+
+#			Str	Agi	Vit	Int	Luc
+Ninja		4	4	1	1	5
+"Ninjas are expert assassins. They can use their ninja magic for various
+combat tricks as well as causing natural disasters. They can throw
+weapons for severe damage, or even various special effects. Ninjas are
+also masters of two-weapon fighting, putting them among the most
+devastating physical attackers."
+
+a:Throw		a:Ambidexterity	a:Ninjutsu
+W:Knife		W:Katana		W:Boomerang	W:Blade
+A:Ornament	A:Clothes		A:Hat		A:Armlet
+~
+
+#			Str	Agi	Vit	Int	Luc
+Oracle		4	1	3	5	2
+"Oracles use their spells to call upon the mystic forces of yin and yang to
+impede and confuse their enemies. Sometimes they can even syphon the
+magical energy that was used to cast a spell."
+
+a:Yinyang.Low	a:Yinyang.High	a:Absorb.MP
+W:Pole			W:Book
+A:Clothes	A:Robe	A:Hat	A:Ring	A:Armlet	A:Ornament
+~
+
+#			Str	Agi	Vit	Int	Luc
+Time.Mage	1	4	2	5	3
+"Time Mages use their magic to call upon cosmic forces to manipulate time
+and space. They can even reactively freeze time for a split second when
+they are severely injured."
+
+a:Time.Low	a:Time.High		a:Critical.Quick
+W:Rod		W:Staff
+A:Clothes	A:Robe	A:Hat	A:Ring	A:Mantle	A:Ornament
+~
+
+#			Str	Agi	Vit	Int	Luc
+White.Mage	2	4	3	5	1
+"White Mages can use their spells to call on a divine being to grant healing
+or protection. They can even pray to their divinity in the hopes of
+achieving an immediate blessing without having to consume any magical
+energy."
+
+a:White.Low	a:White.High	a:Pray
+W:Staff		W:Hammer
+A:Clothes	A:Robe	A:Hat	A:Ornament	A:Mantle	A:Armlet
+~
+}

@@ -1,0 +1,71 @@
+
+BOSSES {
+
+# A star after the enemy's name indicates to the parser that it is a boss
+# (and thus doesn't have treasure trops, has a greeting text, &c).
+
+#Lv	Name			Vit	Agi	Eva	Hit	Atk	Int	Sex Races	Weak	Resist	Immune	Adds	Always/Start	Start-Cast
+5	Garland			10	5	3	3	10	5	M			W:H		R:D	~
+"I, Garland, will knock you all down!"
+[ Last.Dance ]
+~
+6	Bikke			12	6	3	3	12	6	M			W:D 											c:Spawn6Pirate ~
+"Mates! Get those landlubers!"
+[ Spawn6Pirate ]
+~
+7	Astos			14	7	3	4	14	7	M	r:M 													c:Death ~
+"Astos wears a disguise and lurks in seclusion."
+Status [ Slow 	Haste	Blind	Form:Damage ]
+Damage [ Fire.2	Ice.2	Bolt.2	Form:Status ]
+~
+9	Vampire.Lord	18	9	4	4	18	9	M			W:FH			I:DE			a:Undead ~
+"All living things are born to die!"
+[ Mind.Blast	Red.Feast ]
+~
+11	Lich			22	11	4	5	22	11	M	r:M		W:FH			I:D		+:Mute	a:Undead ~
+"An ominous cloud rises and an evil shape congeals..."
+[ Bio	Ice.Breath	Titan ]
+~
+13	Marilith		26	13	5	6	26	13	F			W:I				I:F ~
+"You shall burn in its flames!"
+[ Fire.3	Fire.Breath ]
+~
+16	Kraken			32	16	5	7	32	16	N			W:B				I:W		+:Blind	B:Haste ~
+"Ho, ho, ho... how foolhardy to dare challenge me!"
+[ Tsunami ]
+~
+20	Tiamat			40	20	6	8	40	20	N	r:D		W:A				I:E ~
+"So, you have come this far."
+[ Dragon.Breath	X-Zone ]
+~
+25	Chaos			50	25	7	10	50	25	M			R:EFAWIBDH				+:Stun 			P:Chaoses ~
+"I will live forever, and you shall meet doom."
+Earth	[ Tremor Curse.Blade Form:Fire ]
+Fire	[ Meltdown Radiant.Blade Form:Air ]
+Air	[ Cyclops Blink.L3 Form:Water ]
+Water	[ Leviathan Giant.Drink Form:Earth ]
+Chaos	[ Slot.13 Swap.L3 Nameless.Dance Form:Chaos ]
+~
+
+}
+
+QUESTS {
+
+Garland	Bikke	Astos	Vampire.Lord	Lich	Marilith	Kraken	Tiamat	Chaos
+
+}
+
+# level name						# enemy			Gold	Item
+#1	"Rescue the Princess"			1 Evil.Knight	1600	None
+#2	"Liberate the Town"				9 Pirates		3600	Ship
+#3	"Retrieve the Crown"			12 Pisco.Demon	6400	Crown
+#4	"Wake the Sleeping Princess"	1 Dark.Elf		10000	Key
+#5	"Slay the Vampire"				1 Vampyre		14400	Ruby
+#6	"Retrieve the Earth Crystal"	1 Earth.Lord	19600	Earth.Crystal
+#7	"Find the Airship"				1 Eye			25600	Airship
+#8	"Retrieve the Fire Crystal"		1 Fire.Lord		32400	Fire.Crystal
+#9	"Find the Cube"					12 Cockatrice	40000	Cube
+#10	"Retrieve the Water Crystal"	1 Water.Lord	48400	Water.Crystal
+#11	"Find the Slab"					9 Mindflayer	57600	Slab
+#12	"Retrieve the Air Crystal"		1 Air.Lord		67600	Air.Crystal
+#13	"Break the Time-Loop"			1 Chaos			78400	None

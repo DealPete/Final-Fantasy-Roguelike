@@ -1,0 +1,72 @@
+
+MONSTERS {
+
+# A star after the enemy's name indicates to the parser that it is a boss
+# (and thus immune to status effects, has no treasure drop, &c).
+
+#Lv	Name			Vit	Agi	Eva	Hit	Atk	Int	Sex	Spade	Club	Diamond	Heart	Races	Weak	Resist	Immune	Absorbs	Adds	Always	Start
+
+1	Evil.Knight*	8	5	5	5	7	1	M	~
+2	Pirates			3	5	5	3	1	1	M	Smoke.Bomb	Tyrfing																		P:Pirates ~
+4	Dark.Elf*		11	11	11	1	1	15	M	S:Fire.2 C:Bolt.2 D:Haste H:Death r:M													P:Dark.Elves ~
+5	Vampyre*		12	5	5	7	8	5	M	S:Stun									W:FH	R:IW			A:D		+:Stun	a:Undead ~
+6	Earth.Lord*		13	10	10	6	5	10	N	S:Quake C:Bio	D:Haste			r:M		W:FH	R:IW			A:DE	+:Stun	a:Undead ~
+7	Eye*			14	13	13	1	1	20	N	S:Death C:X-Zone D:Petrify H:Stop ~
+8	Fire.Lord*		15	7	5	5	7	20	N	S:Fire.2 C:Fire.Breath D:Ifrit			W:IW	R:HD	I:BE	A:F ~
+10	Water.Lord*		17	10	6	15	13	10	N	S:Tsunami C:Blind						W:B		R:FIA	I:E		A:W ~
+12	Air.Lord*		19	20	16	1	1	25	N	S:Fire.Breath C:Ice.Breath D:Bolt.Breath H:Holy.Breath r:D W:D I:EH A:A ~
+13	Chaos*			20	10	10	10	13	10	M	S:Megaflare C:Chirijiraden						R:EFAWIBDH			+:Stop				P:Chaoses ~
+
+}
+
+
+ITEMS {
+
+# Level	Name			Price	Effect
+	2	Ship			0		"Allows you to sail over water."
+	4	Key				0		"Once per floor, you may remove a wall."
+	7	Airship			0		"Allows you to fly over mountains."
+	9	Cube			0
+"Once per quest, you may replace a dungeon with another one upon discovery."
+	11	Slab			0		"Grants a set of spells (not implemented)."
+
+}
+
+
+ARMOR {
+
+$ Quest
+# level	name		HP	MP	Slot	Price	Special
+3	Crown			0	0	Head	0		C:KO	C:Petrify
+												C:Invite	C:Frog	C:Mini		C:Pig ~
+# Double recovery is hard coded for the Crown.												
+												
+5	Ruby			0	0	Acces	0		G:Titan ~
+6	Earth.Crystal	0	0	Acces	0		G:Quake	v:1	S:E	I:E	R:DWA ~
+8	Fire.Crystal	0	0	Acces	0		k:1 S:F I:F R:BDI
+												G:Fire.Breath ~
+10	Water.Crystal	0	0	Acces	0		a:1 S:W I:W R:EIB
+												G:Leviathan ~
+12	Air.Crystal		0	0	Acces	0		G:Cyclops S:A I:A R:HBE ~
+
+}
+
+
+QUESTS {
+
+# level name						# enemy			Gold	Item
+1	"Rescue the Princess"			1 Evil.Knight	1600	None
+2	"Liberate the Town"				9 Pirates		3600	Ship
+3	"Retrieve the Crown"			12 Pisco.Demon	6400	Crown
+4	"Wake the Sleeping Princess"	1 Dark.Elf		10000	Key
+5	"Slay the Vampire"				1 Vampyre		14400	Ruby
+6	"Retrieve the Earth Crystal"	1 Earth.Lord	19600	Earth.Crystal
+7	"Find the Airship"				1 Eye			25600	Airship
+8	"Retrieve the Fire Crystal"		1 Fire.Lord		32400	Fire.Crystal
+9	"Find the Cube"					12 Cockatrice	40000	Cube
+10	"Retrieve the Water Crystal"	1 Water.Lord	48400	Water.Crystal
+11	"Find the Slab"					9 Mindflayer	57600	Slab
+12	"Retrieve the Air Crystal"		1 Air.Lord		67600	Air.Crystal
+13	"Break the Time-Loop"			1 Chaos			78400	None
+
+}

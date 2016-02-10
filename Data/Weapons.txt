@@ -1,0 +1,460 @@
+# This is the key for the "Special" Field:
+#
+#	+	Adds
+#	a	bonus to agility
+#	A	Always
+#	B	Starts (begins)
+#	c	Casts
+#	C	Cancels
+#	D	Drains (HP or MP)
+#	e	bonus to evade
+#	E	Element
+#	g	Grants (ability)
+#	G	Grants (spell)
+#	H	Hurts
+#	i	bonus to intelligence
+#	l	bonus to luck
+#	m	bonus to magic evade
+#	R	resists
+#	s	bonus to strength
+#	S	Strengthens
+#	v	bonus to vitality
+#	w	Weight
+
+
+WEAPONS {
+
+$ None
+0	None	0	0	1	N	0 ~
+
+
+$ Ammunition
+# level name		Atk	Hit	Rng	2H	Price	Special
+0	Shuriken		1	5	3	N	10 ~
+0	Smoke.Bomb		0	0	3	N	20		c:Smoke ~
+0	Water.Ball		0	0	3	N	30		c:Aqua.Rake ~
+0	Thunder.Ball	0	0	3	N	30		c:Ramuh ~
+0	Ice.Ball		0	0	3	N	30		c:Shiva ~
+0	Fire.Ball		0	0	3	N	30		c:Ifrit ~
+0	Baccus'.Wine	0	0	3	N	500		+:Berserk ~
+0	Coeurl.Whisker	0	0	3	N	500		+:Count ~
+0	Fuma.Shuriken	3	5	3	N	1000 ~
+0	Scape.Doll		0	0	3	N	2000	+:Blinkx2 ~
+0	Light.Curtain	0	0	3	N	2000	+:Reflect ~
+0	Hourglass		0	0	3	N	3000	c:Galaxy.Stop ~
+0	Yagyu.Darkness	6	5	3	N	5000 ~
+
+$ Axe
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Hand.Axe		2	1	1	N	40 ~
+2	Battle.Axe		6	1	1	Y	190 ~
+3	Dwarf.Axe		4	1	2	N	340 ~
+4	Golden.Axe		12	1	1	Y	1030 ~
+5	Ogrekiller		10	1	1	N	2320	H:G ~
+6	Venom.Axe		18	1	1	Y	3460	+:Poison ~
+7	Slasher			15	1	1	N	6100	g:Meatbone.Slash ~
+8	Earthbreaker	24	1	1	Y	8990	c:Earth.Slash ~
+9	Demon.Axe		28	1	1	N	10720	E:D ~
+10	Gigantaxe		32	1	1	Y	16000 ~
+11	Light.Axe		18	1	1	N	22790	E:H ~
+12	Francisca		40	1	1	Y	29420 ~
+13	Rune.Axe		24	1	1	N	37220	H:M m:1 ~
+
+$ Bell
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Tinklebell		1	1	3	N	44 ~
+2	Mythril.Bell	2	1	3	N	189 ~
+3	Diamond.Bell	3	1	3	N	560		R:B ~
+4	Heal.Chime		4	1	3	N	1638	G:Heal ~
+5	Glass.Bell		5	1	3	N	2700 ~
+6	Rune.Chime		6	1	3	N	6150	H:M +:Mute ~
+7	Gaia's.Bell		7	1	3	N	8384	C:Quake ~
+8	Trumpet.Shell	8	1	3	N	13365 ~
+9	Demon.Bell		9	1	3	N	20100	E:D C:Evil.Mist ~
+10	Blessed.Bell	10	1	3	N	29524	E:H C:Holy.Breath ~
+11	Starlight.Phone	11	1	3	N	52272	i:1 ~
+12	Marvelous.Cheer	12	1	3	N	71910	a:1 ~
+13	Bell.Of.Alxnder	13	1	3	N	77224	E:H C:Alexander ~
+
+$ Blade
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Ninja.Blade		0	4	1	N	10		l:1 ~
+2	Kunai			1	4	1	N	190		+:Blind ~
+3	Kodachi			2	4	1	N	440		+:Lock ~
+4	Longblade		3	4	1	N	1230	+:Count ~
+5	Spellbinder		5	4	1	N	2000	+:Mute ~
+6	Sakura			6	4	1	N	2670	e:1 ~
+7	Orochi			7	4	1	N	4400	+:Poison ~
+8	Moonsilk.Blade	9	4	1	N	7450	m:1 ~
+9	Kagenui			9	4	1	N	9830	+:Halt ~
+10	Ichigeki		11	4	1	N	16000	+:Stun ~
+11	Striker			11	4	1	N	22790	+:KO ~
+12	Oborozuki		11	4	1	N	27650	+:Petrify ~
+13	Sasuke's.Blade	13	4	1	N	35160	+:Critical B:Quick ~
+
+$ Book
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Dictionary		1	2	1	N	10 ~
+2	Encyclopedia	3	2	1	N	90 ~
+3	Battle.Book		5	2	1	N	340 ~
+4	Tome.of.Fire	6	2	1	N	1030	E:F ~
+5	Tome.of.Ice		7	2	1	N	1460	E:I ~
+6	Tome.of.Light	8	2	1	N	3460	E:H ~
+7	Monster.Manual	7	2	1	N	4930	H:CDGM ~
+8	Papyrus.Plate	12	2	1	N	6750 ~
+9	Mage.Manual		12	2	1	N	10720	H:M ~
+10	Cognitome		15	2	1	N	14830	i:1 ~
+11	Necronomicon	19	2	1	N	19880	E:D +:Undead ~
+12	Omnitome		20	2	1	N	29420 ~
+13	Tome.of.Ending	18	2	1	N	35160	+:Fatal ~
+
+$ Boomerang
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Boomerang		1	3	3	N	40 ~
+2	Chakram			2	3	3	N	190 ~
+3	Metal.Boomerang	3	3	3	N	440 ~
+4	Full.Moon		4	3	3	N	1030 ~
+5	War.Hoop		5	3	3	N	2320	s:1 ~
+6	Sniper			5	3	3	N	3050	+:Lock ~
+7	Twin.Lance		6	3	3	N	4930	g:Ambidexterity ~
+8	Hawkeye			8	3	3	N	6750 ~
+9	Moonring.Blade	9	3	3	N	9830 ~
+10	Wing.Edge		8	3	3	N	16000	E:A ~
+11	Comet.Tail		14	3	3	N	19880	E:D ~
+12	Death.Chakram	0	3	3	N	27650	+:KO ~
+13	Rising.Sun		11	3	3	N	31250	a:1 E:F ~
+
+$ Bow
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Crossbow		1	2	3	N	20 ~
+2	Long.Bow		3	2	3	Y	190 ~
+3	Mythril.Bow		4	2	3	Y	340 ~
+4	Night.Killer	4	2	3	N	1030	+:Blind ~
+5	Ice.Bow			6	2	3	Y	1720	E:I ~
+6	Fire.Bow		7	2	3	Y	2670	E:F ~
+7	Lightning.Bow	9	2	3	Y	5490	E:B ~
+8	Poison.Bow		11	2	3	N	6750	E:D +:Poison ~
+9	Yoichi's.Bow	14	2	3	Y	11670 ~
+10	Windslash.Bow	11	2	3	Y	16000	E:A ~
+11	Gastrafitis		14	2	3	N	19880 ~
+12	Artemis'.Bow	16	2	3	Y	29420	H:D ~
+13	Perseus'.Bow	20	2	3	Y	33170 ~
+
+$ Brush
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Chocobo.Brush	2	1	1	N	28		a:1 ~
+2	Mythril.Brush	4	1	1	N	114		v:1 ~
+3	Red.Brush		6	1	1	N	255		S:F ~
+4	Blue.Brush		8	1	1	N	567		S:I ~
+5	Green.Brush		10	1	1	N	1107	S:B ~
+6	Magical.Brush	12	1	1	N	2548	i:1 ~
+7	White.Brush		14	1	1	N	3273	S:H ~
+8	Black.Brush		16	1	1	N	5140	S:D ~
+9	Silver.Brush	18	1	1	N	7720	S:E ~
+10	Crystal.Brush	20	1	1	N	11177	A:Reflect ~
+11	Da.Vinci.Brush	22	1	1	N	15692	B:Blink ~
+12	Angel.Brush		24	1	1	N	21464	B:Quick ~
+13	Rainbow.Brush	26	1	1	N	28709	S:FIBDHAEW ~
+
+$ Claw
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Bronze.Knuckle	1	4	1	N	20 ~
+2	Fire.Claw		2	4	1	N	130		E:F ~
+3	Ice.Claw		3	4	1	N	340		E:I ~
+4	Thunder.Claw	4	4	1	N	690		E:B ~
+5	Mythril.Claw	6	4	1	N	2000	s:1 ~
+6	Tiger.Fang		7	4	1	N	3050	v:1 ~
+7	Fairy.Claw		5	4	1	N	4930	H:G +:Charm ~
+8	Poison.Claw		10	4	1	N	8200	+:Poison ~
+9	Hell.Claw		14	4	1	N	10720	E:D ~
+10	Cat.Claw		13	4	1	N	16000	a:1 ~
+11	Kaiser.Knuckle	14	4	1	N	19880	s:1 ~
+12	Dragon.Claw		14	4	1	N	24340	H:D ~
+13	Godhand			14	4	1	N	35160	E:H ~
+
+$ Fellsword
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Shadowblade		2	3	1	N	40		E:D ~
+2	Dark.Sword		4	3	1	N	190		E:D ~
+3	Ebony.Blade		5	3	1	N	550		E:D i:1 ~
+4	Chaosbringer	6	3	1	N	850		E:D +:Confuse ~
+5	Dark.Claymore	12	3	1	Y	1720	E:D ~
+6	Blood.Sword		12	1	1	N	3910	D:HP ~
+7	Arondight		13	3	1	N	4930	E:D ~
+8	Balmung			15	3	1	N	7350	E:D ~
+9	Avenger			25	3	1	Y	10720	E:D A:Berserk ~
+10	Valhalla		13	3	1	N	16000	E:D S:D ~
+11	Vorpal.Sword	25	3	1	Y	19880	E:D g:Meatbone.Slash ~
+12	Apocalypse		21	3	1	N	25960	E:D c:Doomsday ~
+13	Deathbringer	21	3	1	N	33170	E:D +:KO ~
+
+$ Flail
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Nunchuck		2	2	1	N	40 ~
+2	Chain.Flail		4	2	1	N	190 ~
+3	Battle.Mace		6	2	1	N	550 ~
+4	Iron.Nunchuck	8	2	1	N	1230 ~
+5	Morning.Star	10	2	1	N	2320 ~
+6	Lotus.Mace		12	2	1	N	3910 ~
+7	Three-Part		17	2	1	Y	4930 ~
+8	Vesper			16	2	1	N	8990 ~
+9	Flame.Mace		13	2	1	N	12670	E:F c:Fire.2 ~
+10	Scorpion.Tail	20	2	1	N	17240 ~
+11	Life.Croiser	21	2	1	N	22790	B:Regen ~
+12	Druid.Mace		23	2	1	N	29420	i:1 ~
+13	Mandragora		21	2	1	N	35160	H:D ~
+
+$ Game
+1	Cards			1	3	3	N	32 ~
+2	Dice			2	3	3	N	108 ~
+3	Darts			3	3	3	N	282 ~
+4	Trump			4	3	3	N	620 ~
+5	Viper.Darts		5	3	3	N	1210	+:Poison ~
+6	Magician.Cards	6	3	3	N	2636	i:1 ~
+7	Mystery.Cards	7	3	3	N	3584	c:Slot.5 ~
+8	Dragon.Cards	8	3	3	N	5638	H:D ~
+9	Master.Cards	9	3	3	N	10480	l:1 ~
+10	Reaper's.Cards	10	3	3	N	12294	+:Count ~
+11	Fixed.Dice		11	3	3	N	17280 ~
+12	Death.Tarot		12	3	3	N	23660	+:KO ~
+13	Final.Trump		13	3	3	N	31674 ~
+
+$ Greatsword
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Buster.Sword	4	2	1	Y	40		w:1 ~
+2	Claymore		5	2	1	Y	190	~
+3	Hardedge		7	2	1	Y	440 ~
+4	Butterfly		8	2	1	Y	1230	e:1 ~
+5	Obliige			12	2	1	Y	1720 ~
+6	Rune.Blade		13	2	1	Y	3910	H:M ~
+7	Barong			17	2	1	Y	4930 ~
+8	Force.Stealer	17	2	1	Y	8200	D:MP ~	
+9	Lurebreaker		17	2	1	Y	12670	C:Charm C:Confuse
+											C:Invite ~
+10	Ogrenix			21	2	1	Y	14830	H:G ~
+11	Vigilante		28	2	1	Y	19880 ~
+12	Master.Sword	28	2	1	Y	25960	s:1 v:1 ~
+13	Ultima.Weapon	32	2	1	Y	35160	c:Ultima ~
+
+$ Gun
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Romanda.Gun		2	2	3	N	40 ~
+2	Mythril.Gun		3	2	3	N	130 ~
+3	Longbarrel		5	2	3	Y	440 ~
+4	Blaze			3	2	3	N	1030	c:Fire.2 ~
+5	Glacier			4	2	3	N	1720	c:Ice.2 ~
+6	Blast			5	2	3	N	2670	c:Bolt.2 ~
+7	Blindsnipe		7	2	3	N	4400	+:Blind +:Lock ~
+8	Outsider		9	3	3	N	8200 ~
+9	Formalhaut		10	3	3	N	10720 ~
+10	Stoneshooter	9	3	3	N	16000	+:Petrify B:Petrify ~
+11	Peacemaker		9	3	3	Y	21300	+:Invite ~
+12	Death.Penalty	9	3	3	N	24340	+:KO ~
+13	Lionheart		13	3	3	N	31250	g:Meatbone.Slash ~
+
+$ Hammer
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Wooden.Hammer	2	1	1	Y	20		H:C ~
+2	Mythril.Hammer	5	1	1	Y	190		H:C ~
+3	War.Hammer		8	1	1	Y	550		H:C ~
+4	Gaia's.Hammer	11	1	1	Y	1230	H:C E:E c:Quake ~
+5	Sledgehammer	13	1	1	Y	2320	H:C ~
+6	Platinum.Hammer	16	1	1	Y	3910	H:C ~
+7	Mystic.Hammer	17	1	1	Y	6100	H:C i:1 ~
+8	Triton's.Hammer	17	1	1	Y	8200	H:C E:W ~
+9	Blessed.Hammer	17	1	1	Y	12670	H:C E:H ~
+10	Gigas.Hammer	21	1	1	Y	14830	H:CG ~
+11	Thor's.Hammer	22	1	1	Y	22790	H:C E:B c:Blitz ~
+12	Dragon.Hammer	26	1	1	Y	27650	H:CD ~
+13	Fiery.Hammer	26	1	1	Y	35160	H:C c:Flare ~
+
+$ Harp
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Silver.Harp		1	5	3	Y	53 ~
+2	Draemaer		2	5	3	Y	162		+:Sleep ~
+3	Lamia.Harp		3	5	3	Y	378		+:Confuse ~
+4	Madhura's.Harp	4	5	3	Y	645 ~
+5	Fairy.Harp		5	5	3	Y	1426	+:Charm ~
+6	Dark.Harp		6	5	3	Y	1617	E:D ~
+7	Muse.Harp		7	5	3	Y	3149 ~
+8	Earth.Harp		8	5	3	Y	4228	E:E ~
+9	Bloody.Strings	9	5	3	Y	7080	D:HP ~
+10	Lunar.Harp		10	5	3	Y	10091 ~
+11	Requiem			11	5	3	Y	13478	E:H ~
+12	Apollo's.Harp	12	5	3	Y	24674	E:F H:D ~
+13	Loki's.Lute		13	5	3	Y	40533	H:CDGM ~
+
+$ Katana
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Ashura			1	3	1	N	20 ~
+2	Kotetsu			2	3	1	N	60 ~
+3	Osafune			3	3	1	N	250 	E:W ~
+4	Murasame		6	3	1	N	1030 ~
+5	Murakumo		6	3	1	N	2320	E:A ~
+6	Zanmato			8	3	1	N	3050 	s:1 ~
+7	Kiyomori		11	3	1	N	5490 ~
+8	Muramasa		12	3	1	N	6750 ~
+9	Kazekiri		9	3	1	N	12670 	E:A c:Aero.2 ~
+10	Kikuichimoji	16	3	1	N	16000 ~
+11	Masamune		17	3	1	N	18530 ~
+12	Mutsunokami		17	3	1	N	24340 	g:Meatbone.Slash ~
+13	Chirijiraden	21	3	1	N	35160 ~
+
+$ Knife
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Knife			1	5	1	N	40 ~
+2	Dagger			2	5	1	N	130	~
+3	Mythril.Knife	3	5	1	N	340 ~
+4	Blind.Knife		3	5	1	N	690		+:Blind ~
+5	Mage.Masher		4	5	1	N	1720	+:Mute H:M ~
+6	Platinum.Dagger	7	5	1	N	3460 ~
+7	Dancing.Dagger	6	5	1	N	4930	c:Sword.Dance ~
+8	Main.Gauche		8	5	1	N	7450	e:1 ~
+9	Orifalcon		11	5	1	N	12670 ~
+10	Zorlin.Shape	12	5	1	N	16000 ~
+11	Air.Knife		11	5	1	N	22790 	E:A ~
+12	Gladius			12	5	1	N	29420	E:H ~
+13	Assassin.Dagger	12	5	1	N	37220	+:KO ~
+
+$ Knightsword
+# level name		Atk Hit Rng 2H	Price	Special
+1	Caliburn		1	3	1	N	40		E:H ~
+2	Lustrous.Sword	2	3	1	N	130		E:H ~
+3	Kingsword		3	3	1	N	340		E:H ~
+4	Druandal		5	3	1	N	1230	E:H ~
+5	Save.The.Queen	6	3	1	N	2320	E:H ~
+6	Crystal.Sword	7	3	1	N	3460	E:H ~
+7	Demonsbane		6	3	1	N	4930	E:H c:Harm ~
+8	Sun.Blade		8	3	1	N	8990	E:H c:Fire.2 ~
+9	Defender		9	3	1	N	9830	E:H A:Protect ~
+10	Braveheart		16	3	1	Y	16000	E:H ~
+11	Excalibur		12	3	1	N	21300	E:H s:1 v:1 ~
+12	Ragnarok		11	3	1	N	25960	E:H S:H ~
+13	Lightbringer	14	3	1	N	37220	E:H c:Holy ~
+
+$ Pole
+# level name		Atk Hit Rng 2H	Price	Special
+1	Tonfa			2	1	2	Y	40 ~
+2	Oaken.Pole		4	1	2	Y	190 ~
+3	Cypress.Pole	7	1	2	Y	440		E:E ~
+4	Battle.Bamboo	8	1	2	Y	1230 ~
+5	Musk.Stick		9	1	2	Y	2320	+:Slow ~
+6	Iron.Pole		12	1	2	Y	3050	w:1 ~
+7	Hexagon.Pole	13	1	2	Y	4930 ~
+8	Gokuu.Poke		15	1	2	Y	7450 ~
+9	Zephyr.Pole		12	1	2	Y	12670	E:A ~
+10	Ivory.Pole		13	1	2	Y	16000	E:H ~
+11	Sweep			21	1	2	Y	19880 ~
+12	Whale.Whisker	19	1	2	Y	29420	E:W ~
+13	Octagon.Pole	21	1	2	Y	33170	S:BDFI ~
+
+$ Rapier
+1	Battle.Rapier	0	4	1	N	10		a:1 ~
+2	Tyrfing			1	4	1	N	60		a:1 ~
+3	Wightslayer		2	4	1	N	340		a:1 E:H ~
+4	Stinger			3	4	1	N	690		a:1 s:1 ~
+5	Wild.Rose		6	4	1	N	2000	a:1 ~
+6	Dual.Rapier		6	4	1	N	3460	a:1 g:Ambidexterity ~
+7	Flamberge		8	4	1	N	6100	a:1 E:F ~
+8	Windsong.Rapier	8	4	1	N	8200	a:1 E:A ~
+9	Joyeuse			11	4	1	N	9830	a:1 ~
+10	Djinn.Flyssa	12	4	1	N	14830	a:1 l:1 ~
+11	Diabolique		16	4	1	N	18530	a:1 E:D ~
+12	Epee.Prime		10	4	1	N	25960	a:1 S:ABDEFHIW ~
+13	Femme.Fatale	13	4	1	N	33170	a:1 +:KO ~
+
+$ Rod
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Wooden.Rod		0	2	1	N	10		i:1 ~
+2	Fire.Rod		0	2	1	N	190		c:Fire S:F ~
+3	Ice.Rod			1	2	1	N	340		c:Ice S:I ~
+4	Thunder.Rod		2	3	1	N	850		c:Bolt S:B ~
+5	Poison.Rod		4	3	1	N	2000	c:Poison S:D ~
+6	Fairy.Rod		5	3	1	N	3050	H:G +:Charm ~
+7	Wizard.Rod		8	4	1	N	5490	i:2 ~
+8	Gravity.Rod		6	4	1	N	7450	E:D c:Demi S:D ~
+9	Polymorph.Rod	9	4	1	N	9830	+:Frog ~
+10	Lilith.Rod		8	5	1	N	14830	D:MP c:Drain ~
+11	Wonder.Wand		10	5	1	N	18530	c:Slot.10 ~
+12	Stardust		10	5	1	N	29420	E:D c:Comet S:D ~
+13	Asura's.Rod		8	5	1	N	37220	E:H c:Holy S:H ~
+
+$ Spear
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Wooden.Spear	1	3	1	N	20 ~
+2	Mythril.Spear	2	3	1	N	60 ~
+3	Wind.Spear		3	3	1	N	340		E:A ~
+4	Flame.Spear		5	3	1	N	850		E:F ~
+5	Blizzard.Spear	6	3	1	N	1460	E:I ~
+6	Thunder.Spear	8	3	1	N	3460	E:B ~
+7	Trident			9	3	1	N	4930	E:W ~
+8	Blood.Lance		11	3	1	N	8200	D:HP ~
+9	Gungnir			15	3	1	N	12670 ~
+10	Longinus		11	3	2	N	17240 ~
+11	Holy.Lance		13	3	1	N	19880	E:H ~
+12	Wyvern.Lance	16	3	1	N	24340	H:D ~
+13	Abel's.Lance	14	3	1	N	37220	E:A c:Aero.3 ~
+
+$ Staff
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Wooden.Staff	2	2	1	1	40		i:1 ~
+2	Mythril.Staff	3	2	1	1	190		i:1 v:1 ~
+3	Rainbow.Staff	4	2	1	1	340		i:1 c:Prismatic.Flash ~
+4	Power.Staff		6	2	1	1	1230	i:1 G:Berserk ~
+5	Gold.Staff		7	2	1	1	1460	i:1 l:1 ~
+6	Rune.Staff		8	2	1	1	3050	i:1 H:M ~
+7	Healing.Staff	10	2	1	1	4930	i:1 G:Heal.2 ~
+8	Aura.Staff		11	2	1	1	7450	i:1	c:Dispel ~
+9	Holy.Wand		12	2	1	1	12670	i:1	E:H ~
+10	Judgment.Staff	14	2	1	1	13720	i:2 S:H c:Holy ~
+11	Sage's.Staff	15	2	1	1	18530	i:1	B:Reraise G:Life ~
+12	Seraphim's.Mace	16	2	1	1	24340	i:1	G:Esuna ~
+13	Nirvana			18	2	1	1	33170	i:1 G:Reflect ~
+
+$ Sword
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Broad.Sword		2	2	1	N	40 ~
+2	Long.Sword		4	2	1	N	190 ~
+3	Iron.Sword		7	2	1	N	550 	w:1 ~
+4	Mythril.Sword	8	2	1	N	1230 ~
+5	Wyrmkiller		8	2	1	N	2320 	H:D ~
+6	Coral.Sword		10	2	1	N	3910	E:B ~
+7	Flametongue		11	2	1	N	5490	E:F ~
+8	Icebrand		12	2	1	N	6750	E:I ~
+9	Sleep.Blade		15	2	1	N	10720	+:Sleep ~
+10	Ancient.Sword	18	2	1	N	14830 	+:Slow ~
+11	Diamond.Sword	22	2	1	N	22790 ~
+12	Enhancer		23	2	1	N	29420	i:1 ~
+13	Break.Blade		21	2	1	N	37220	+:Petrify ~
+
+#	== BELOW IS UP-TO-DATE 19/11/2014 ==
+
+$ Whip
+# level name		Atk	Hit	Rng	2H	Price	Special
+1	Leather.Whip	1	3	2	N	60 ~
+2	Chain.Whip		2	3	2	N	150 ~
+3	Thorn.Whip		1	3	2	N	400		+:Stun ~
+4	Silver.Whip		2	3	2	N	800		+:Stun ~
+5	Mystic.Whip		3	3	2	N	1600	i:1 +:Stun ~
+6	Blitz.Whip		3	3	2	N	2000	E:B	+:Stun ~
+7	Ice.Whip		4	3	2	N	4500	E:I	+:Stun ~
+8	Fire.Lash		5	3	2	N	6500	E:F	+:Stun ~
+9	Platinum.Whip	7	3	2	N	8000	+:Stun ~
+10	Master.Whip		9	3	2	N	15000	+:Stun ~
+11	Beast.Killer	7	3	2	N	17000	H:CDGM +:Stun ~
+12	Dragon.Whisker	9	3	2	N	24000	H:D +:Stun ~
+13	Mist.Whip		7	4	2	N	28000	E:H +:Stun ~
+
+}
+
+
+
+#$ Holy.Sword
+# level name		Atk	Hit	Rng	2H	Price	Special
+#3	Sword.of.Legend	4	4	1	N	1296	E:H	~
+#5	Sword.of.Light	7	7	1	N	6650	E:H G:Lamp ~
+#7	Save.the.Queen	10	10	1	N	29400	E:H C:KO C:Petrify
+#											C:Invite ~
+#	Defender		13	13	1	Y	36504	E:H A:Protect ~
+#11	Excalibur		16	16	1	N	81312	E:H S:H ~
+#13	Lightbringer	19	19	1	N	186238	E:H c:Holy ~

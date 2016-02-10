@@ -1,0 +1,23 @@
+#	This is the configuration file for Final Fantasy.
+#	Add the options you want between the braces after CONFIG
+#	(lines starting with # aren't used).
+#	
+#	In Ironman mode your game is deleted when the party is defeated.
+#	In Chaos mode the random encounters are more varied than
+#		in Ron Keating's FFCG.
+#	In Luck mode a fatally wounded player has a small chance dependent
+#		on his Luc to be saved from death.
+
+CONFIG {
+Ironman
+Chaos
+#Luck
+}
+
+#	This option only works if FFCG is compiled with the LIBTCOD option.
+#	The second string should be COL or ROW, depending on whether the
+#	png file is organized into columns or rows.
+
+FONT {
+DarkondDigsDeeper_16x16 ROW
+}

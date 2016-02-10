@@ -1,0 +1,256 @@
+# This is the key for the "Special" Field:
+#
+#	a	bonus to Agility
+#	A	Always
+#	B	Starts (begins)
+#	C	Cancels
+#	e	bonus to evade
+#	G	Grants (spell)
+#	h	bonus to hit
+#	i	bonus to Intelligence
+#	I	Immune
+#	k	bonus to attacK
+#	l	bonus to luck
+#	m	bonus to magic evade
+#	P	Seals* (ability)
+#	R	Resists
+#	s	bonus to Strength
+#	S	Strengthens
+#	v	bonus to Vitality
+#	w	Weight
+#
+#	* At the moment a player can only have one ability sealed at a time.
+
+
+ARMOR {
+
+$ None
+0	None			0	0	Access	0 ~
+0	None			0	0	Body	0 ~
+0	None			0	0	Head	0 ~
+
+
+$ Hat
+# level	name		HP	MP	Slot	Price	Special
+1	Leather.Cap		2	2	Head	20 ~
+2	Feather.Hat		4	4	Head	100 ~
+3	Poet.Cap		6	6	Head	200 ~
+4	Triangle.Hat	6	6	Head	700		i:1 ~
+5	Green.Beret		12	12	Head	1400	a:1 ~
+6	Scholar's.Hat	14	14	Head	2500	m:1 ~
+7	Black.Cowl		16	16	Head	4500	e:1 ~
+8	Sage's.Miter	16	16	Head	7500	i:1 ~
+9	Red.Cap			18	18	Head	10000	v:1 R:F ~
+10	Flash.Hat		20	20	Head	15000 	a:1 i:1 ~
+11	Cat.Hood		22	22	Head	19000	i:1 R:I ~
+12	Thief's.Hat		28	28	Head	24000	a:1 h:1 C:Lock C:Stun ~
+13	Acacia.Hat		30	30	Head	40000	a:1 e:1 C:Berserk
+											C:Charm C:Confuse ~
+$ Helm
+# level	name		HP	MP	Slot	Price	Special
+1	Leather.Helm	6	0	Head	16 ~
+2	Bronze.Helm		12	0	Head	101 ~
+3	Iron.Helm		18	0	Head	227 	w:1 ~
+4	Barbuta			24	0	Head	691 ~
+5	Mythril.Helm	30	0	Head	1305 ~
+6	Gold.Helm		36	0	Head	2203 ~
+7	Cross.Helm		42	0	Head	3440 ~
+8	Viking.Helm		48	0	Head	8141	A:Berserk ~
+9	Diamond.Helm	54	0	Head	8238 	R:B ~
+10	Crystal.Helm	60	0	Head	11220 	R:D ~
+11	Genji.Helm		66	0	Head	12850 ~
+12	Grand.Helm		72	0	Head	19181	C:Blind C:Sleep ~
+13	Glass.Mask		78	0	Head	50649 	A:Reflect ~
+
+$ Ornament
+# level	name		HP	MP	Slot	Price	Special
+1	Bandanna		0	3	Head	15		a:1 ~
+2	Twist.Headband	0	6	Head	107		s:1 ~
+3	Mystery.Veil	0	9	Head	470		m:1 R:H ~
+4	Tiger.Mask		0	12	Head	811		v:1 ~
+5	Ballad.Crown	0	15	Head	1568	i:1 ~
+6	Mantra.Band		0	18	Head	3337	e:1 ~
+7	Lamia's.Tears	0	21	Head	4248	C:Charm C:Confuse C:Sleep ~
+8	Circlet			0	24	Head	6317	i:1 ~
+9	Royal.Crown		0	27	Head	6780 ~
+10	Oath.Veil		0	30	Head	9270 ~
+11	Hypno.Crown		0	33	Head	12306	C:Frog ~
+12	Gold.Hairpin	0	36	Head	21125	i:1 ~
+13	Ribbon			0	39	Head	46593	C:KO C:Petrify
+		C:Frog	C:Invite	C:Charm	C:Stop	C:Mini	C:Pig
+		C:Count	C:Sleep		C:Undead		C:Stun	C:Lock
+		C:Confuse	C:Slow	C:Mute	C:Blind	C:Poison ~
+
+$ Clothes
+# level	name		HP	MP	Slot	Price	Special
+1	Leather.Vest	8	4	Body	27 ~
+2	Chain.Vest		16	8	Body	142 ~
+3	Mythril.Vest	24	12	Body	401 ~
+4	Wizard.Outfit	32	16	Body	1050	i:1 ~
+5	Brigandine		40	20	Body	1565 ~
+6	Judo.Outfit		48	24	Body	3226	s:1 C:KO ~
+7	Black.Costume	56	28	Body	3949 ~
+8	Earth.Clothes	64	32	Body	8038	S:E I:E ~
+9	Power.Sleeve	72	36	Body	10174	s:1 ~
+10	Ninja.Suit		80	40	Body	10760	C:Stop ~
+11	Mirage.Vest		88	44	Body	22095	B:Blink ~
+12	Assassin.Vest	96  48	Body	23270	C:Poison C:Petrify
+											C:Stun C:Lock ~
+13	Vishnu.Vest		104	52	Body	49111	C:KO C:Petrify
+		C:Frog	C:Invite	C:Charm	C:Stop	C:Mini	C:Pig
+		C:Count	C:Sleep		C:Undead		C:Stun	C:Lock
+		C:Confuse	C:Slow	C:Mute	C:Blind	C:Poison ~
+		
+$ Mail
+# level	name		HP	MP	Slot	Price	Special
+1	Chain.Mail		12	0	Body	38 ~
+2	Mythril.Mail	24	0	Body	187 ~
+3	Shadow.Mail		36	0	Body	543		R:H P:Holy.Magic ~
+4	Paladin.Mail	48	0	Body	1133	R:D P:Dark.Magic ~
+5	Flame.Mail		60	0	Body	2032	R:F ~
+6	Ice.Mail		72	0	Body	3305	R:I ~
+7	Darkness.Mail	84	0	Body	5527 	I:H P:Holy.Magic ~
+8	Light.Mail		96	0	Body	7987	I:D P:Dark.Magic ~
+9	Carabini.Mail	108	0	Body	8894 ~
+10	Bone.Mail		120	0	Body	20880	v:1 A:Undead ~
+11	Demon.Mail		132	0	Body	21453	I:H R:D P:Holy.Magic ~
+12	Crystal.Mail	144	0	Body	27475	I:D R:H P:Dark.Magic ~
+13	Reflect.Mail	156	0	Body	54300	A:Reflect ~
+
+$ Plate
+# level	name		HP	MP	Slot	Price	Special
+1	Leather.Plate	18	0	Body	71 		w:1 ~
+2	Iron.Plate		36	0	Body	283		w:2 ~
+3	Bronze.Plate	54	0	Body	664		w:2 ~
+4	Steel.Plate		72	0	Body	1133	w:3 ~
+5	Gold.Plate		90	0	Body	1808	w:3 ~
+6	Diamond.Plate	108	0	Body	2657	w:4 R:B ~
+7	Genji.Armor		126	0	Body	3690 	w:4 ~
+8	Grand.Armor		144	0	Body	4915 	w:5 ~
+9	Platinum.Armor	162	0	Body	6342 	w:5 ~
+10	Maximilian		180	0	Body	7980 	w:6 ~
+11	Dragon.Plate	198	0	Body	9837	w:6 R:FIB ~
+12	Caesar's.Plate	216	0	Body	11923	w:7 R:HD	S:HD ~
+13	Adamant.Armor	234	0	Body	37315	w:7 R:HDFIAEWB	C:KO
+		C:Petrify	C:Frog	C:Invite	C:Charm	C:Stop		C:Mini
+		C:Pig		C:Count	C:Sleep		C:Undead	C:Stun	C:Lock
+		C:Confuse	C:Slow	C:Mute		C:Blind	C:Poison ~
+
+$ Robe
+# level	name		HP	MP	Slot	Price	Special
+1	Cloth.Robe		4	8	Body	31 ~
+2	Silk.Robe		8	16	Body	162 ~
+3	Poet.Robe		12	24	Body	445 ~
+4	Wizard.Robe		16	32	Body	1126	i:1 ~
+5	White.Robe		20	40	Body	2248	R:FIB ~
+6	Black.Robe		24	48	Body	3722	S:FIB ~
+7	Sage's.Surplice	28	56	Body	4699	C:Berserk C:Mute ~
+8	Angel.Robe		32	64	Body	9114	v:1 C:KO C:Petrify C:Stop ~
+9	Luminous.Robe	36	72	Body	12749	I:H R:B C:KO ~
+10	Scholar's.Robe	40	80	Body	17240	m:1 ~
+11	Robe.of.Lords	44	88	Body	22675	s:1 i:1 ~
+12	White.Dress		48	96	Body	23962	I:Dark ~
+13	Rainbow.Robe	52	104	Body	36741	A:Shell ~
+
+$ Armlet
+# level	name		HP	MP	Slot	Price	Special
+1	Leather.Wrist	3	2	Acces	12 ~
+2	Mythril.Armlet	6	4	Acces	84 ~
+3	Defense.Armlet	9	6	Acces	310		C:Lock C:Stun ~
+4	Magic.Armlet	12	8	Acces	816		i:1 ~
+5	Bracer			15	10	Acces	1575	v:1 ~
+6	Thief's.Glove	18	12	Acces	2700	a:1 ~
+7	Jade.Armlet		21	14	Acces	3748	C:Petrify C:Stop ~
+8	Bone.Wrist		24	16	Acces	7872	A:Undead ~
+9	Power.Armlet	27	18	Acces	8991	s:1 ~
+10	Pearl.Armlet	30	20	Acces	10800	R:D ~
+11	Diamond.Brcelet	33	22	Acces	14338	R:B ~
+12	Dragon.Wrist	36	24	Acces	23760	R:BFI ~
+13	Empyreal.Armbnd	39	26	Acces	46644	a:1 C:Slow C:Lock C:Stop ~
+
+$ Boots
+# level	name		HP	MP	Slot	Price	Special
+1	Leather.Boots	1	0	Acces	12		l:1 ~
+2	Battle.Boots	2	0	Acces	97		a:1 ~
+3	Red.Shoes		3	0	Acces	326		i:1 ~
+4	Spike.Shoes		4	0	Acces	963		s:1 C:Lock C:Sleep
+											C:Slow C:Stop C:Stun ~
+5	Rubber.Boots	5	0	Acces	2068	v:1 R:W I:B ~
+6	Sprint.Shoes	6	0	Acces	2599 ~
+7	Tintinabulum	7	0	Acces	4126 ~
+8	Feather.Boots	8	0	Acces	8461	m:1 A:Float ~
+9	Germinas.Boots	9	0	Acces	10951	l:2 ~
+10	Magician.Shoes	10	0	Acces	15020	i:2 ~
+11	Desert.Boots	11	0	Acces	19989	B:Blink ~
+12	Running.Shoes	12	0	Acces	25949	B:Haste ~
+13	Miracle.Shoes	13	0	Acces	49466	A:Protect A:Regen A:Shell ~
+	
+$ Gauntlet
+# level	name		HP	MP	Slot	Price	Special
+1	Leather.Gantlet 6	0	Acces	16 ~
+2	Bronze.Gauntlet	12	0	Acces	101 ~
+3	Iron.Gauntlet	18	0	Acces	308 ~
+4	Steel.Gauntlet	24	0	Acces	691 ~
+5	Mythril.Gantlet	30	0	Acces	1305 ~
+6	Giant's.Glove	36	0	Acces	2851	v:1 ~
+7	Defense.Glove	42	0	Acces	5498	e:1 ~
+8	Aegis.Glove		48	0	Acces	8141	m:1 ~
+9	Diamond.Gantlet	54	0	Acces	8238	R:B ~
+10	Genji.Glove		60	0	Acces	9720 ~
+11	Demon.Gauntlet	66	0	Acces	18840	I:H S:D ~
+12	Crystal.Gantlet	72	0	Acces	24365	I:D S:H ~
+13	Dragon.Gauntlet	78	0	Acces	34172	R:BFI S:A ~
+
+$ Mantle
+# level	name		HP	MP	Slot	Price	Special
+1	Small.Mantle	0	2	Acces	16		m:1 ~
+2	Yellow.Scarf	0	4	Acces	149		m:1 s:1 ~
+3	Leather.Mantle	0	6	Acces	497		m:1 v:1 ~
+4	Wizard.Mantle	0	8	Acces	1171	i:1 m:1 ~
+5	Feather.Mantle	0	10	Acces	2655	m:2 ~
+6	Elf.Mantle		0	12	Acces	5875	e:1 m:2 ~
+7	Vampire.Mantle	0	14	Acces	8291	m:2 I:D ~
+8	Vanish.Mantle	0	16	Acces	13901	m:2 B:Blink ~
+9	Protect.Cape	0	18	Acces	24154	m:3 B:Protect ~
+10	Zephyr.Cape		0	20	Acces	33120	e:1 m:3 ~
+11	Angel.Wings		0	22	Acces	40075	m:3 A:Float ~
+12	White.Cape		0	24	Acces	62381	e:1 m:3 C:Berserk
+											C:Frog C:Mute ~
+13	Sorcerer.Mantle	0	26	Acces	79295	i:1 m:4 ~
+
+$ Ring
+# level	name		HP	MP	Slot	Price	Special
+1	Defense.Ring	0	1	Acces	12		v:1 ~
+2	Magic.Ring		0	2	Acces	97		i:1 ~
+3	Angel.Ring		0	3	Acces	286		B:Reraise ~
+4	Cure.Ring		0	4	Acces	677		A:Regen ~
+5	Barrier.Ring	0	5	Acces	1882	A:Shell ~
+6	Amulet			0	6	Acces	4547	C:Berserk C:Blind
+		C:Charm C:Confuse C:Count C:Frog C:Invite C:KO C:Lock
+		C:Mute C:Petrify C:Poison C:Sleep C:Slow C:Stop C:Stun C:Undead ~
+7	Flame.Ring		0	7	Acces	7218	m:1 I:FI ~
+8	Coral.Ring		0	8	Acces	10771	m:1 I:BW ~
+9	Cursed.Ring		0	9	Acces	17520	a:1 i:1 l:1 s:1 v:1 I:EABDFHIW
+											A:Undead ~
+10	Protect.Ring	0	10	Acces	19530	R:BFI A:Protect ~
+11	108.Gems		0	11	Acces	27987	S:ABDEFHIW ~
+12	Reflect.Ring	0	12	Acces	38923	A:Reflect ~
+13	Hero's.Ring		0	13	Acces	85734	a:2 i:2 l:2 s:2 v:2 ~
+		
+$ Shield
+# level	name		HP	MP	Slot	Price	Special
+1	Leather.Shield	2	0	Acces	16 		e:1 ~
+2	Iron.Shield		4	0	Acces	99		w:1 e:1 ~
+3	Mythril.Shield	6	0	Acces	412 	e:1 ~
+4	Thunder.Shield	8	0	Acces	1261	e:1 I:B R:W ~
+5	Flame.Shield	10	0	Acces	3208	e:2 I:F R:I ~
+6	Ice.Shield		12	0	Acces	5537	e:2 I:I R:F ~
+7	Diamond.Shield	14	0	Acces	7757	e:2 R:B ~
+8	Aegis.Shield	16	0	Acces	13875	e:2 m:1 ~
+9	Genji.Shield	18	0	Acces	19748	e:3 ~
+10	Dragon.Shield	20	0	Acces	31580	e:3 R:BFI ~
+11	Demon.Shield	22	0	Acces	42023 	e:3 I:H R:D ~
+12	Crystal.Shield	24	0	Acces	54547	e:3 I:D R:H ~
+13	Hero's.Shield	26	0	Acces	151728	a:1 e:4 l:1 s:1 v:1
+											I:AEFIWBDH ~
+}

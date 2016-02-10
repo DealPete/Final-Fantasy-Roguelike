@@ -1,0 +1,204 @@
+#	This is a key to the one-letter codes used to denote the monsters' characteristics.
+#
+#	S, C, D, H		On the monster's turn, it draws a card and acts based upon the suit of the card: Spade, Club, Diamond, Heart. The default action is to attack.
+#	r				Race
+#	W				Weak
+#	R				Resist
+#	I				Immune
+#	+				The monster may add this status to its victim on a successful attack.
+#	B				The monster begins the battle with this status.
+#	a				The monster always has this status.
+#	c				The monster casts this spell as battle beings.
+
+# Monster names cannot be longer than 14 Characters.
+
+MONSTERS {
+
+0	None			0	0	0	0	0	0	N	None			None ~
+
+
+#Lv	Name			Vit	Agi	Eva	Hit	Atk	Int	Sex	Common Item		Rare Item		Spade	Club	Diamond	Heart	Races	Weak	Resist	Immune	Adds	Always/Start
+
+1	Asp				1	1	3	3	1	0	N	Sleeping.Bag	Chain.Whip										r:D		W:I		R:FA			+:Poison ~
+1	Bomb			2	0	2	1	3	1	N	Smoke.Bomb		Mythril.Gun		S:Exploder						r:C		W:W		R:I		I:EF ~
+1	Crazy.Horse		1	2	3	3	3	0	N	Potion			Battle.Boots																			B:Confuse ~
+1	Eagle			1	2	3	1	1	1	N	Smoke.Bomb		Feather.Hat		S:Aero									W:A				I:E ~
+1	Goblin			1	1	2	2	2	1	M	Shuriken		Chain.Vest		S:Goblin.Punch							W:I ~
+1	Jelly			1	1	2	1	1	0	N	Potion			Encyclopedia											W:F		R:WD	I:I			P:Jellies ~
+1	Nut.Eater		1	0	1	3	2	1	N	Sleeping.Bag	Mythril.Hammer	S:Goblin.Punch							W:B		R:W				+:Lock ~
+1	Peeper			1	2	3	1	1	1	N	Smoke.Bomb		Twist.Headband	S:Smoke																	B:Haste ~
+1	Pirate			1	2	3	1	1	1	M	Smoke.Bomb		Tyrfing			S:Throw.Stone							W:D ~
+1	Spider			1	2	3	2	1	0	N	Sleeping.Bag	Ashura													W:IW	R:D				+:Stun ~
+1	Skeleton		1	2	1	2	3	0	N	Shuriken		Dark.Sword												W:FH			I:D				a:Undead ~
+1	Wolf			1	0	2	3	3	0	N	Potion			Dagger							P:Wolves ~
+1	Yellow.Chocobo	2	2	3	1	1	1	N	Potion			Yellow.Scarf	S:Heal							r:M		W:A		R:W ~
+
+2	Creep			3	1	2	3	5	0	N	Sleeping.Bag	Battle.Book												W:FE	R:A				+:Lock ~
+2	Doll			1	3	2	3	4	1	N	Smoke.Bomb		Poet.Robe		S:Exploder	C:Sword.Dance		r:C		W:FW			I:B ~
+2	Flame.Dog		3	2	1	2	4	2	N	Sleeping.Bag	Red.Brush		S:Fire	C:Fire							W:I				I:F ~
+2	Ice.Soldier		3	2	1	3	6	2	M	Shuriken		Ice.Rod			S:Chill.Blade	C:Ice					W:F		R:W		I:I ~
+2	Iguana			3	1	2	3	3	0	N	Potion			Defense.Armlet											W:I		R:F ~
+2	Larva			1	1	2	3	5	3	N	Sleeping.Bag	Mystery.Veil	S:Slow	C:Rasp.L1						W:I ~
+2	Leafer			1	3	3	2	2	2	N	Smoke.Bomb		Angel.Ring		S:Aero							r:M ~
+2	Needler			3	1	1	2	5	3	N	Potion			Darts			S:Sword.Dance ~
+2	Rock.Moth		2	2	3	2	2	3	N	Smoke.Bomb		Wind.Spear		S:Aero	C:Sleep							W:A				I:E ~
+2	Sahagin			2	2	3	2	2	2	N	Potion			Kotetsu			S:Goblin.Punch							W:B		R:F		I:EW ~
+2	Scum			2	1	2	3	2	0	N	Potion			Bronze.Plate											W:I		R:HB	I:F				a:Protect ~
+2	Stray.Cat		2	3	3	3	2	1	N	Shuriken		Red.Shoes		S:Critical.Strike						W:W		R:AB ~
+2	Zombie			3	1	1	3	6	0	N	Shuriken		Shadow.Mail												W:FH			I:D				a:Undead ~
+
+3	Arachnid		1	1	3	3	3	0	N	Remedy			Spike.Shoes												W:IW	R:D				+:Poison	B:Quick ~
+3	Cobra			3	3	3	3	3	3	N	Remedy			Silver.Whip		S:Critical.Strike						W:IE	R:A 			+:Count ~
+3	Cursed.Copper	4	2	1	2	5	5	N	Thunder.Ball	Steel.Gauntlet	S:Flash							r:C		W:BH	R:D ~
+3	Grenade			3	5	2	1	4	3	N	Fire.Ball		Blaze			S:Exploder						r:C		W:W		R:I		I:EF ~
+3	Hornet			1	5	3	3	4	0	N	Water.Ball		Night.Killer											W:AW	R:B		I:E		+:Sleep ~
+3	Ice.Beast		4	2	1	2	6	3	N	Ice.Ball		Blue.Brush		S:Shiva									W:F				I:I ~
+3	Odd.Eye			1	3	2	2	4	3	N	Water.Ball		Osafune			S:Aqua.Rake	C:Condemn			r:M		W:B				I:FE	+:Blind	B:Blink ~
+3	Ogre			3	3	2	2	6	3	M	Tent			Battle.Bamboo	S:Goblin.Punch					r:G ~
+3	Proto.Armor		5	2	1	1	8	5	N	Thunder.Ball	Steel.Plate		S:Exploder	C:Bolt.Beam	D:Heal.Force	r:C		W:BW	R:DH ~
+3	Rhobite			2	5	3	2	4	3	N	Phoenix.Down	Cure.Ring		S:Life							r:M ~
+3	Sand.Worm		5	2	1	3	8	3	N	Fire.Ball		Blind.Knife		S:Aero							r:G		W:IE	R:A		I:F ~
+3	Shadow			2	4	3	2	6	3	N	Tent			Wizard.Mantle	S:Flash									W:FH			I:E				a:Undead ~
+3	Skull.Eater		1	1	3	3	9	3	N	Phoenix.Down	Barbuta			S:Critical.Strike										I:EFAWIBDH		a:Shell ~
+	
+4	Archeotoad		5	3	2	3	10	6	N	Water.Ball		Rubber.Boots	S:Aqua.Rake	C:Frog						W:IB	R:F		I:W ~
+4	Black.Chocobo	4	4	3	3	8	4	N	Remedy			Feather.Mantle	S:Kick	C:Esuna							W:A				I:E ~
+4	Chimera			5	3	1	3	8	6	N	Ice.Ball		Barrier.Ring	S:Aqua.Rake								W:D		R:WBAF	I:H ~
+4	Clay.Golem		6	2	1	2	12	0	N	Thunder.Ball	Gold.Plate										r:C		W:W		R:DH	I:B		+:Poison a:Shell ~
+4	Coeurl			5	2	2	4	8	6	N	Phoenix.Down	Poison.Rod		S:Condemn								W:W		R:DB ~	
+4	Crawl			4	4	2	5	4	0	N	Ice.Ball		Tome.of.Ice												W:BE	R:A				+:Stun ~
+4	Earth.Elemental	4	4	2	3	8	4	N	Tent			Gaia's.Hammer	S:Earth.Slash	C:Local.Quake			W:E				I:A ~
+4	Iron.Fist		3	5	2	5	12	4	N	Tent			Mythril.Claw	S:Repeating.Fist						W:D ~
+4	Scorpion		5	3	1	4	8	0	N	Phoenix.Down	Viper.Darts												W:IW	R:FD			+:Poison ~
+4	Shark			4	4	2	3	8	4	N	Water.Ball		Murasame		S:Critical.Strike						W:B		R:F		I:EW ~
+4	Slam.Dancer		3	5	2	2	4	6	M	Thunder.Ball	Glass.Bell		S:Flash	C:Bolt.2	D:Ice.2		r:M		W:D ~
+4	Soul			2	6	3	3	4	6	N	Fire.Ball		Fairy.Harp		S:Condemn	C:Fire.2					W:H		R:D		I:FE			a:Undead ~
+4	Trap.Rose		5	2	1	5	10	5	N	Remedy			Wild.Rose		S:Sleep									W:FE	R:HW			+:Poison ~
+
+5	Basilisk		6	4	3	3	10	5	N	Remedy			Thief's.Glove	S:Stone.Gaze							W:I		R:F				+:Calcify ~
+5	Bat				3	8	5	3	6	5	N	Phoenix.Down	Amulet			S:Red.Feast	C:Red.Feast					W:HAF			I:DEB ~
+5	Bloodbones		4	6	3	4	14	0	N	Fire.Ball		Blood.Sword												W:FH			I:D				a:Undead	P:Bloodbones ~
+5	Cream			6	3	3	5	6	5	N	Water.Ball		Ice.Shield		S:Pep.Up								W:B		R:AI	I:W		+:Confuse	a:Protect ~
+5	Fire.Elemental	4	6	2	3	12	5	N	Fire.Ball		Fire.Bow		S:Fire.2	C:Demon.Fire				W:I		R:F ~
+5	Gigas			8	3	1	3	15	5	M	Tent			Giant's.Glove									r:G 								P:Gigantes ~
+5	Guard			4	4	3	4	12	5	M	Thunder.Ball	Diamond.Plate	S:Flash							r:C		W:BW	R:DH ~
+5	Pisco.Demon		7	3	1	3	14	5	N	Water.Ball		Black.Robe		S:Aqua.Rake	C:Condemn			r:M		W:B				I:W 			a:Shell ~	
+5	Ra.Mage			4	8	2	2	8	5	M	Ice.Ball		Elf.Mantle		S:Fire.2	C:Ice.2	D:Bolt.2	r:M		W:D ~
+5	Sea.Snake		2	4	5	5	10	0	N	Tent			Blitz.Whip										r:D		W:IB	R:F		I:EW 	+:Poison ~
+5	Sword.Dancer	3	6	4	4	8	8	N	Thunder.Ball	Sakura			S:Bladeblitz	C:Disillusion			W:D ~		
+5	Werewolf		4	3	3	5	13	5	N	Remedy			Tiger.Fang												W:H		R:D				+:Poison			P:Werewolves ~
+5	Wyvern			6	7	3	3	12	5	N	Phoenix.Down	Murakumo		S:Aero.2						r:D		W:A				I:E ~
+
+6	Bio.Soldier		9	3	3	4	13	9	M	Fire.Ball		Slasher			S:Bio	C:Bio					r:M		W:D ~
+6	Blood.Slime		6	6	3	3	12	6	N	Hi.Potion		Darkness.Mail	S:Pep.Up	C:Red.Feast			r:M		W:H		R:IE	I:D				a:Protect ~
+6	Clapper			8	9	2	2	10	6	N	Thunder.Ball	Zanmato			S:Kamaitachi	C:Kamaitachi	r:D		W:WA			I:BE ~
+6	Cure.Beast		6	8	2	2	8	9	N	Hi.Potion		Healing.Staff	S:Heal.2 ~
+6	Evoker			5	9	4	1	6	9	N	Ether			Sage's.Surplice	S:Remora	C:Ramuh	D:Titan		r:M		W:D ~
+6	Ice.Elemental	8	3	1	4	12	9	N	Ice.Ball		Ice.Whip		S:Ice.Breath	C:Frost.Cannon			W:F				I:I ~
+6	Image			5	7	4	5	8	6	N	Ether			Vampire.Mantle	S:Aero.2								W:FH			I:DE	+:Stun	a:Undead ~
+6	Minotaurus		9	4	1	4	18	7	M	Fire.Ball		Mystic.Hammer	S:Accumulate					r:G 	W:E		R:HA			+:Confuse			P:Minotauri ~
+6	Piranha			3	4	4	5	10	6	N	Water.Ball		Trident			S:Critical.Strike C:Critical.Strike		W:B		R:F		I:EW	+:Lock	B:Haste		P:Piranha ~
+6	Stone.Golem		8	4	2	3	16	6	N	Thunder.Ball	Genji.Armor										r:C		W:W		R:DH	I:B		+:Slow	B:Shell ~
+6	Tiny.Mage		3	7	5	2	6	9	M	Ether			Flame.Ring		S:Stun	C:Mute					r:M		W:D								a:Shell ~
+6	Treant			7	5	1	5	15	7	N	Water.Ball		Hexagon.Pole	S:Berkserk								W:FE	R:HW ~
+6	Troll			9	4	1	3	15	6	N	Hi.Potion		Tintinabulum											W:F								B:Regen ~
+
+7	Adamantoise		11	5	1	5	21	7	N	Fuma.Shuriken	Grand.Armor		S:Critical.Strike						W:I		R:BD					a:Protect ~
+7	Aqua.Worm		9	5	3	4	14	7	N	Hi.Potion		Coral.Ring		S:Tsunami								W:BE	R:A		I:W ~
+7	Bolt.Elemental	3	11	3	2	20	9	N	Ether			Lightning.Bow	S:Bolt.Breath	C:Chaos.Drive			W:W				I:B ~
+7	Ghoul			9	4	2	5	18	7	N	Coeurl.Whisker	Bone.Wrist		S:Red.Feast								W:FH			I:D		+:Stun	a:Undead ~
+7	Hades.Gigas		7	7	3	4	14	7	M	Baccus'.Wine	Earth.Clothes	S:Quake							r:G		W:D 										P:Hades.Gigantes ~
+7	Marionette		4	9	4	5	16	9	N	Ether			Angel.Robe		S:Slow.Dance					r:C		W:FW			I:B ~
+7	Porky			11	3	1	2	21	7	N	Hi.Potion		Blood.Lance		S:Pep.Up								W:E		R:A ~
+7	Red.Chocobo		10	10	4	3	10	7	N	Coeurl.Whisker	Vanish.Mantle	S:Meteorain						r:M		W:A		R:W ~
+7	Ricard.Mage		7	7	3	4	14	7	M	Ether			Sage's.Miter	S:Flamethrower	C:Sleep	D:Stun	r:M		W:D ~
+7	Sentry			6	6	3	5	17	7	N	Fuma.Shuriken	Outsider		S:Dischord						r:C		W:BW	R:DH									P:Sentries ~
+7	Tofu			8	5	2	6	7	7	N	Hi.Potion		Light.Mail		S:Pep.Up								W:D		R:FA	I:H		+:Slow	a:Protect		P:Tofu ~
+7	Yellow.Dragon	8	5	3	4	14	9	N	Coeurl.Whisker	Kiyomori		S:Bolt.Breath					r:D		W:AW			I:EB ~
+7	Zuu				11	3	5	4	10	7	N	Baccus'.Wine	Windsong.Rapier	S:Aero.2	C:Cross.Slash				W:A				I:E ~
+
+8	Alligator		10	4	4	6	24	8	N	Cabin			Power.Sleeve	S:Cross.Slash							W:B		R:F		I:WE ~
+8	Chimera.Brain	10	6	2	4	16	10	N	Fuma.Shuriken	Germinas.Boots	S:Flamethrower							W:D		R:WBAF	I:H ~
+8	Earth.Dragon	12	5	1	4	20	10	N	Fuma.Shuriken	Muramasa		S:Quake							r:D		W:EW			I:AB ~
+8	Ice.Lizard		8	8	3	4	16	5	N	Cabin			Power.Armlet	S:Ice.Breath							W:F				I:I ~
+8	Iron.Golem		12	6	1	4	20	0	N	Cabin			Platinum.Armor									r:C		W:WB	R:DH ~
+8	Medusa			6	10	4	6	8	12	F	Coeurl.Whisker	Yoichi's.Bow	S:Medusa's.Arrow						W:IH	R:D				+:Calcify ~
+8	Mini.Satana		7	9	3	2	20	12	N	Unicorn.Horn	Demon.Bell		S:Charm	C:Flamethrower			r:M		W:H				I:D 							P:Mini.Satana ~
+8	Muck			8	7	2	4	18	0	N	Unicorn.Horn	Protect.Cape											W:A		R:DB	I:E		+:Lock	a:Protect ~
+8	Night.Stalker	9	4	3	5	20	8	N	Coeurl.Whisker	Bloody.Strings	S:Red.Feast								W:FH			I:D				a:Undead ~
+8	Rock.Wasp		4	11	5	6	8	11	N	Unicorn.Horn	Moonring.Blade	S:Petrify								W:AW	R:B		I:E ~
+8	Spirit			4	12	4	3	8	9	N	Coeurl.Whisker	Cursed.Ring		S:Dischord	C:Fire.Breath		r:M		W:H		R:D		I:FE			a:Undead ~
+8	Undergrounder	10	4	1	3	20	6	N	Baccus'.Wine	Silver.Brush	S:Tremor						r:G		W:IE	R:AF ~
+8	Water.Elemental	10	5	1	6	18	8	N	Baccus'.Wine	Polymorph.Rod	S:Tsunami								W:B				I:W ~
+
+9	Air.Elemental	4	14	6	6	9	9	N	Cabin			Kazekiri		S:Aero.3								W:A				I:E ~
+9	Ankylosaurus	14	4	2	3	27	11	N	Cabin			Protect.Ring	S:Dischord						r:G		W:I		R:F 									P:Ankylosauroi ~
+9	Arachne			14	19	2	4	12	8	F	Fuma.Shuriken	Scorpion.Tail	S:Quake C:Quake D:Quake					W:IW	R:D ~
+9	Hermit.Crab		8	6	3	5	9	13	N	Unicorn.Horn	Stoneshooter	S:Stop									W:B		R:F		I:W		+:Petrify ~
+9	Hydra			9	6	4	4	18	9	N	Cabin			Dragon.Shield	S:Fire.Breath C:Ice.Breath D:Bolt.Breath		r:D	W:B	R:F	I:EW		B:Haste	 		P:Hydrae ~
+9	Lamia			9	9	4	4	10	13	F	Unicorn.Horn	Lilith.Rod		S:Cupid's.Arrow							W:H		R:D				+:Mute					P:Lamiae ~
+9	Magitek.Armor	13	5	3	5	10	13	N	Fuma.Shuriken	Maximilian		S:Flamethrower C:Tek.Barrier D:Tek.Missile		r:C	W:BW	R:DH		B:Regen ~
+9	Mummy			8	10	4	5	16	9	N	Coeurl.Whisker	Zephyr.Cape		S:Mind.Blast							W:FH			I:D		+:Sleep	a:Undead 		P:Mummies ~
+9	Nightshade		5	12	2	5	22	13	N	Coeurl.Whisker	Crystal.Brush	S:Invite						r:C		W:FW			I:D ~
+9	Purobolos		13	13	2	2	12	9	N	Baccus'.Wine	Reaper's.Cards	S:Exploder	C:Life.2			r:C		W:W		R:I		I:FE 							P:Puroboloi ~
+9	Shadow.Dancer	5	14	6	5	9	13	M	Unicorn.Horn	Magician.Shoes	S:Nameless.Dance C:Last.Dance			W:H		R:D ~
+9	Water.Dragon	9	9	4	4	18	9	N	Baccus'.Wine	Pearl.Armlet	S:Tsunami						r:D		W:AB	R:F		I:EW ~
+9	Zombie.Dragon	12	9	3	4	20	9	N	Coeurl.Whisker	Bone.Mail		S:Bad.Breath					r:D		W:FHA			I:DE	+:Poison a:Undead ~
+
+10	Agama			7	15	3	4	20	7	N	X.Potion		Desert.Boots	S:Fire.Breath C:Fire.Breath D:Fire.Breath		W:I		I:F ~
+10	Aspis			10	10	4	5	20	10	N	Light.Curtain	Comet.Tail										r:D		W:IE	R:A				+:Stun	a:Undead		P:Aspides ~
+10	Cockatrice		5	15	6	7	10	9	N	Scape.Doll		Angel.Wings		S:Aero.3								W:A				I:E		+:Petrify ~
+10	Dark.Elemental	8	12	3	4	24	13	N	Dry.Ether		Diabolique		S:Evil.Mist	C:Dark.Holy					W:H				I:D ~
+10	Dinozombie		13	7	3	6	20	0	N	Light.Curtain	Demon.Mail										r:G		W:FH			I:D		+:Undead a:Undead ~
+10	Frost.Dragon	14	12	3	4	20	13	N	Dry.Ether		Dragon.Plate	S:Ice.Breath					r:D		W:FA			I:I 	+:Slow ~
+10	Moogle.Eater	15	6	2	3	30	7	N	Scape.Doll		Starlight.Phone	S:Bad.Breath							W:B		R:F		I:EW ~
+10	Morbol			13	9	2	6	24	11	N	X.Potion		Wonder.Wand		S:Bad.Breath							W:IB ~
+10	Ooze			12	8	4	5	20	0	N	X.Potion		108.Gems												W:E		R:WH	I:A		+:Stun	a:Protect ~
+10	Red.Dragon		10	10	4	5	20	13	N	Dry.Ether		Kikuichimoji	S:Fire.Breath					r:D		W:AI			I:EF ~
+10	Reflect.Knight	15	8	3	6	25	10	M	Light.Curtain	Excalibur		S:Aero.3								W:D								a:Reflect ~
+10	Rock.Statue		12	12	4	4	16	13	N	Scape.Doll		Vorpal.Sword	S:Mind.Blast C:Petrify			r:C		W:B		R:DH	I:E ~
+10	Vampire			8	12	5	6	16	13	M	Dry.Ether		Robe.of.Lords	S:Mind.Blast C:Draw.Life		r:M		W:FH			I:D				a:Undead ~
+
+11	Black.Dragon	13	8	3	6	26	11	N	X.Potion		Dragon.Claw		S:Bad.Breath					r:D		W:HA			I:DE	+:Count ~
+11	Black.Warlock	10	9	5	4	22	17	M	Dry.Ether		Gold.Hairpin	S:X-Zone C:Slow.2 D:Petrify		r:M		W:H		R:D ~
+11	Clockwrk.Dragon	15	15	5	3	16	11	N	Scape.Doll		Masamune		S:Megaflare	C:Exploder			r:DC	W:BWA	R:DH	I:E ~
+11	Dust.Mousse		12	9	4	5	22	11	N	X.Potion		Crystal.Mail	S:Big.Guard								W:W		R:FE	I:B		+:Sleep	a:Protect ~
+11	Enchanted.Fan	11	16	6	6	15	11	N	Light.Curtain	Death.Chakram	S:White.Wind C:Aero.3 D:Hellwind		r:C		W:B		R:F		I:EA ~
+11	Gloom.Widow		6	13	6	8	11	11	N	Dry.Ether		Death.Tarot		S:Green.Gear							W:IW	R:D				+:KO ~
+11	Holy.Elemental	13	13	3	4	24	11	N	Light.Curtain	Gladius			S:White.Wind	C:Holy.Breath			W:D		I:H ~
+11	Mindflayer		8	10	2	6	11	11	N	Dry.Ether		White.Dress		S:Mind.Blast					r:M		W:B				I:W		+:KO	a:Shell ~
+11	Reflect.Mage	8	13	4	4	18	13	M	Light.Curtain	Reflect.Ring	S:Fire.3	C:Ice.3	D:Bolt.3	r:M		W:D ~
+11	Sandcrawler		17	5	2	8	30	13	N	Scape.Doll		Apollo's.Harp	S:Critical.Strike C:Maelstrom			W:EIW	R:AB	I:F ~
+11	Silver.Dragon	10	12	5	6	18	9	N	X.Potion		Dragon.Whisker	S:Arm.Aim						r:D		W:A				I:E ~
+11	Skuldier		8	14	3	5	28	0	N	Scape.Doll		Grand.Helm												W:FH			I:D				a:Undead ~
+11	Storm.Dragon	11	11	4	5	22	11	N	X.Potion		Wyvern.Lance	S:Aero.3						r:D		W:A				I:E ~
+
+12	Ahriman			8	6	4	6	26	12	N	Yagyu.Darkness	Ribbon			S:Muramasa	C:Dark.Nightmare	r:M		W:AH			I:ED			B:Quick ~
+12	Behemoth		18	6	2	4	30	12	N	Elixir			Vishnu.Vest		S:Big.Guard																a:Shell ~
+12	Blue.Dragon		12	12	4	5	24	12	N	Elixir			Dragon.Gauntlet	S:Dragon.Breath					r:D		W:A				I:E				a:Shell ~
+12	Dark.Sage		9	14	3	5	20	17	M	Hourglass		Rainbow.Robe	S:White.Wind	C:Meltdown		r:M ~
+12	Flaremancer		10	13	4	4	18	17	M	Elixir			Sorcerer.Mantle	S:Megaflare C:Flare D:Slot.13	r:M		W:D ~
+12	Gold.Dragon		12	8	5	4	20	17	N	Elixir			Mutsunokami		S:Galaxy.Stop					r:D		W:A				I:E ~
+12	Mech.Giant		18	6	2	6	28	7	N	Hourglass		Glass.Mask		S:Megaflare						r:GC	W:BW	R:DH ~
+12	Nitemare		17	9	6	3	30	13	N	Yagyu.Darkness	Miracle.Shoes	S:Hellcry.Punch							W:HA	R:FI	I:DE	+:Blind ~
+12	Revenant		14	10	3	6	26	12	N	Yagyu.Darkness	Acacia.Hat												W:FH			I:D		+:Charm	a:Undead ~
+12	Rukh			15	7	6	6	20	17	N	Elixir			Abel's.Lance	S:Doomsday C:Gale						W:A				I:DE ~
+12	Sacred			18	8	2	4	34	13	N	Elixir			Lightbringer	S:Divine.Ruin C:Holy			r:G		W:DE	R:A		I:H		+:Calcify ~
+12	Time.Elemental	16	6	3	6	30	17	N	Hourglass		Sasuke's.Blade	S:Time.Cannon	C:Galaxy.Stop ~
+12	White.Dragon	13	15	4	4	20	12	N	Elixir			Mist.Whip		S:Holy.Breath					r:D		W:DA			I:HE ~
+
+13	Bad.Man			10	12	6	8	30	13	M	Yagyu.Darkness	Deathbringer	S:Shadowblade							W:BH	R:D										P:Bad.Men ~
+13	Crystal.Dragon	18	9	4	8	20	13	N	Megalixir		Reflect.Mail	S:White.Wind					r:D		W:DA			I:HE	+:Slow ~
+13	Ghost			10	15	6	6	32	13	N	Yagyu.Darkness	Hero's.Ring		S:Critical.Strike						W:FH			I:DE			a:Undead ~
+13	Golden.Flan		15	10	5	6	26	13	N	Hourglass		Adamant.Armor	S:Pep.Up														+:stop	a:Protect ~
+13	Green.Dragon	13	13	5	6	26	13	N	Megalixir		Mandragora		S:Megaflare						r:D		W:IA			I:FE	+:Poison ~
+13	Hades			12	14	4	7	20	19	M	Hourglass		Tome.of.Ending	S:Ulmagust	C:Rockseal			r:M		W:H				I:D		+:KO 					P:Hades ~
+13	Hoover			20	10	3	7	35	9	N	Megalixir		Final.Trump		S:Cyclops						r:G		W:EW	R:BA ~
+13	Magic.Dragon	12	16	5	5	26	13	N	Megalixir		Hero's.Shield	S:Big.Guard	C:Maelstrom			r:D		W:A				I:E ~
+13	Purple.Worm		20	13	2	4	35	13	N	Megalixir		Break.Blade		S:Bladeblitz					r:G		W:E				I:A ~
+13	Retainer		13	13	4	8	32	13	M	Megalixir		Chirijiraden	S:Shock	C:Chirijiraden					W:D ~
+13	Shadow.Dragon	6	6	5	9	30	20	N	Yagyu.Darkness	Assassin.Dagger	S:Galaxy.Stop	C:Air.Anchor	r:D		W:HA			I:DE	+:Fatal	B:Quick ~
+13	Tyrannosaurus	18	8	3	8	35	13	N	Hourglass		Lionheart		S:Critical.Strike	C:Roar		r:G		W:I		R:F				+:Halt 					P:Tyrannosauroi ~
+13	Ultima.Demon	16	10	3	3	13	20	N	Megalixir		Ultima.Weapon	S:Ultima C:Ulmagust	D:Dark.Holy r:M		W:H				I:D ~
+
+}
