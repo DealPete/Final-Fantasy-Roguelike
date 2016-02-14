@@ -34,6 +34,7 @@ int _getch(input_type state)
 		return KEY_ACCEPT;
 
 	case '8':
+	case 'k':
 		return _KEY_UP;
 
 	case KEY_PGUP:
@@ -43,12 +44,15 @@ int _getch(input_type state)
 		return KEY_PGUP;
 
 	case '4':
+	case 'h':
 		return _KEY_LEFT;
 
 	case '6':
+	case 'l':
 		return _KEY_RIGHT;
 
 	case '2':
+	case 'j':
 		return _KEY_DOWN;
 
 	case KEY_PGDN:

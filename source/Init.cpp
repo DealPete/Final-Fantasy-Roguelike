@@ -50,6 +50,7 @@ void start_game()
 			{
 				message(
 "Couldn't find any savefiles!  Press (B) to begin a new game.");
+				ch = KEY_ACCEPT;
 			}
 			break;
 

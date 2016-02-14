@@ -4,7 +4,7 @@
 <   Go up stairs.
 
 c   Cast a spell.                    e   Equip item.
-j   Allocate job points.             i   Use item.
+J   Allocate job points.             i   Use item.
 m   Browse the map.                  I   Use key item.
 s   View the status screen.          r   Switch rows.
 

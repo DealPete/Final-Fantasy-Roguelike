@@ -11,6 +11,19 @@
 #include "Input.h"
 #include _MEDIA_HEADER_
 
+extern std::string font_file;
+extern std::string font_orient;
+
+#ifdef __linux__
+#define RIGHT_ARROW ACS_RARROW  
+#define ACS_DBL_HLINE ACS_HLINE
+#define ACS_DBL_VLINE ACS_VLINE
+#define ACS_DBL_TTEE ACS_TTEE 
+#define ACS_DBL_BTEE ACS_BTEE 
+#define ACS_DBL_LTEE ACS_LTEE
+#define ACS_DBL_RTEE ACS_RTEE
+#define ACS_COMBINE_BTEE ACS_BTEE
+#else
 #define RIGHT_ARROW 175
 #define ACS_DBL_HLINE 205
 #define ACS_DBL_VLINE 186
@@ -19,12 +32,9 @@
 #define ACS_DBL_LTEE 204
 #define ACS_DBL_RTEE 185
 #define ACS_COMBINE_BTEE 207
-
-extern std::string font_file;
-extern std::string font_orient;
+#endif
 
 #ifdef _LIBTCOD_
-
 const TCODColor BLACK = TCODColor::black;
 const TCODColor BLUE = TCODColor::blue;
 const TCODColor GREEN = TCODColor::green;

@@ -78,7 +78,7 @@ int main(int argc, char* argv[])
 			draw_map(leftWindow, Party.L);
 			break;
 
-		case 'j':
+		case 'J':
 			learn_spells();
 			break;
 

@@ -26,10 +26,8 @@ std::string font_orient;
 #ifdef _CURSES_
 
 #ifdef _WIN32
-#ifndef UNICODE
 #include <Windows.h>
 #include <Wincon.h>
-#endif
 #endif
 
 #endif // _CURSES_
@@ -125,15 +123,13 @@ void init_display()
 		
 #ifdef _CURSES_
 #ifdef _WIN32
-#ifndef UNICODE
 	SetConsoleOutputCP(437);
-#endif
 #endif
 
 	setlocale(LC_ALL, "");
 
 	mainWindow = initscr();
-
+	
 	bigWindow = newwin(BIG_HEIGHT, BIG_WIDTH, BIG_UL_Y, BIG_UL_X);
 	helpWindow = newwin(HELP_HEIGHT, HELP_WIDTH, HELP_UL_Y, HELP_UL_X);
 	leftWindow = newwin(LEFT_HEIGHT, LEFT_WIDTH, LEFT_UL_Y, LEFT_UL_X);
@@ -264,13 +260,7 @@ int _wputchar(_wintype *window, int y, int x, _chtype ch,
 	if (reverse) ch |= A_REVERSE;
 	wmove(window, y, x);
 #ifdef __linux__
-#ifdef UNICODE
-    wattron(window, color);
-	waddstr(window, unicode_str[ch]);
-	wattroff(window, color);
-#else
    	return waddch(window, ch | color);
-#endif
 #else
 	return waddch(window, ch | color | A_ALTCHARSET);
 #endif
@@ -861,12 +851,11 @@ std::pair<int, int> CSelectFunctor::operator()()
 
 void show_enemy_pad(int y)
 {
-#ifdef __linux__
-	prefresh(enemyPad, y, 0, 0, 18, LEFT_HEIGHT - 1, RIGHT_UL_X - 2);
-#else
-//	copywin(enemyPad, mainWindow, y, 0, 0, 20, LEFT_HEIGHT - 1,
-//		RIGHT_UL_X - 2, false);
-#endif
+	//prefresh(enemyPad, y, 0, 0, 18, LEFT_HEIGHT - 1, RIGHT_UL_X - 2);
+	copywin(enemyPad, mainWindow, y, 0, 0, 20, LEFT_HEIGHT - 1,
+		RIGHT_UL_X - 2, false);
+
+	refresh();
 }
 
 void prepare_combat_output()
@@ -875,7 +864,7 @@ void prepare_combat_output()
 
 	battleQWindow = _derwin(leftWindow, LEFT_HEIGHT - 1, 17, 1, 1);
 	//enemyWindow = derwin(leftWindow, LEFT_HEIGHT - 1, 21, 0, 18);
-//	enemyPad = newpad(ENEMY_PAD_SIZE, 23);
+	enemyPad = newpad(ENEMY_PAD_SIZE, 23);
 
 #ifdef _CURSES_
 	wattron(leftWindow, BORDER_COLOR);

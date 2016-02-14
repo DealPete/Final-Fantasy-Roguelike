@@ -515,17 +515,26 @@ void CBattle::draw_monsters(CTarget& cursor, CTarget* Target)
 
 			bool reverse = (cursor.count(it) != 0);
 
+			if (reverse)
+				_wputcstr_reverse(enemyPad, i, 1, color, "%s", ref.name.c_str());
+			else
+				_wputcstr(enemyPad, i, 1, color, "%s", ref.name.c_str());
+
 		//	buf.push(" " + ref.name, color);
-			_wputcstr(enemyPad, i, 1, color, "%s", ref.name.c_str());
 
 			if (Target && Target->count(it))
 			{
+#ifdef __linux__
+				_chtype checkMark = 42;
+#else
+				_chtype checkMark = 251;
+#endif
 				_wputchar(enemyPad, i, 17, 251, WHITE, reverse);
 			}
-//			if (Target.Cards[it] > 0)
+			//if (Target.Cards[it] > 0)
 				//buf.push_back
-//				wmvcprintw(enemyPad, i, 17, WHITE | A_REVERSE, "%d",
-//					Target.Cards[it]);
+				//wmvcprintw(enemyPad, i, 17, WHITE | A_REVERSE, "%d",
+			//		Target.Cards[it]);
 
 			EnemyY[it] = i++;
 

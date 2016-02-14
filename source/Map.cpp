@@ -301,7 +301,12 @@ void draw_dungeon_map(_wintype* window, CLocation Loc, bool cursor)
 					break;
 
 				case FEA_DAMAGE_FLOOR:
+#ifdef __linux__
+					tile_ch = '=';
+#else
 					tile_ch = 240;
+#endif
+					
 					tile_color = RED;
 					break;
 
@@ -311,7 +316,11 @@ void draw_dungeon_map(_wintype* window, CLocation Loc, bool cursor)
 					break;
 
 				default:
+#ifdef __linux__
+					tile_ch = 46;
+#else
 					tile_ch = 250;
+#endif
 					tile_color = Loc.domain().color;
 				}
 
@@ -396,7 +405,11 @@ void draw_overworld_map(_wintype* window, CLocation Loc, bool cursor)
 			switch(ftr)
 			{
 			case FEA_TOWN:
+#ifdef __linux__
+				tile_ch = 37;
+#else
 				tile_ch = 254;
+#endif
 				tile_color = WHITE;
 				break;
 
@@ -411,7 +424,11 @@ void draw_overworld_map(_wintype* window, CLocation Loc, bool cursor)
 				switch(map.tile(i, j).terrain)
 				{
 				case TRN_GRASS:
+#ifdef __linux__
+					tile_ch = 46;
+#else
 					tile_ch = 250;
+#endif
 					tile_color = LIGHTGREEN;
 					break;
 
@@ -421,7 +438,11 @@ void draw_overworld_map(_wintype* window, CLocation Loc, bool cursor)
 					break;
 
 				case TRN_WATER:
+#ifdef __linux__
+					tile_ch = '~';
+#else
 					tile_ch = 247;
+#endif
 					tile_color = BLUE;
 					break;
 

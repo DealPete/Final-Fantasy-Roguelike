@@ -76,7 +76,7 @@ void CParty::create()
 			break;
 		}
 
-	} while ((ch != 'J' && ch != 'j') || Player.size() == 0);
+	} while ((ch != 'J' && ch != _KEY_DOWN) || Player.size() == 0);
 
 	Gil = 600;
 	playing_time = 0;

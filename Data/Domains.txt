@@ -1,12 +1,16 @@
 #	This file contains the data for the Domains.
 #	
-#	First line format is [Domain type:Entrance char:Wall char:color]
+#	First line format is [Domain type:Echar:Wchar:Echar128:Echar128:color]
+#
+#	Echar		ASCII code for dungeon entrance.	
+#	Wchar		ASCII code for dungeon wall tiles.
+#	Xchar128	ASCII codes for displays that don't support extended ASCII.
 #
 #	These must occur in the same order as in Misc.h
 
 DOMAINS 14 {
 
-Overworld:0:0:Black
+Overworld:0:0:0:0:Black
 
 #		s			c				d				h
 1		Goblin			Bomb			Eagle			Wolf
@@ -23,7 +27,7 @@ Overworld:0:0:Black
 12		Flaremancer		Dark.Sage		Behemoth		Rukh
 13		Green.Dragon	Magic.Dragon	Crystal.Dragon	Tyrannosaurus
 
-an.underwater.ruin:247:247:Lightblue
+an.underwater.ruin:247:247:126:126:Lightblue
 
 #	s				c				d				h
 1	Pirate			Eagle			Skeleton		Yellow.Chocobo
@@ -40,7 +44,7 @@ an.underwater.ruin:247:247:Lightblue
 12	Gold.Dragon		Ahriman			White.Dragon	Blue.Dragon
 13	Ghost			Shadow.Dragon	Magic.Dragon	Green.Dragon
 
-a.mountain.path:126:94:Red
+a.mountain.path:126:94:126:94:Red
 
 #	s				c			d				h
 1	Eagle			Bomb		Crazy.Horse		Skeleton
@@ -57,7 +61,7 @@ a.mountain.path:126:94:Red
 12	Rukh			Behemoth	Sacred			Revenant
 13	Green.Dragon	Retainer	Tyrannosaurus	Magic.Dragon
 
-a.cavern:239:177:Lightgray
+a.cavern:239:177:94:35:Lightgray
 
 #	s				c			d				h
 1	Goblin 			Jelly		Asp				Spider
@@ -74,7 +78,7 @@ a.cavern:239:177:Lightgray
 12	Revenant		Gold.Dragon	Dark.Sage		Behemoth
 13	Golden.Flan		Hades		Shadow.Dragon	Ghost
 
-an.abandoned.factory:254:219:Darkgray
+an.abandoned.factory:254:219:36:35:Darkgray
 
 #	s				c				d				h
 1	Bomb			Pirate			Jelly			Spider
@@ -91,7 +95,7 @@ an.abandoned.factory:254:219:Darkgray
 12	Mech.Giant		Time.Elemental	Flaremancer		Dark.Sage
 13	Golden.Flan		Bad.Man			Retainer		Ghost
 
-a.ghost.town:254:178:Yellow
+a.ghost.town:254:178:37:35:Yellow
 
 #	s				c				d			h
 1	Jelly			Skeleton		Spider		Pirate
@@ -108,7 +112,7 @@ a.ghost.town:254:178:Yellow
 12	Dark.Sage		Flaremancer		Revenant	Time.Elemental
 13	Retainer		Ultima.Demon	Golden.Flan	Ghost
 
-a.temple:241:178:Magenta
+a.temple:241:178:65:35:Magenta
 
 #	s				c				d				h
 1	Spider			Skeleton		Wolf			Goblin
@@ -125,7 +129,7 @@ a.temple:241:178:Magenta
 12	Ahriman			Nitemare		Sacred			White.Dragon
 13	Bad.Man			Crystal.Dragon	Ultima.Demon	Hades
 
-a.swamp:247:247:Green
+a.swamp:247:247:126:126:Green
 
 #	s				c				d				h
 1	Jelly			Asp				Skeleton		Spider
@@ -142,7 +146,7 @@ a.swamp:247:247:Green
 12	Revenant		Ahriman			Gold.Dragon		Nitemare
 13	Tyrannosaurus	Ghost			Purple.Worm		Green.Dragon
 
-an.ice.castle:247:247:White
+an.ice.castle:247:247:35:35:White
 
 #	s				c				d			h
 1	Eagle			Wolf			Jelly		Crazy.Horse
@@ -159,7 +163,7 @@ an.ice.castle:247:247:White
 12	Nitemare		Blue.Dragon		Ahriman		Dark.Sage
 13	Shadow.Dragon	Ultima.Demon	Ghost		Crystal.Dragon
 	
-a.volcano:94:94:Lightred
+a.volcano:94:94:94:94:Lightred
 
 #	s				c				d				h
 1	Bomb			Goblin			Eagle			Peeper
@@ -176,7 +180,7 @@ a.volcano:94:94:Lightred
 12	Flaremancer		Ahriman			Behemoth		Sacred
 13	Tyrannosaurus	Magic.Dragon	Green.Dragon	Purple.Worm
 
-a.forest:237:237:Lightgreen
+a.forest:237:237:25:25:Lightgreen
 
 #	s			c				d				h
 1	Wolf		Creep			Crazy.Horse		Asp
@@ -193,7 +197,7 @@ a.forest:237:237:Lightgreen
 12	Rukh		Nitemare		Ahriman			Behemoth
 13	Purple.Worm	Retainer		Tyrannosaurus	Magic.Dragon
 
-a.pyramid:94:176:Lightyellow
+a.pyramid:94:176:94:35:Lightyellow
 
 #	s			c				d				h
 1	Peeper		Eagle			Crazy.Horse		Asp
@@ -210,7 +214,7 @@ a.pyramid:94:176:Lightyellow
 12	Ahriman		White.Dragon	Time.Elemental	Sacred
 13	Hoover		Purple.Worm		Tyrannosaurus	Retainer
 
-a.tower:186:178:Lightgray
+a.tower:186:178:124:35:Lightgray
 
 #	s				c				d			h
 1	Bomb			Goblin			Jelly		Wolf
@@ -227,7 +231,7 @@ a.tower:186:178:Lightgray
 12	Flaremancer		Time.Elemental	Sacred		Mech.Giant
 13	Purple.Worm		Green.Dragon	Retainer	Shadow.Dragon
 
-a.crystal.palace:35:35:Blue
+a.crystal.palace:35:35:35:35:Blue
 
 #	s				c				d				h
 1	Eagle			Bomb			Goblin			Jelly
