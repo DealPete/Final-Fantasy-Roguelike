@@ -8,8 +8,5 @@ ffcg : $(OBJECTS)
 #	$(CC) $(CXXFLAGS) $(OBJECTS) -ltcodxx -o ../ffcg
 	$(CC) $(CXXFLAGS) $(OBJECTS) -lncursesw -o ../ffcg
 
-%.o : %.c %.h
-	$(CC) $(CFLAGS) -c $<
-
 clean:
 	rm -f *.o

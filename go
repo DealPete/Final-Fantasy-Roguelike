@@ -1,5 +1,5 @@
 cd source
-make -f makefile
+make
 cd ..
 ./ffcg
 
