@@ -202,7 +202,7 @@ public:
 	std::set<CMapTile*> unexplored_tile;
 //	std::set<CMapTile*> unexplored_water_tile;
 
-	CMap(domain_type domain);
+	CMap(domain_type domain = DOM_OVERWORLD);
 	CMap(std::ifstream& savefile);
 
 	CPortal& entrance()
@@ -293,7 +293,7 @@ public:
 
 	std::deque<CMap> Map;
 
-	CDungeon(domain_type d, feature_type ftype);
+	CDungeon(domain_type d = DOM_OVERWORLD, feature_type ftype = FEA_NONE);
 	CDungeon(std::ifstream& savefile);
 
 	void out(std::ofstream& savefile);

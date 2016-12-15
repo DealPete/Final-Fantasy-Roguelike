@@ -6,7 +6,7 @@ all : ffcg
 
 ffcg : $(OBJECTS)
 #	$(CC) $(CXXFLAGS) $(OBJECTS) -ltcodxx -o ../ffcg
-	$(CC) $(CXXFLAGS) $(OBJECTS) -lncursesw -o ../ffcg
+	$(CC) $(CXXFLAGS) $(OBJECTS) -lncurses -o ../ffcg
 
 clean:
 	rm -f *.o

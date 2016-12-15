@@ -197,7 +197,7 @@ CPortal::CPortal(feature_type ftype)
 }
 
 // creates a new empty map.
-CMap::CMap(domain_type domain = DOM_OVERWORLD)
+CMap::CMap(domain_type domain)
 {
 	int y = MAP_SIZE / 2, x = MAP_SIZE / 2;
 
@@ -643,8 +643,7 @@ void CMap::grow_east()
 			yx[i].push_back(new CMapTile());
 }
 
-CDungeon::CDungeon(domain_type d = DOM_OVERWORLD,
-				   feature_type ftype = FEA_NONE)
+CDungeon::CDungeon(domain_type d, feature_type ftype)
 {
 	is_tunnel = (ftype == FEA_TUNNEL);
 	domain = d;
