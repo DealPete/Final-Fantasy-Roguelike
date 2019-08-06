@@ -112,7 +112,7 @@ a.ghost.town:254:178:37:35:Yellow
 12	Dark.Sage		Flaremancer		Revenant	Time.Elemental
 13	Retainer		Ultima.Demon	Golden.Flan	Ghost
 
-a.temple:241:178:65:35:Magenta
+a.temple:241:178:65:35:Blue
 
 #	s				c				d				h
 1	Spider			Skeleton		Wolf			Goblin
@@ -180,7 +180,7 @@ a.volcano:94:94:94:94:Lightred
 12	Flaremancer		Ahriman			Behemoth		Sacred
 13	Tyrannosaurus	Magic.Dragon	Green.Dragon	Purple.Worm
 
-a.forest:237:237:25:25:Lightgreen
+a.forest:237:237:42:42:Lightgreen
 
 #	s			c				d				h
 1	Wolf		Creep			Crazy.Horse		Asp
@@ -231,7 +231,7 @@ a.tower:186:178:124:35:Lightgray
 12	Flaremancer		Time.Elemental	Sacred		Mech.Giant
 13	Purple.Worm		Green.Dragon	Retainer	Shadow.Dragon
 
-a.crystal.palace:35:35:35:35:Blue
+a.crystal.palace:35:35:35:35:White
 
 #	s				c				d				h
 1	Eagle			Bomb			Goblin			Jelly

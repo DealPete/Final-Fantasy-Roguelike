@@ -56,10 +56,12 @@ void init_color()
 {
 #ifdef _CURSES_
 	start_color();
+	init_color(COLOR_MAGENTA, 300, 300, 300);
 	init_pair(1, COLOR_BLUE, COLOR_BLACK);
 	init_pair(2, COLOR_GREEN, COLOR_BLACK);
 	init_pair(3, COLOR_CYAN, COLOR_BLACK);
 	init_pair(4, COLOR_RED, COLOR_BLACK);
+	init_pair(5, COLOR_MAGENTA, COLOR_BLACK);
 	init_pair(6, COLOR_YELLOW, COLOR_BLACK);
 	init_pair(7, COLOR_WHITE, COLOR_BLACK);
 	init_pair(8, COLOR_BLACK, COLOR_BLACK);
@@ -70,7 +72,6 @@ void init_color()
 	colormap["Green"] = GREEN;
 	colormap["Cyan"] = CYAN;
 	colormap["Red"] = RED;
-	colormap["Magenta"] = MAGENTA;
 	colormap["Yellow"] = YELLOW;
 	colormap["Lightgray"] = LIGHTGRAY;
 	colormap["Darkgray"] = DARKGRAY;
@@ -78,7 +79,6 @@ void init_color()
 	colormap["Lightgreen"] = LIGHTGREEN;
 	colormap["Lightcyan"] = LIGHTCYAN;
 	colormap["Lightred"] = LIGHTRED;
-	colormap["Lightmagenta"] = LIGHTMAGENTA;
 	colormap["Lightyellow"] = LIGHTYELLOW;
 	colormap["White"] = WHITE;
 }
@@ -259,7 +259,7 @@ int _wputchar(_wintype *window, int y, int x, _chtype ch,
 #ifdef _CURSES_
 	if (reverse) ch |= A_REVERSE;
 	wmove(window, y, x);
-#ifdef __linux__
+#ifndef _WIN32
    	return waddch(window, ch | color);
 #else
 	return waddch(window, ch | color | A_ALTCHARSET);
@@ -852,10 +852,13 @@ std::pair<int, int> CSelectFunctor::operator()()
 void show_enemy_pad(int y)
 {
 	//prefresh(enemyPad, y, 0, 0, 18, LEFT_HEIGHT - 1, RIGHT_UL_X - 2);
+
+#ifdef _CURSES_
 	copywin(enemyPad, mainWindow, y, 0, 0, 20, LEFT_HEIGHT - 1,
 		RIGHT_UL_X - 2, false);
 
 	refresh();
+#endif
 }
 
 void prepare_combat_output()
@@ -864,9 +867,9 @@ void prepare_combat_output()
 
 	battleQWindow = _derwin(leftWindow, LEFT_HEIGHT - 1, 17, 1, 1);
 	//enemyWindow = derwin(leftWindow, LEFT_HEIGHT - 1, 21, 0, 18);
-	enemyPad = newpad(ENEMY_PAD_SIZE, 23);
 
 #ifdef _CURSES_
+	enemyPad = newpad(ENEMY_PAD_SIZE, 23);
 	wattron(leftWindow, BORDER_COLOR);
 	mvwvline(leftWindow, 0, 19, ACS_VLINE, LEFT_HEIGHT);
 	wattroff(leftWindow, BORDER_COLOR);

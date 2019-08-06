@@ -14,16 +14,7 @@
 extern std::string font_file;
 extern std::string font_orient;
 
-#ifdef __linux__
-#define RIGHT_ARROW ACS_RARROW  
-#define ACS_DBL_HLINE ACS_HLINE
-#define ACS_DBL_VLINE ACS_VLINE
-#define ACS_DBL_TTEE ACS_TTEE 
-#define ACS_DBL_BTEE ACS_BTEE 
-#define ACS_DBL_LTEE ACS_LTEE
-#define ACS_DBL_RTEE ACS_RTEE
-#define ACS_COMBINE_BTEE ACS_BTEE
-#else
+#ifdef _WIN32
 #define RIGHT_ARROW 175
 #define ACS_DBL_HLINE 205
 #define ACS_DBL_VLINE 186
@@ -32,6 +23,15 @@ extern std::string font_orient;
 #define ACS_DBL_LTEE 204
 #define ACS_DBL_RTEE 185
 #define ACS_COMBINE_BTEE 207
+#else
+#define RIGHT_ARROW ACS_RARROW
+#define ACS_DBL_HLINE ACS_HLINE
+#define ACS_DBL_VLINE ACS_VLINE
+#define ACS_DBL_TTEE ACS_TTEE
+#define ACS_DBL_BTEE ACS_BTEE
+#define ACS_DBL_LTEE ACS_LTEE
+#define ACS_DBL_RTEE ACS_RTEE
+#define ACS_COMBINE_BTEE ACS_BTEE
 #endif
 
 #ifdef _LIBTCOD_
@@ -40,7 +40,6 @@ const TCODColor BLUE = TCODColor::blue;
 const TCODColor GREEN = TCODColor::green;
 const TCODColor CYAN = TCODColor::cyan;
 const TCODColor RED = TCODColor::red;
-const TCODColor MAGENTA = TCODColor::magenta;
 const TCODColor YELLOW = TCODColor::yellow;
 const TCODColor LIGHTGRAY = TCODColor::lightGrey;
 const TCODColor DARKGRAY = TCODColor::darkGrey;
@@ -48,7 +47,6 @@ const TCODColor LIGHTBLUE = TCODColor::lightBlue;
 const TCODColor LIGHTGREEN = TCODColor::lightGreen;
 const TCODColor LIGHTCYAN = TCODColor::lightCyan;
 const TCODColor LIGHTRED = TCODColor::lightRed;
-const TCODColor LIGHTMAGENTA = TCODColor::lightMagenta;
 const TCODColor LIGHTYELLOW = TCODColor::lightYellow;
 const TCODColor WHITE = TCODColor::white;
 
@@ -64,7 +62,7 @@ const TCODColor WHITE = TCODColor::white;
 
 typedef TCODConsole _wintype;
 typedef TCODColor _colortype;
-typedef int _chtype;
+typedef chtype _chtype;
 
 extern std::map<_wintype*, int> winXmap;
 extern std::map<_wintype*, int> winYmap;
@@ -77,23 +75,6 @@ extern std::map<_wintype*, int> winYmap;
 //#undef erase
 //#undef move
 
-const chtype BLACK = COLOR_PAIR(8);
-const chtype BLUE = COLOR_PAIR(1);
-const chtype GREEN = COLOR_PAIR(2);
-const chtype CYAN = COLOR_PAIR(3);
-const chtype RED = COLOR_PAIR(4);
-const chtype MAGENTA = COLOR_PAIR(5);
-const chtype YELLOW = COLOR_PAIR(6);
-const chtype LIGHTGRAY = COLOR_PAIR(7);
-const chtype DARKGRAY = COLOR_PAIR(8) | A_BOLD;
-const chtype LIGHTBLUE = COLOR_PAIR(1) | A_BOLD;
-const chtype LIGHTGREEN = COLOR_PAIR(2) | A_BOLD;
-const chtype LIGHTCYAN = COLOR_PAIR(3) | A_BOLD;
-const chtype LIGHTRED = COLOR_PAIR(4) | A_BOLD;
-const chtype LIGHTMAGENTA = COLOR_PAIR(5) | A_BOLD;
-const chtype LIGHTYELLOW = COLOR_PAIR(6) | A_BOLD;
-const chtype WHITE = COLOR_PAIR(7) | A_BOLD;
-
 #define _clear() clear()
 // getmaxy and getmaxx are badly named.
 #define _getheight(WND) getmaxy(WND)
@@ -105,6 +86,21 @@ const chtype WHITE = COLOR_PAIR(7) | A_BOLD;
 typedef WINDOW _wintype;
 typedef chtype _colortype;
 typedef chtype _chtype;
+
+const _chtype BLACK = COLOR_PAIR(8);
+const _chtype BLUE = COLOR_PAIR(1);
+const _chtype GREEN = COLOR_PAIR(2);
+const _chtype CYAN = COLOR_PAIR(3);
+const _chtype RED = COLOR_PAIR(4);
+const _chtype DARKGRAY = COLOR_PAIR(5);
+const _chtype YELLOW = COLOR_PAIR(6);
+const _chtype LIGHTGRAY = COLOR_PAIR(7);
+const _chtype LIGHTBLUE = COLOR_PAIR(1) | A_BOLD;
+const _chtype LIGHTGREEN = COLOR_PAIR(2) | A_BOLD;
+const _chtype LIGHTCYAN = COLOR_PAIR(3) | A_BOLD;
+const _chtype LIGHTRED = COLOR_PAIR(4) | A_BOLD;
+const _chtype LIGHTYELLOW = COLOR_PAIR(6) | A_BOLD;
+const _chtype WHITE = COLOR_PAIR(7) | A_BOLD;
 
 #endif // _CURSES_
 

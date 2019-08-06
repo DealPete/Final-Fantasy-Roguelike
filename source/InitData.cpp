@@ -347,14 +347,14 @@ void load_domains(buffer& category)
 		Domain.push_back(CDomain());
 		Domain[j].serial = Domain.size() - 1;
 		Domain[j].name = ns(category);
-#ifndef __linux__
+#ifndef _WIN32
+		ni(category); ni(category);
 		Domain[j].entrance = ni(category);
 		Domain[j].wall = ni(category);
-		ni(category); ni(category);
 #else
-		ni(category); ni(category);
 		Domain[j].entrance = ni(category);
 		Domain[j].wall = ni(category);
+		ni(category); ni(category);
 #endif
 		Domain[j].color = colormap[ns(category)];
 		for(int k = 0;k < 13;k++)

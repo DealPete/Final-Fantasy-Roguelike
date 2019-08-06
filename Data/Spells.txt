@@ -1,14 +1,14 @@
 # If a spell has a "chance" of doing something, followed by other effects not
 # dependent on that chance, end the list of dependent effects with an
-# ampersand (&).  e.g. "Big Guard", below.
+# ampersand (&).  e.g. "Mind Blast", below.
 # Similarly, an "attack" or "if" clause must be terminated by an ampersand if
 # followed by other effects.
 #
 # Note: "chance" excludes KO party members for ANY spells (so, e.g., creating an
 # ANY spell with a chance to revive someone wouldn't work).
 #
-#	"atk" indicates whether the enemy should cast the spell on the players (Y),
-#	another enemy (N), or a KO'd enemy (K).
+#	"AI" indicates whether the monsters should cast the spell on the players (ENEMY),
+#	another monster (ALLY), or a KO'd monster (KOALLY).
 
 
 SPELLS {

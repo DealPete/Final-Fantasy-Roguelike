@@ -524,7 +524,7 @@ void CBattle::draw_monsters(CTarget& cursor, CTarget* Target)
 
 			if (Target && Target->count(it))
 			{
-#ifdef __linux__
+#ifndef _WIN32
 				_chtype checkMark = 42;
 #else
 				_chtype checkMark = 251;
