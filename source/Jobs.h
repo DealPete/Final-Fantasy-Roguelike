@@ -6,7 +6,7 @@
 
 #include "Input.h"
 #include "Misc.h"
-#include "Output.h"
+#include "Window.h"
 
 class CJob
 {
@@ -22,14 +22,14 @@ public:
 	void describe(_wintype* window);
 };
 
-class CJobFunctor : public CSelectFunctor
+class CJobWindow : public CSelectWindow
 {
 public:
 	void describe(_wintype*);
 	void empty_menu(_wintype*);
 
-	CJobFunctor(_wintype* w, bool p = true, int m = 18)
-		: CSelectFunctor(w, p, true, m, INPUT_START)
+	CJobWindow(_wintype* w, bool p = true, int m = 18)
+		: CSelectWindow(w, p, true, m, INPUT_START)
 	{}
 };
 

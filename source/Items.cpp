@@ -16,6 +16,7 @@
 #include "Spells.h"
 #include "Target.h"
 #include "Weapons.h"
+#include "Window.h"
 
 CItem* CItem::get_item(std::string name)
 {
@@ -35,26 +36,26 @@ void CItem::describe(_wintype* window, int y)
 	}
 }
 
-CShopFunctor::CShopFunctor(_wintype* w, item_type i) : CItemFunctor(w, i,
+CShopWindow::CShopWindow(_wintype* w, item_type i) : CItemWindow(w, i,
 						ITEM_MODE_BUY, true, true)
 {
 	for(CItemSet& it : ItemSet)
-		if (it.name != "None" && it.name != "Quest")
+		switch(it.type)
 		{
-			switch(it.type)
-			{
-			case ITEM_WEAPON:
-				if (i == it.type)
-					SuperMenu.push_back(&it);
-				break;
+		case ITEM_WEAPON:
+			if (i == it.type)
+				SuperMenu.push_back(&it);
+			break;
 
-			case ITEM_BODY:
-			case ITEM_ACCESSORY:
-			case ITEM_HEAD:
-				if (i == ITEM_BODY)
-					SuperMenu.push_back(&it);
-				break;
-			}
+		case ITEM_BODY:
+		case ITEM_ACCESSORY:
+		case ITEM_HEAD:
+			if (i == ITEM_BODY)
+				SuperMenu.push_back(&it);
+			break;
+
+		default:
+			break;
 		}
 
 	Menu.push_back(buffer());
@@ -75,14 +76,14 @@ CShopFunctor::CShopFunctor(_wintype* w, item_type i) : CItemFunctor(w, i,
 	}
 }
 
-CEquipFunctor::CEquipFunctor(_wintype* w, item_type i, item_mode_type m,
-							 bool p) : CItemFunctor(w, i, m, p),
+CEquipWindow::CEquipWindow(_wintype* w, item_type i, item_mode_type m,
+							 bool p) : CItemWindow(w, i, m, p),
 							 equipped_something(false)
 {}
 
-CItemFunctor::CItemFunctor(_wintype* w, item_type i, item_mode_type m,
+CItemWindow::CItemWindow(_wintype* w, item_type i, item_mode_type m,
 						   bool p, bool shared_menu) : type(i), mode(m),
-						   CSelectFunctor(w, p, true)
+						   CSelectWindow(w, p, true)
 {
 	if (!shared_menu)
 		for(CPlayer& it : Party.Player)
@@ -92,7 +93,7 @@ CItemFunctor::CItemFunctor(_wintype* w, item_type i, item_mode_type m,
 		}
 }
 
-void CEquipFunctor::describe(_wintype* window)
+void CEquipWindow::describe(_wintype* window)
 {
 	if (party_view)
 		player = &Party.Player[menu];
@@ -151,7 +152,7 @@ enough!");
 	}
 }
 
-void CEquipFunctor::supermenu()
+void CEquipWindow::supermenu()
 {
 	describe(rWindow);
 	show_window(window);	
@@ -242,7 +243,7 @@ void CEquipFunctor::supermenu()
 	}
 }
 
-void CShopFunctor::supermenu()
+void CShopWindow::supermenu()
 {
 	int Ss = (int)SuperMenu.size();
 	int ch;
@@ -337,7 +338,7 @@ void CShopFunctor::supermenu()
 	}
 }
 
-bool CItemFunctor::build_menus(bool include_equipped)
+bool CItemWindow::build_menus(bool include_equipped)
 {
 	if (mode == ITEM_MODE_BUY)
 		return false;
@@ -408,7 +409,7 @@ bool CItemFunctor::build_menus(bool include_equipped)
 	return menus_nonempty;
 }
 
-bool CShopFunctor::build_menus()
+bool CShopWindow::build_menus()
 {
 	Item[0].clear();
 	Menu[0].clear();
@@ -434,7 +435,7 @@ bool CShopFunctor::build_menus()
 		return true;
 }
 
-void CItemFunctor::describe(_wintype* window)
+void CItemWindow::describe(_wintype* window)
 {
 	if (_getwidth(window) < 39)
 	{
@@ -468,7 +469,7 @@ enough!");
 	}
 }
 
-void CItemFunctor::empty_menu(_wintype* window)
+void CItemWindow::empty_menu(_wintype* window)
 {
 	if (_getwidth(window) < 39)
 	{
@@ -509,6 +510,10 @@ enough!");
 	case ITEM_ACCESSORY:
 		item_string = "accessories";
 		break;
+
+	default:
+		item_string = "ERRORS";
+		break;
 	}
 
 	if (mode == ITEM_MODE_BUY)
@@ -519,7 +524,7 @@ enough!");
 			Party.Player[menu].name.c_str(), item_string.c_str());
 }
 
-void CItemFunctor::select()
+void CItemWindow::select()
 {
 	if (party_view)
 		player = &Party.Player[menu];
@@ -647,7 +652,7 @@ void CItemFunctor::select()
 			int always = player->always;
 			if (player->equip(Item[menu][pos], (item_type)(suppos + 1)))
 			{
-				((CEquipFunctor*)this)->equipped_something = true;
+				((CEquipWindow*)this)->equipped_something = true;
 				menu_move = CLIMB;
 			}
 			build_menus();
@@ -714,7 +719,7 @@ bool CPlayer::use(CItem* item, _wintype* window)
 				message("The party sleeps soundly in the %s.",
 					item->name.c_str());
 				for(CPlayer& it : Party.Player)
-					if (!it.defeated())
+					if (!it.defeated()) {
 						if (item->name == "Tent")
 						{
 							it.gainHP(150);
@@ -725,6 +730,7 @@ bool CPlayer::use(CItem* item, _wintype* window)
 							it.heal_to_full();
 							it.MP = it.MaxMP;
 						}
+					}
 				return true;
 			}
 		}
@@ -806,8 +812,12 @@ bool CPlayer::use(CItem* item, _wintype* window)
 		if (tgt(*this, TRGT_SINGLE))
 			target = (CPlayer*)*tgt.begin();
 	}
-	else if (select = menu_select(4, 1, buf))
-		target = &Party.Player[--select];
+	else {
+		select = menu_select(4, 1, buf);
+
+		if (select)
+			target = &Party.Player[--select];
+	}
 
 	if (target == NULL)
 		return false;
@@ -963,7 +973,7 @@ bool CPlayer::use(CItem* item, _wintype* window)
 
 void item_menu(item_mode_type mode)
 {
-	CItemFunctor functor(upperWindow, ITEM_ITEM, mode);
+	CItemWindow functor(upperWindow, ITEM_ITEM, mode);
 	functor.build_menus();
 	(void)functor();
 }

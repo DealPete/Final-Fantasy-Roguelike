@@ -1,9 +1,11 @@
 
+died of boredom - make enemies attack less often.
 toggle no longer exists
 enchant + throw?  (i.e. throwing complex items)
 slab
 
 when buying stuff in town, showing boni as if first player.
+some bug with the boni with martial artist in party?
 when choosing throw weapon, it doesn't report the stat
 	improvements correctly
 weight doesn't reduce agi if item comes out of inventory.

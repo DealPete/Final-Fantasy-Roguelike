@@ -7,6 +7,7 @@
 
 #include "Misc.h"
 #include "Monsters.h"
+#include "Player.h"
 
 class CActor;
 class CDeal;

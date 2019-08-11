@@ -1,9 +1,9 @@
 #include <deque>
 
 #include "Armor.h"
-#include "Output.h"
 #include "Party.h"
 #include "Spells.h"
+#include "Window.h"
 
 void CArmor::describe(_wintype* window, int y)
 {

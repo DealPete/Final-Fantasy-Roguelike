@@ -382,13 +382,14 @@ int CBattle::damage(CActor* source, CActor& target, int base_damage,
 	int HP_before = target.curHP();
 	CCard card1, card2;
 
-	if (!mult_includes_base)
+	if (!mult_includes_base) {
 		if (card1.suit == card2.suit)
 			mult += 4;
 		else if (card1.is_black() == card2.is_black())
 			mult += 3;
 		else
 			mult += 2;
+	}
 
 	for(unsigned int i = 1; i <= 8; i++)
 	{
@@ -427,7 +428,7 @@ int CBattle::damage(CActor* source, CActor& target, int base_damage,
 	}
 
 
-	if (drainMP)
+	if (drainMP) {
 		if (target == ST_UNDEAD)
 		{
 			msg += " " + source->name + " loses " + std::to_string(dv(dam, 2))
@@ -440,6 +441,7 @@ int CBattle::damage(CActor* source, CActor& target, int base_damage,
 				+ " MP.";
 			source->gainMP(dv(dam, 2));
 		}
+	}
 
 	if (drainHP && source->is_player())
 		{
@@ -726,7 +728,7 @@ bool CBattle::gain_status(CActor& target, unsigned long status)
 
 			return true;
 		}
-		else if (status & ST_KO)
+		else if (status & ST_KO) {
 			if (target == ST_UNDEAD)
 			{
 				add_message(target.name + " returns to Maximum HP.");
@@ -741,6 +743,7 @@ bool CBattle::gain_status(CActor& target, unsigned long status)
 				die(target);
 				return true;
 			}
+		}
 	}
 
 	if (status & ST_BLINK)
@@ -1373,7 +1376,7 @@ bool CBattle::use_ability(CAbility& ability, CActor& actor)
 	}
 	else
 	{
-		CSpellFunctor functor(upperWindow, false);
+		CSpellWindow functor(upperWindow, false);
 		functor.casting = true;
 		functor.combat = true;
 		functor.caster = (CPlayer*)&actor;

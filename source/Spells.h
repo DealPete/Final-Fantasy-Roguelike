@@ -41,14 +41,14 @@ public:
 
 class CPlayer;
 
-class CSpellFunctor : public CSelectFunctor
+class CSpellWindow : public CSelectWindow
 {
 public:
 	std::vector<std::vector<CSpell*> > SpellItem;
 	bool casting, combat;
 	CPlayer* caster;
 
-	CSpellFunctor(_wintype* w, bool p = true, int m = 18);
+	CSpellWindow(_wintype* w, bool p = true, int m = 18);
 
 	void describe(_wintype*);
 	void empty_menu(_wintype*);

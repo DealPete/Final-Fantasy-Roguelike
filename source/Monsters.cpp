@@ -205,14 +205,15 @@ bool CMonster::gain_stat(std::string stat, int bonus)
 	else
 		return false;
 
-	if (stat == "Agi")
+	if (stat == "Agi") {
 		if (bonus > 0)
 			init->add_cards(bonus);
 		else if (bonus < 0 && init->size() > 0)
 			init->cut_highest(-bonus);
+	}
 	
-	if (stat == "Vit")
-		if ((int)HPCards.size() > Vit)
+	if (stat == "Vit") {
+		if ((int)HPCards.size() > Vit) {
 			if (Vit > 0)
 				while ((int)HPCards.size() > Vit)
 					HPCards.pop_back();
@@ -229,6 +230,8 @@ bool CMonster::gain_stat(std::string stat, int bonus)
 				}
 				HPCards.push_back(lastcard);
 			}
+		}
+	}
 
 	return true;
 }

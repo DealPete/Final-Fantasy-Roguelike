@@ -7,7 +7,7 @@
 #include "Party.h"
 #include "Quests.h"
 
-void CQuestFunctor::describe(_wintype* window)
+void CQuestWindow::describe(_wintype* window)
 {
 	_werase(window);
 
@@ -33,14 +33,14 @@ void CQuestFunctor::describe(_wintype* window)
 		"You will transported to town upon completing this quest.");
 }
 
-void CQuestFunctor::empty_menu(_wintype* window)
+void CQuestWindow::empty_menu(_wintype* window)
 {
 	format_print(window, 1, 
 		"The land is at peace, for you have completed all the quests.");
 }
 
-CQuestFunctor::CQuestFunctor(_wintype* w, int m)
-		: CSelectFunctor(w, false, true, m, INPUT_NORMAL)
+CQuestWindow::CQuestWindow(_wintype* w, int m)
+		: CSelectWindow(w, false, true, m, INPUT_NORMAL)
 {
 	Menu.push_back(buffer());
 
@@ -69,7 +69,7 @@ CQuestFunctor::CQuestFunctor(_wintype* w, int m)
 	}
 }
 
-void CQuestItemFunctor::select()
+void CQuestItemWindow::select()
 {
 	if (Item[pos]->name == "Airship")
 		if (Party.flying)
@@ -133,7 +133,7 @@ void CQuestItemFunctor::select()
 					break;
 				}
 
-			if (exit != EXIT_ALL)
+			if (exit != EXIT_ALL) {
 				if (exit & Party.tile().exits)
 					message("There is already an exit in that direction.");
 				else
@@ -152,13 +152,15 @@ void CQuestItemFunctor::select()
 						Party.map().key_used = true;
 					}
 				}
+			}
+
 			unstack_window();
 		}
 	else
 		message("You fiddle with the " + Item[pos]->name + ".");
 }
 
-void CQuestItemFunctor::describe(_wintype* window)
+void CQuestItemWindow::describe(_wintype* window)
 {
 	if (_getwidth(window) < 39)
 	{
@@ -170,8 +172,8 @@ enough!");
 	Item[pos]->describe(window);
 }
 
-CQuestItemFunctor::CQuestItemFunctor(_wintype* w)
-		: CSelectFunctor(w, false, true)
+CQuestItemWindow::CQuestItemWindow(_wintype* w)
+		: CSelectWindow(w, false, true)
 {
 	Menu.push_back(buffer());
 
@@ -182,7 +184,7 @@ CQuestItemFunctor::CQuestItemFunctor(_wintype* w)
 	}
 }
 
-void CQuestItemFunctor::empty_menu(_wintype* window)
+void CQuestItemWindow::empty_menu(_wintype* window)
 {
 
 	format_print(window, 1,
@@ -191,7 +193,7 @@ void CQuestItemFunctor::empty_menu(_wintype* window)
 
 void quest_item_menu()
 {
-	(void)CQuestItemFunctor(upperWindow)();
+	(void)CQuestItemWindow(upperWindow)();
 }
 
 std::deque<CQuest> Quest;

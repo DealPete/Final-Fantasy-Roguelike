@@ -20,18 +20,18 @@ enum action_result_type
 	AR_ERROR
 };
 
-class CActionFunctor
+class CActionWindow
 {
 public:
 	CActor& actor;
 
-	CActionFunctor(CActor& a) : actor(a)
+	CActionWindow(CActor& a) : actor(a)
 	{}
 
-	CActionFunctor(CActor& a, buffer e) : actor(a), effect(e)
+	CActionWindow(CActor& a, buffer e) : actor(a), effect(e)
 	{}
 
-	virtual ~CActionFunctor() {}
+	virtual ~CActionWindow() {}
 
 protected:
 	CActor* target;
@@ -44,7 +44,7 @@ protected:
 	std::string next();
 };
 
-class CActionAttack : public CActionFunctor
+class CActionAttack : public CActionWindow
 {
 public:
 	CActionAttack(CActor& a, buffer e);
@@ -67,58 +67,58 @@ private:
 	CWeapon* attack_weapon;
 };
 
-class CActionDefend : public CActionFunctor
+class CActionDefend : public CActionWindow
 {
 public:
 	CActionDefend(CActor& a) :
-	  CActionFunctor(a) {}
+	  CActionWindow(a) {}
 
 	action_result_type operator()();
 };
 
-class CActionFlee : public CActionFunctor
+class CActionFlee : public CActionWindow
 {
 public:
 	CActionFlee(CActor& a) :
-	  CActionFunctor(a) {}
+	  CActionWindow(a) {}
 
 	action_result_type operator()();
 
 };
 
-class CActionChangeRow : public CActionFunctor
+class CActionChangeRow : public CActionWindow
 {
 public:
 	CActionChangeRow(CActor& a) :
-	  CActionFunctor(a) {}
+	  CActionWindow(a) {}
 
 	action_result_type operator()();
 };
 
-class CActionEquip : public CActionFunctor
+class CActionEquip : public CActionWindow
 {
 public:
 	CActionEquip(CActor& a) :
-	  CActionFunctor(a) {}
+	  CActionWindow(a) {}
 
 	action_result_type operator()();
 };
 
-class CActionItem : public CActionFunctor
+class CActionItem : public CActionWindow
 {
 public:
 
 	CActionItem(CActor& a) :
-	  CActionFunctor(a) {}
+	  CActionWindow(a) {}
 	
 	action_result_type operator()();
 };
 
-class CActionCastSpell : public CActionFunctor
+class CActionCastSpell : public CActionWindow
 {
 public:
 	CActionCastSpell(CActor& a, CSpell* s) :
-	  CActionFunctor(a), spell(s) {}
+	  CActionWindow(a), spell(s) {}
 
 	action_result_type operator()(CTarget& Target);
 
@@ -181,11 +181,11 @@ public:
 	action_result_type toggle();
 };
 
-class CActionCommand : public CActionFunctor
+class CActionCommand : public CActionWindow
 {
 public:
 	CActionCommand(CActor& a, CAbility* ab) :
-	  CActionFunctor(a), ability(ab) {}
+	  CActionWindow(a), ability(ab) {}
 
 	bool operator()(CTarget&);
 

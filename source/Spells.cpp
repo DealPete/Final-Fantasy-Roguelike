@@ -55,8 +55,8 @@ enough!");
 	return format_print(window, y, desc);
 }
 
-CSpellFunctor::CSpellFunctor(_wintype* w, bool p, int m)
-		: CSelectFunctor(w, p, true, m)
+CSpellWindow::CSpellWindow(_wintype* w, bool p, int m)
+		: CSelectWindow(w, p, true, m)
 	{
 		for(CPlayer& player : Party.Player)
 		{
@@ -65,7 +65,7 @@ CSpellFunctor::CSpellFunctor(_wintype* w, bool p, int m)
 		}
 	}
 
-void CSpellFunctor::describe(_wintype* window)
+void CSpellWindow::describe(_wintype* window)
 {
 	CSpell* spell = SpellItem[menu][pos];
 	int y = spell->describe(window, casting);
@@ -123,7 +123,7 @@ void CSpellFunctor::describe(_wintype* window)
 	}
 }
 
-void CSpellFunctor::empty_menu(_wintype* window)
+void CSpellWindow::empty_menu(_wintype* window)
 {
 	_setColor(window, INFO_COLOR);
 
@@ -135,7 +135,7 @@ void CSpellFunctor::empty_menu(_wintype* window)
 			Party.Player[menu].name.c_str());
 }
 
-void CSpellFunctor::select()
+void CSpellWindow::select()
 {
 	if (casting)
 		menu_move = CLIMB;
@@ -160,7 +160,7 @@ void CSpellFunctor::select()
 	}
 }
 
-void CSpellFunctor::build_learning_menus()
+void CSpellWindow::build_learning_menus()
 {
 	int i = 0;
 	for(CPlayer& player : Party.Player)
@@ -315,7 +315,7 @@ bool cast_spell(CPlayer& actor, CSpell* spell)
 
 void select_spell()
 {
-	CSpellFunctor functor(bigWindow);
+	CSpellWindow functor(bigWindow);
 	functor.casting = true;
 	functor.combat = false;
 
@@ -342,7 +342,7 @@ void select_spell()
 
 void learn_spells()
 {
-	CSpellFunctor functor(upperWindow);
+	CSpellWindow functor(upperWindow);
 	functor.casting = false;
 	functor.combat = false;
 	functor.build_learning_menus();

@@ -5,6 +5,7 @@
 #include "Message.h"
 #include "Input.h"
 #include "Output.h"
+#include "Window.h"
 
 static bool more_line = false;
 static int unseen_lines = 0;

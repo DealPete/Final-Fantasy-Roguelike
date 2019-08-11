@@ -55,12 +55,13 @@ To throw this, equip it and attack the enemy.");
 			"Cancels %s.",
 			comma_list(status_to_buffer(cancels)).c_str());
 
-	if (casts)
+	if (casts) {
 		if (Set->name == "Ammunition")
 			y = format_print(window, y, "Casts %s.", casts->name.c_str());
 		else
 			y = format_print(window, y, "May cast %s upon wounding the foe.",
 				casts->name.c_str());
+	}
 
 	if (element)
 	{

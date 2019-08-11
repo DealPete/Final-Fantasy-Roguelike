@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
 
 		case 'e':
 			{
-				CEquipFunctor functor(upperWindow, ITEM_WEAPON, 
+				CEquipWindow functor(upperWindow, ITEM_WEAPON, 
 					ITEM_MODE_EQUIP);
 				functor.build_menus();
 				(void)functor();

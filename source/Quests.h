@@ -21,23 +21,23 @@ public:
 	CItem* reward;
 };
 
-class CQuestFunctor : public CSelectFunctor
+class CQuestWindow : public CSelectWindow
 {
 public:
 
 	std::vector<CQuest*> Item;
-	CQuestFunctor(_wintype* w, int m = 30);
+	CQuestWindow(_wintype* w, int m = 30);
 
 	void describe(_wintype*);
 	void empty_menu(_wintype*);
 };
 
-class CQuestItemFunctor : public CSelectFunctor
+class CQuestItemWindow : public CSelectWindow
 {
 public:
 	std::vector<CItem*> Item;
 
-	CQuestItemFunctor(_wintype*);
+	CQuestItemWindow(_wintype*);
 	void describe(_wintype*);
 	void empty_menu(_wintype*);
 	void select();

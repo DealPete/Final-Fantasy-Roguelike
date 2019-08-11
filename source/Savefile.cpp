@@ -330,6 +330,9 @@ CPlayer::CPlayer(std::ifstream& savefile)
 		case ITEM_ACCESSORY:
 			Inventory.push_back(&Armor[serial]);
 			break;
+
+		default:
+			break;
 		}
 	}
 
@@ -399,6 +402,9 @@ void CParty::restore(std::ifstream& savefile)
 		case ITEM_HEAD:
 		case ITEM_ACCESSORY:
 			KeyItem.insert(&Armor[serial]);
+			break;
+
+		default:
 			break;
 		}
 	}
@@ -590,12 +596,12 @@ Time:");
 		"%.0f:%d", playing_time / 3600, (int)(playing_time / 60) % 60);
 }
 
-void CSaveHeaderFunctor::describe(_wintype* window)
+void CSaveHeaderWindow::describe(_wintype* window)
 {
 	SaveHeader[pos].describe(window);
 }
 
-void CSaveHeaderFunctor::empty_menu(_wintype* window)
+void CSaveHeaderWindow::empty_menu(_wintype* window)
 {
 	_werase(window);
 	_wputstring(window, 1, 1, ERROR_COLOR, "strange... no save files to \
@@ -676,7 +682,7 @@ bool save_game()
 bool restore_game()
 {
 	std::ifstream savefile;
-	CSaveHeaderFunctor functor(bigWindow, false);
+	CSaveHeaderWindow functor(bigWindow, false);
 
 	int i;
 

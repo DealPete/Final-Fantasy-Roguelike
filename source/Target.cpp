@@ -264,12 +264,13 @@ bool CTarget::operator()(CActor& actor, target_type type, bool automatic,
 		== (actor == ST_CHARM);
 	bool can_target_KO = actor.is_player() && !automatic;
 
-	if (actor == ST_CONFUSE)
+	if (actor == ST_CONFUSE) {
 		if (type == TRGT_GROUP)
 			enemy_is_player = (random(2) == 1);
 		else if (type == TRGT_ANY || type == TRGT_SINGLE
 			|| type == TRGT_OTHER)
 			type = TRGT_RANDOM;
+	}
 
 	if (automatic && type == TRGT_ANY)
 		type = TRGT_SINGLE;

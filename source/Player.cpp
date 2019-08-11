@@ -212,11 +212,12 @@ bool CPlayer::gain_stat(std::string stat, int bonus)
 
 	cal_stats();
 
-	if (stat == "Agi")
+	if (stat == "Agi") {
 		if (bonus > 0)
 			init->add_cards(bonus);
 		else if (bonus < 0)
 			init->cut_highest(-bonus);
+	}
 
 	return true;
 }
@@ -356,11 +357,12 @@ void CPlayer::put_on(CItem* item)
 
 void CPlayer::take_off(CItem* item)
 {
-	if (item->name != "None")
+	if (item->name != "None") {
 		if (item->Set->name == "Quest")
 			Party.EquippedKeyItem.erase(item);
 		else
 			Inventory.push_back(item);
+	}
 }
 
 bool CPlayer::equip(CItem* item, item_type slot)

@@ -22,13 +22,13 @@ public:
 	void describe(_wintype*);
 };
 
-class CSaveHeaderFunctor : public CSelectFunctor
+class CSaveHeaderWindow : public CSelectWindow
 {
 public:
 	std::vector<CSaveHeader> SaveHeader;
 
-	CSaveHeaderFunctor(_wintype* w, bool p = true, int m = 18)
-		: CSelectFunctor(w, p, true, m, INPUT_START)
+	CSaveHeaderWindow(_wintype* w, bool p = true, int m = 18)
+		: CSelectWindow(w, p, true, m, INPUT_START)
 	{}
 
 	void describe(_wintype*);

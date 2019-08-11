@@ -94,8 +94,8 @@ void CTown::enter()
         case 2:
 			{
 				message("You enter the Weaponry.");
-				CShopFunctor functor(upperWindow, ITEM_WEAPON);
-				//CItemFunctor functor(upperWindow, ITEM_WEAPON);
+				CShopWindow functor(upperWindow, ITEM_WEAPON);
+				//CItemWindow functor(upperWindow, ITEM_WEAPON);
 				//int i = 0;
 				//foreach(CPlayer& it, Party.Player)
 				//{				
@@ -115,8 +115,8 @@ void CTown::enter()
 		case 3:
 			{
 				message("You enter the Armory.");
-				CShopFunctor functor(upperWindow, ITEM_BODY);
-				//CItemFunctor functor(upperWindow, ITEM_BODY);
+				CShopWindow functor(upperWindow, ITEM_BODY);
+				//CItemWindow functor(upperWindow, ITEM_BODY);
 				//int i = 0;
 				//foreach(CPlayer& it, Party.Player)
 				//{
@@ -136,7 +136,7 @@ void CTown::enter()
 		case 4:
 			{
 				message("You enter the Apothecary.");
-				CItemFunctor functor(upperWindow, ITEM_ITEM);
+				CItemWindow functor(upperWindow, ITEM_ITEM);
 				int i = 0;
 				for(CPlayer& it : Party.Player)
 				{
@@ -156,7 +156,7 @@ void CTown::enter()
 		case 5:
 			{
 				message("You wander the market.");
-				CItemFunctor functor(upperWindow, ITEM_ITEM, ITEM_MODE_SELL);
+				CItemWindow functor(upperWindow, ITEM_ITEM, ITEM_MODE_SELL);
 
 				int i = 0;
 				for(CPlayer& it : Party.Player)
@@ -177,7 +177,7 @@ void CTown::enter()
 			{
 				message("The wise man tells of the dangers facing "
 					+ name + ".");
-				CQuestFunctor functor(upperWindow);
+				CQuestWindow functor(upperWindow);
 				std::pair<int, int> result = functor();
 				if (result.second--)
 				{

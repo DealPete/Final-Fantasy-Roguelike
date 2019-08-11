@@ -6,7 +6,6 @@
 
 #include "Misc.h"
 
-//#include <std::iostream>
 #include <fstream>
 std::ofstream file("Parser/debug.txt", std::ios::out);
 #define BOOST_SPIRIT_DEBUG_OUT file

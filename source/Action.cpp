@@ -6,9 +6,8 @@
 #include "Combat.h"
 #include "Input.h"
 #include "Message.h"
-#include "Monsters.h"
 #include "Misc.h"
-#include "Output.h"
+#include "Monsters.h"
 #include "Party.h"
 #include "Player.h"
 #include "Random.h"
@@ -16,14 +15,15 @@
 #include "Target.h"
 #include "Town.h"
 #include "Weapons.h"
+#include "Window.h"
 
-std::string CActionFunctor::next()
+std::string CActionWindow::next()
 {
 	return token = ns(effect);
 }
 
 CActionAttack::CActionAttack(CActor& a, buffer e) :
-	CActionFunctor(a, e), attack_adds(ST_NONE), attack_hurts(RACE_NONE),
+	CActionWindow(a, e), attack_adds(ST_NONE), attack_hurts(RACE_NONE),
 	attack_element(ELEM_NONE), ignore_evasion(false), ignore_row(false),
 	jumping(false),	throwing(false), attack_drainHP(false),
 	attack_drainMP(false), meatbone_slashing(false), modifier(0),
@@ -194,11 +194,12 @@ action_result_type CActionAttack::attack(CActor& target)
 		
 		CPlayer& ref = (CPlayer&)target;
 			
-		if (ref.has_ability("Dragon Spirit") && !died)
+		if (ref.has_ability("Dragon Spirit") && !died) {
 			if (ref == ST_RERAISE)
 				can_jump = true;
 			else
 				status_gain |= ST_RERAISE;
+		}
 
 		if (ref.has_ability("Sunken State") &&
 			CCard().is_black())
@@ -381,7 +382,7 @@ void CActionAttack::parse()
 
 void reequip_thrown_weapon(CPlayer& player, item_type slot)
 {
-	CItemFunctor functor(
+	CItemWindow functor(
 		upperWindow, ITEM_WEAPON, ITEM_MODE_SELECT, false);
 
 	functor.player = &player;
@@ -533,7 +534,7 @@ action_result_type CActionEquip::operator()()
 {
 	CPlayer& ref = dynamic_cast<CPlayer&>(actor);
 
-	CEquipFunctor functor(upperWindow, ITEM_WEAPON, ITEM_MODE_EQUIP, false);
+	CEquipWindow functor(upperWindow, ITEM_WEAPON, ITEM_MODE_EQUIP, false);
 
 	functor.player = &ref;
 	functor.build_menus();
@@ -759,7 +760,7 @@ bool CActionCommand::operator()(CTarget& Target)
 
 		CPlayer& player = (CPlayer&)actor;
 
-		CItemFunctor functor(upperWindow, ITEM_WEAPON, ITEM_MODE_SELECT, false);
+		CItemWindow functor(upperWindow, ITEM_WEAPON, ITEM_MODE_SELECT, false);
 
 		functor.player = &player;
 		if (!functor.build_menus(true))
@@ -810,7 +811,7 @@ action_result_type CActionItem::operator()()
 {
 	CPlayer& ref = dynamic_cast<CPlayer&>(actor);
 
-	CItemFunctor functor(upperWindow, ITEM_ITEM, ITEM_MODE_SELECT, false);
+	CItemWindow functor(upperWindow, ITEM_ITEM, ITEM_MODE_SELECT, false);
 
 	functor.player = &ref;
 	functor.build_menus();

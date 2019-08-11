@@ -10,11 +10,12 @@
 #include "Misc.h"
 #include "Output.h"
 #include "Player.h"
+#include "Window.h"
 
 enum item_mode_type
 {
 	ITEM_MODE_SELECT, 
-	ITEM_MODE_BUY,		// Invoked when using CShopFunctor
+	ITEM_MODE_BUY,		// Invoked when using CShopWindow
 						// to buy armor and weapons.
 	ITEM_MODE_SELL,
 	ITEM_MODE_USE,
@@ -170,7 +171,7 @@ public:
 	item_type type;
 };
 
-class CItemFunctor : public CSelectFunctor
+class CItemWindow : public CSelectWindow
 {
 public:
 	item_mode_type mode;
@@ -178,8 +179,8 @@ public:
 	std::vector<std::vector<CItem*> > Item;
 
 	// if shared_menu is true, all players select from the same
-	// buffer (used by CShopFunctor).
-	CItemFunctor(_wintype*, item_type, item_mode_type m = ITEM_MODE_BUY,
+	// buffer (used by CShopWindow).
+	CItemWindow(_wintype*, item_type, item_mode_type m = ITEM_MODE_BUY,
 				 bool party_view = true, bool shared_menu = false);
 
 	// return value:  Whether any of the menus built were nonempty.
@@ -189,23 +190,23 @@ public:
 	void select();
 };
 
-class CEquipFunctor : public CItemFunctor
+class CEquipWindow : public CItemWindow
 {
 public:
 	bool equipped_something;
 
-	CEquipFunctor(_wintype*, item_type, item_mode_type m,
+	CEquipWindow(_wintype*, item_type, item_mode_type m,
 		bool party_view = true);
 	void supermenu();
 	void describe(_wintype*);
 };
 
-class CShopFunctor : public CItemFunctor
+class CShopWindow : public CItemWindow
 {
 public:
 	std::vector<CItemSet*> SuperMenu;
 
-	CShopFunctor(_wintype*, item_type);
+	CShopWindow(_wintype*, item_type);
 	bool build_menus();
 	void supermenu();
 };

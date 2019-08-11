@@ -187,7 +187,7 @@ void CParty::die()
 
 void CParty::display_status()
 {
-	(void)CStatusFunctor(bigWindow)();
+	(void)CStatusWindow(bigWindow)();
 }
 
 void CParty::draw(_wintype* window, CTarget& cursor, CTarget* Target)
@@ -692,7 +692,7 @@ CDungeon& CParty::dungeon()
 
 bool CParty::add_player()
 {
-	CJobFunctor functor(bigWindow, false);
+	CJobWindow functor(bigWindow, false);
 
 	std::string name;
 
@@ -752,7 +752,7 @@ void CParty::step_on_damage_floor()
 	draw(rightWindow);
 }
 
-void CStatusFunctor::describe(_wintype* window)
+void CStatusWindow::describe(_wintype* window)
 {
 	player = &Party.Player[menu];
 

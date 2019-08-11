@@ -178,7 +178,10 @@ _wintype* _derwin(_wintype*, int nlines, int ncols, int begin_y,
                  int begin_x);
 _wintype* _dupwin(_wintype*);
 void show_window(_wintype* window);
+void draw_screen_borders();
 void draw_explore_screen();
+void divide_window_vert(_wintype *window, _wintype*& lwindow,
+	_wintype*& rwindow,	int middle);
 void stack_window();
 void unstack_window();
 void cbox(_wintype* window, _colortype color);
@@ -186,57 +189,10 @@ void cbox(_wintype* window, _colortype color);
 void browse_buffer(_wintype*, buffer*);
 void draw_buffer(_wintype*, buffer*, bool in_box);
 
-// returns 0 for cancel, nonzero for position in buffer.
-int menu_select(int y, int x, const buffer&, void (*desc)(int) = NULL);
-
 void show_enemy_pad(int y);
 void prepare_combat_output();
 int get_player_battle_command(const std::vector<std::string>&,
 							  int pos);
-
-class CPlayer;
-
-class CSelectFunctor
-{
-public:
-	_wintype *window, *bWindow, *lWindow, *rWindow;
-	CPlayer* player;
-
-	bool party_view,	// Seperate menu for each player.
-		selection;		// false if you just want to display
-						// information (like the status screen).
-	
-	int depth, menu, pos, middle;
-	std::vector<buffer> Menu;
-	input_type state;
-	int suppos;
-
-	enum {
-		CLIMB = -1,
-		HOVER = 0,
-		DIVE = 1
-	} menu_move;
-
-	CSelectFunctor(_wintype* w, bool p = true, bool s = true, int m = 18,
-		input_type i = INPUT_NORMAL)
-		: player(NULL), menu(0), pos(0), suppos(0), window(w),
-		party_view(p), selection(s), middle(m), state(i)
-	{}
-
-	std::pair<int, int> operator()();
-	virtual void describe(_wintype*) = 0;
-	virtual void empty_menu(_wintype*) = 0;
-	
-	virtual void select()
-	{
-		menu_move = CLIMB;
-	}
-
-	virtual void supermenu()
-	{}
-
-	virtual ~CSelectFunctor() {}
-};
 
 extern _wintype* battleQWindow;
 extern _wintype* bigWindow;

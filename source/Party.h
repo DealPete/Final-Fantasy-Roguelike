@@ -73,11 +73,11 @@ private:
 	void step_on_damage_floor();
 };
 
-class CStatusFunctor : public CSelectFunctor
+class CStatusWindow : public CSelectWindow
 {
 public:
-	CStatusFunctor(_wintype* w)
-		: CSelectFunctor(w, true, false, 18, INPUT_STATUS)
+	CStatusWindow(_wintype* w)
+		: CSelectWindow(w, true, false, 18, INPUT_STATUS)
 	{}
 
 	void describe(_wintype*);

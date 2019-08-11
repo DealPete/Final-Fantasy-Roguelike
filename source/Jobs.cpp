@@ -1,5 +1,5 @@
 #include "Jobs.h"
-#include "Output.h"
+#include "Window.h"
 
 void CJob::describe(_wintype* window)
 {
@@ -46,12 +46,12 @@ enough!");
 	format_print(window, 10, description);
 }
 
-void CJobFunctor::describe(_wintype* window)
+void CJobWindow::describe(_wintype* window)
 {
 	Job[pos].describe(window);
 }
 
-void CJobFunctor::empty_menu(_wintype* window)
+void CJobWindow::empty_menu(_wintype* window)
 {
 	_werase(window);
 	_wputstring(window, 1, 1, ERROR_COLOR, "Error: no jobs appear to \
