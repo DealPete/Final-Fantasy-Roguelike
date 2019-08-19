@@ -509,6 +509,7 @@ void browse_map(_wintype* window, CLocation Loc)
 			Loc.x++;
 			break;
 
+		case '<':
 		case KEY_PGUP:
 			//do
 				if (Loc.floor > 0)
@@ -527,6 +528,7 @@ void browse_map(_wintype* window, CLocation Loc)
 			//	(Dungeon[Loc.dungeon].domain != DOM_OVERWORLD));
 			break;
 
+		case '>':
 		case KEY_PGDN:
 			//do
 				if (Loc.floor < Loc.dungeon().floors - 1)
