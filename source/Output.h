@@ -242,15 +242,5 @@ const unsigned int MSG_WIDTH = 80;
 
 const unsigned int ENEMY_PAD_SIZE = 100;
 const unsigned int MSG_BUF_WIDTH = 78;
-/*
-const int MSG_UL_Y = 22;
-const int MSG_UL_X = 0;
-const int MSG_HEIGHT = 3;
-const int MSG_WIDTH = 80;
-
-const int MSG_UL_Y = 22;
-const int MSG_UL_X = 0;
-const int MSG_HEIGHT = 3;
-const int MSG_WIDTH = 80; */
 
 #endif // __OUTPUT_H_

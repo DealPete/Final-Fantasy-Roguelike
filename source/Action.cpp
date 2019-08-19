@@ -17,13 +17,13 @@
 #include "Weapons.h"
 #include "Window.h"
 
-std::string CActionWindow::next()
+std::string CAction::next()
 {
 	return token = ns(effect);
 }
 
 CActionAttack::CActionAttack(CActor& a, buffer e) :
-	CActionWindow(a, e), attack_adds(ST_NONE), attack_hurts(RACE_NONE),
+	CAction(a, e), attack_adds(ST_NONE), attack_hurts(RACE_NONE),
 	attack_element(ELEM_NONE), ignore_evasion(false), ignore_row(false),
 	jumping(false),	throwing(false), attack_drainHP(false),
 	attack_drainMP(false), meatbone_slashing(false), modifier(0),

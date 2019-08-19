@@ -121,7 +121,8 @@ std::pair<int, int> CSelectWindow::operator()()
 		if (party_view)
 			for(CPlayer& it : Party.Player)
 			{
-				_wputstring(window, 1, i * 17 + 2, TEXT_COLOR, it.name,
+				_wputchar(window, 1, i * 19 + 2, i + 0x31, WHITE);
+				_wputstring(window, 1, i * 19 + 4, TEXT_COLOR, it.name,
 					i == menu);
 				i++;
 			}
@@ -195,6 +196,17 @@ std::pair<int, int> CSelectWindow::operator()()
 
 			switch(ch)
 			{
+			case '1':
+			case '2':
+			case '3':
+			case '4':
+			{
+				int player_num = ch - 0x31;
+				if (player_num < Party.Player.size())
+					menu = player_num;
+				break;
+			}
+
 			case _KEY_UP:
 				if (selection && pos == 0)
 					pos = Menu[eff_menu].size() - 1;
@@ -214,6 +226,7 @@ std::pair<int, int> CSelectWindow::operator()()
 						menu--;
 				break;
 
+			case '\t':
 			case _KEY_RIGHT:
 			case KEY_PGDN:
 				if (menu == Party.Player.size() - 1)

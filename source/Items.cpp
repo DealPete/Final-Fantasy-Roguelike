@@ -167,6 +167,17 @@ void CEquipWindow::supermenu()
 
 	switch(ch)
 	{
+	case '1':
+	case '2':
+	case '3':
+	case '4':
+	{
+		int player_num = ch - 0x31;
+		if (player_num < Party.Player.size())
+			menu = player_num;
+		break;
+	}
+
 	case _KEY_UP:
 		if (!(suppos % 2))
 			suppos++;
@@ -202,6 +213,7 @@ void CEquipWindow::supermenu()
 				menu--;
 		break;
 
+	case '\t':
 	case KEY_PGDN:
 		if (menu == Party.Player.size() - 1)
 			menu = 0;

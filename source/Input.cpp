@@ -23,7 +23,6 @@ int _getch(input_type state)
 	case _KEY_KEYPAD_ZERO:
 	case 'X':
 	case 'x':
-	case '0':
 		return _KEY_CANCEL;
 		
 	case KEY_SPACE:
@@ -33,30 +32,28 @@ int _getch(input_type state)
 	case 'z':
 		return KEY_ACCEPT;
 
-	case '8':
+	case KEY_UP:
 	case 'k':
 		return _KEY_UP;
 
 	case KEY_PGUP:
-	case '9':
 		if (Party.enemyPad_viewport > 0)
 		Party.enemyPad_viewport--;
 		return KEY_PGUP;
 
-	case '4':
+	case KEY_LEFT:
 	case 'h':
 		return _KEY_LEFT;
 
-	case '6':
+	case KEY_RIGHT:
 	case 'l':
 		return _KEY_RIGHT;
 
-	case '2':
+	case KEY_DOWN:
 	case 'j':
 		return _KEY_DOWN;
 
 	case KEY_PGDN:
-	case '3':
 		if (Party.enemyPad_viewport < ENEMY_PAD_SIZE - LEFT_HEIGHT)
 			Party.enemyPad_viewport++;
 		return KEY_PGDN;

@@ -1,6 +1,7 @@
 #ifndef __MENU_H_
 #define __MENU_H_
 
+#include "Input.h"
 #include "Output.h"
 
 // returns 0 for cancel, nonzero for position in buffer.
