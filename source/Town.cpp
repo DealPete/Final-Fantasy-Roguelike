@@ -95,20 +95,7 @@ void CTown::enter()
 			{
 				message("You enter the Weaponry.");
 				CShopWindow functor(upperWindow, ITEM_WEAPON);
-				//CItemWindow functor(upperWindow, ITEM_WEAPON);
-				//int i = 0;
-				//foreach(CPlayer& it, Party.Player)
-				//{				
-				//	foreach(CItemSet* wset, it.WeaponSkill)
-				//		foreach(CItem* weapon, *wset)
-				//		{
-				//			functor.Menu[i].push_back(weapon->name);
-				//			functor.Item[i].push_back(weapon);
-				//		}
-				//	++i;
-				//}
-
-				(void)functor();
+				functor();
 				break;
 			}
 
@@ -116,20 +103,7 @@ void CTown::enter()
 			{
 				message("You enter the Armory.");
 				CShopWindow functor(upperWindow, ITEM_BODY);
-				//CItemWindow functor(upperWindow, ITEM_BODY);
-				//int i = 0;
-				//foreach(CPlayer& it, Party.Player)
-				//{
-				//	foreach(CItemSet* aset, it.ArmorSkill)
-				//		foreach(CItem* armor, *aset)
-				//		{
-				//			functor.Menu[i].push_back(armor->name);
-				//			functor.Item[i].push_back(armor);
-				//		}
-				//	++i;
-				//}
-
-				(void)functor();
+				functor();
 				break;
 			}
 

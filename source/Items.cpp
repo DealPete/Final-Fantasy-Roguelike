@@ -37,26 +37,27 @@ void CItem::describe(_wintype* window, int y)
 }
 
 CShopWindow::CShopWindow(_wintype* w, item_type i) : CItemWindow(w, i,
-						ITEM_MODE_BUY, true, true)
+                         ITEM_MODE_BUY, true, true)
 {
 	for(CItemSet& it : ItemSet)
-		switch(it.type)
-		{
-		case ITEM_WEAPON:
-			if (i == it.type)
-				SuperMenu.push_back(&it);
-			break;
+		if (it.name != "None")
+			switch(it.type)
+			{
+			case ITEM_WEAPON:
+				if (i == it.type)
+					SuperMenu.push_back(&it);
+				break;
 
-		case ITEM_BODY:
-		case ITEM_ACCESSORY:
-		case ITEM_HEAD:
-			if (i == ITEM_BODY)
-				SuperMenu.push_back(&it);
-			break;
+			case ITEM_BODY:
+			case ITEM_ACCESSORY:
+			case ITEM_HEAD:
+				if (i == ITEM_BODY)
+					SuperMenu.push_back(&it);
+				break;
 
-		default:
-			break;
-		}
+			default:
+				break;
+			}
 
 	Menu.push_back(buffer());
 	Item.push_back(std::vector<CItem*>());
@@ -76,14 +77,13 @@ CShopWindow::CShopWindow(_wintype* w, item_type i) : CItemWindow(w, i,
 	}
 }
 
-CEquipWindow::CEquipWindow(_wintype* w, item_type i, item_mode_type m,
-							 bool p) : CItemWindow(w, i, m, p),
-							 equipped_something(false)
+CEquipWindow::CEquipWindow(_wintype* w, item_type i, item_mode_type m, bool p) :
+                           CItemWindow(w, i, m, p), equipped_something(false)
 {}
 
 CItemWindow::CItemWindow(_wintype* w, item_type i, item_mode_type m,
-						   bool p, bool shared_menu) : type(i), mode(m),
-						   CSelectWindow(w, p, true)
+                         bool p, bool shared_menu) : type(i), mode(m),
+                         CSelectWindow(w, p, true)
 {
 	if (!shared_menu)
 		for(CPlayer& it : Party.Player)
@@ -407,11 +407,8 @@ bool CItemWindow::build_menus(bool include_equipped)
 
 			if (mode == ITEM_MODE_EQUIP)
 			{
-//				if (player->Equip[type]->name != "None")
-//				{
-					Menu[i].push_back(noneItem[type]->name);
-					Item[i].push_back(noneItem[type]);
-//				}
+				Menu[i].push_back(noneItem[type]->name);
+				Item[i].push_back(noneItem[type]);
 
 				for(CItem* item : Party.KeyItem)
 					if (item->type == type &&
@@ -425,10 +422,11 @@ bool CItemWindow::build_menus(bool include_equipped)
 			if (Menu[i++].size())
 				menus_nonempty = true;
 		}
+
 	if (pos > (int)Item[menu].size() - 1)
-	pos = Item[menu].size() - 1;
-	if (pos < 0)
-		pos = 0;
+		pos = Item[menu].size() - 1;
+
+	if (pos < 0) pos = 0;
 
 	return menus_nonempty;
 }
@@ -485,10 +483,11 @@ enough!");
 		Item[eff_menu][pos]->describe(window);
 	else
 	{
-		if (player)
-			player->print_stats(window, Item[eff_menu][pos]);
-		else
+		if (party_view)
 			Party.Player[menu].print_stats(window, Item[eff_menu][pos]);
+		else
+			player->print_stats(window, Item[eff_menu][pos]);
+
 		Item[eff_menu][pos]->describe(window, 7);
 	}
 }
