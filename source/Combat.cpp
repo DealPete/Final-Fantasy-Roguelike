@@ -526,12 +526,7 @@ void CBattle::draw_monsters(CTarget& cursor, CTarget* Target)
 
 			if (Target && Target->count(it))
 			{
-#ifndef _WIN32
-				_chtype checkMark = 42;
-#else
-				_chtype checkMark = 251;
-#endif
-				_wputchar(enemyPad, i, 17, 251, WHITE, reverse);
+				_wputchar(enemyPad, i, 17, CHECK_MARK, WHITE, reverse);
 			}
 			//if (Target.Cards[it] > 0)
 				//buf.push_back
