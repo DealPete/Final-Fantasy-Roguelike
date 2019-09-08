@@ -9,7 +9,7 @@
 #		on his Luc to be saved from death.
 
 CONFIG {
-Ironman
+#Ironman
 Chaos
 #Luck
 }

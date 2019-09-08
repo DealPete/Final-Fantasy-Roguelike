@@ -67,7 +67,7 @@ encounter_type dungeon_encounter[13] =
 	ENC_SAVE_POINT,
 // ENC_MONSTERS, ENC_MONSTERS, ENC_MONSTERS,
 // official rules have 3 in 13 chance of monster attack.
-	ENC_NONE, ENC_NONE, ENC_MONSTERS,
+	ENC_NONE, ENC_MONSTERS, ENC_MONSTERS,
 	ENC_TREASURE, ENC_TREASURE,
 	ENC_DAMAGE_FLOOR
 };
