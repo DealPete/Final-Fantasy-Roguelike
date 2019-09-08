@@ -87,6 +87,7 @@ void init_display()
 	cbreak();
 	noecho();
 	curs_set(0);
+	ESCDELAY = 0;
 
 	init_color();
 	draw_screen_borders();
