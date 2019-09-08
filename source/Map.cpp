@@ -41,7 +41,8 @@ encounter_type overworld_encounter[13] =
 {
 	ENC_NONE, ENC_NONE, ENC_NONE, ENC_NONE, ENC_NONE, ENC_NONE,
 	ENC_NONE, ENC_NONE, ENC_NONE,
-	ENC_MONSTERS, ENC_MONSTERS,
+//	ENC_MONSTERS, ENC_MONSTERS,  // official rules have 2 in 13 chance.
+	ENC_NONE, ENC_MONSTERS,
 	ENC_TOWN,
 	ENC_DUNGEON
 };
@@ -64,7 +65,9 @@ encounter_type dungeon_encounter[13] =
 {
 	ENC_NONE, ENC_NONE, ENC_NONE, ENC_NONE, ENC_NONE, ENC_NONE,
 	ENC_SAVE_POINT,
-	ENC_MONSTERS, ENC_MONSTERS, ENC_MONSTERS,
+// ENC_MONSTERS, ENC_MONSTERS, ENC_MONSTERS,
+// official rules have 3 in 13 chance of monster attack.
+	ENC_NONE, ENC_NONE, ENC_MONSTERS,
 	ENC_TREASURE, ENC_TREASURE,
 	ENC_DAMAGE_FLOOR
 };

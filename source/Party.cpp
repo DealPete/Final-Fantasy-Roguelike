@@ -197,14 +197,6 @@ void CParty::draw(_wintype* window, CTarget& cursor, CTarget* Target)
 
 	int i = 3;
 
-	if (!Party.battle)
-	{
-		_wputstring(window, _getheight(window) - 2, 2, TITLE_COLOR,
-			"Gil:  ");
-		_wputcstr(window, _getheight(window) - 2, 8, TEXT_COLOR, "%d",
-			Gil);
-	}
-
 	for(CPlayer& it : Player)
 	{
 		bool backRow;
@@ -259,6 +251,20 @@ void CParty::draw(_wintype* window, CTarget& cursor, CTarget* Target)
 		if (Party.battle && view_init_cards)
 			_wputstring(window, i++, 1, GREEN,
 				"[" + it.init->rank_string() + "]");
+	}
+
+	if (!Party.battle)
+	{
+		auto height = _getheight(window);
+
+		if (height - 4 > i) {
+			_wputstring(window, height - 2, 2, TITLE_COLOR, "Gil:  ");
+			_wputcstr(window, height - 2, 8, TEXT_COLOR, "%d", Gil);
+		}
+
+		if (height - 5 > i) {
+			_wputstring(window, height - 3, 2, TITLE_COLOR, "Press ? for help.");
+		}
 	}
 
 	show_window(window);
