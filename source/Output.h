@@ -15,6 +15,7 @@ extern std::string font_file;
 extern std::string font_orient;
 
 #ifdef _WIN32
+#define CHECK_MARK 251
 #define RIGHT_ARROW 175
 #define ACS_DBL_HLINE 205
 #define ACS_DBL_VLINE 186
@@ -24,6 +25,7 @@ extern std::string font_orient;
 #define ACS_DBL_RTEE 185
 #define ACS_COMBINE_BTEE 207
 #else
+#define CHECK_MARK '*'
 #define RIGHT_ARROW ACS_RARROW
 #define ACS_DBL_HLINE ACS_HLINE
 #define ACS_DBL_VLINE ACS_VLINE

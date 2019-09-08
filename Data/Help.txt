@@ -9,7 +9,7 @@ m   Browse the map.                  I   Use key item.
 s   View the status screen.          r   Switch rows.
 
 P   Browse the message buffer.       S   Save and quit.
-Q   Turn off power without holding reset.
+Q   Quit without saving.
 
 SPACE, z, Z, ENTER    Select/Continue.
 ESC, x, X             Cancel/Close window.

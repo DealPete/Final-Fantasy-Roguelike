@@ -79,7 +79,7 @@ void CTown::enter()
             message(
 "A pleasant night's rest restores the party to full health.");
             message(std::string(
-                "\"Hold RESET while you turn POWER off!!\" warns ") +
+                "\"Be careful not to quit without saving!\" warns ") +
                 "the innkeeper as you leave.");
 
             for(CPlayer& it : Party.Player)

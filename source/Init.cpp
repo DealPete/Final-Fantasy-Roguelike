@@ -38,6 +38,10 @@ void start_game()
 			Dungeon.push_back(CDungeon(DOM_OVERWORLD, FEA_DUNGEON));
 			set_new_savefile();
 			Party.describe_location();
+
+			message("Press Z to enter town and buy some equipment.");
+			more("Visit the wise man to get your first quest.");
+			message("Don't forget to press J to assign your job points.");
 			break;
 
 		case 'r':
@@ -61,8 +65,6 @@ void start_game()
 	} while (ch == KEY_ACCEPT);
 
 	time(&Party.start_time);
-
-	message("Press ? for a list of commands.");
 
 	Party.draw(rightWindow);
 }

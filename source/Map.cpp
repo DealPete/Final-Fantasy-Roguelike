@@ -22,19 +22,19 @@ int move_vec[4][2] =
 
 terrain_type overworld_terrain[13][3] =
 {
-{	TRN_GRASS,		TRN_MOUNTAIN,	TRN_WATER,      },
-{	TRN_GRASS,		TRN_WATER,		TRN_MOUNTAIN,   },
-{	TRN_MOUNTAIN,	TRN_WATER,		TRN_GRASS,      },
-{	TRN_WATER,		TRN_MOUNTAIN,	TRN_GRASS,      },
-{	TRN_MOUNTAIN,	TRN_GRASS,		TRN_WATER,      },
-{	TRN_WATER,		TRN_GRASS,		TRN_MOUNTAIN,   },
-{	TRN_GRASS,		TRN_GRASS,		TRN_MOUNTAIN,   },
-{	TRN_GRASS,		TRN_GRASS,		TRN_WATER,      },
-{	TRN_MOUNTAIN,	TRN_GRASS,		TRN_GRASS,      },
-{	TRN_WATER,		TRN_GRASS,		TRN_GRASS,      },
-{	TRN_GRASS,		TRN_MOUNTAIN,	TRN_GRASS,      },
-{	TRN_GRASS,		TRN_WATER,		TRN_GRASS,      },
-{	TRN_GRASS,		TRN_GRASS,		TRN_GRASS,      }
+{    TRN_GRASS,     TRN_MOUNTAIN,   TRN_WATER,      },
+{    TRN_GRASS,     TRN_WATER,      TRN_MOUNTAIN,   },
+{    TRN_MOUNTAIN,  TRN_WATER,      TRN_GRASS,      },
+{    TRN_WATER,     TRN_MOUNTAIN,   TRN_GRASS,      },
+{    TRN_MOUNTAIN,  TRN_GRASS,      TRN_WATER,      },
+{    TRN_WATER,     TRN_GRASS,      TRN_MOUNTAIN,   },
+{    TRN_GRASS,     TRN_GRASS,      TRN_MOUNTAIN,   },
+{    TRN_GRASS,     TRN_GRASS,      TRN_WATER,      },
+{    TRN_MOUNTAIN,  TRN_GRASS,      TRN_GRASS,      },
+{    TRN_WATER,     TRN_GRASS,      TRN_GRASS,      },
+{    TRN_GRASS,     TRN_MOUNTAIN,   TRN_GRASS,      },
+{    TRN_GRASS,     TRN_WATER,      TRN_GRASS,      },
+{    TRN_GRASS,     TRN_GRASS,      TRN_GRASS,      }
 };
 
 encounter_type overworld_encounter[13] =

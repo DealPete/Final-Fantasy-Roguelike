@@ -39,7 +39,7 @@ void CTarget::fill()
 }
 
 bool CTarget::choose_multiple_targets(bool monster, std::vector<CActor*>& Friend,
-									  std::vector<CActor*>& Enemy)
+                                      std::vector<CActor*>& Enemy)
 {
 	prompt("Select any number of targets.  Push A when done.");
 

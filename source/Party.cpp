@@ -239,7 +239,7 @@ void CParty::draw(_wintype* window, CTarget& cursor, CTarget* Target)
 
 		if (Target && Target->count(&(CActor&)it))
 		{
-			_wputchar(window, i, 35, 251, WHITE);
+			_wputchar(window, i, 35, CHECK_MARK, WHITE);
 		}
 
 		i++;
